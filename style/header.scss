@@ -1,0 +1,44 @@
+.header {
+  background: white;
+  // width: 100vh;
+  // height: fit-content;
+  // display: flex;
+  // flex-wrap: wrap;
+}
+
+.hamburger-button button {
+  height: 205px;
+  width: 47px;
+}
+.header-right {
+  // margin-left: 0;
+  // margin-right: 0;
+  // box-sizing: border-box;
+  // display: flex;
+  padding-inline: 10px 29px;
+  // padding-block: 14px 13px;
+  flex-wrap: wrap;
+}
+.darkMode-container {
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+}
+.darkMode-container button[aria-label="theme change to dark"],
+.lang-container button[aria-label="language change"],
+.hamburger-button {
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.page-title {
+  font-size: 1.5rem;
+}
+
+.nav-list {
+  display: none;
+  list-style: none;
+}

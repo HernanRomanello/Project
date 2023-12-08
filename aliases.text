@@ -1,0 +1,40 @@
+
+
+
+git config --global alias.h "--help"
+
+
+
+
+
+git config --global alias.com "commit -m"
+
+git config --global alias.aa "add ."
+
+
+git config --global alias.s "status"
+
+git config --global alias.li "config --list" 
+
+git config --global alias.c 
+
+git config --global alias.li "config --list" 
+
+
+
+git config --global alias.b "branch" 
+
+git push -u origin your_branch_name explain
+
+
+git config --global alias.pb "push -u origin" 
+
+git config --global alias.ch "checkout" 
+
+git config --global alias.re "restore" 
+
+
+
+git aa
+
+git com "update1-html"
