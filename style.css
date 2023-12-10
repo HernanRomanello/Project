@@ -222,6 +222,23 @@ h2 {
   }
 }
 
+.hover-card {
+  display: none;
+  max-width: 200px;
+  position: absolute;
+  background-color: white;
+}
+
+.overview-secondary-dark-mode {
+  background-color: rgb(75, 97, 112);
+}
+
+.dark-card {
+  background-color: rgb(55, 79, 96);
+  color: white;
+  box-shadow: rgba(59, 59, 59, 0.2) 0px 0px 15px -3px, rgba(71, 71, 71, 0.05) 0px 4px 6px -2px;
+}
+
 .header-second-part {
   display: flex;
   justify-content: space-between;
@@ -275,7 +292,8 @@ h2 {
   font-weight: bold;
   font-size: 14px;
 }
-.nav-contaner .marked-div {
+.nav-contaner .marked-div,
+.nav-contaner #glance {
   background-color: rgb(255, 255, 255);
   padding: 6px 20px;
   border-radius: 20px;

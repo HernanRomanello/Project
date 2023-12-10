@@ -41,6 +41,7 @@
 .overview-secondary {
   padding: 0.5rem;
   background-color: white;
+
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   margin-top: 1rem;
   margin-bottom: 64px;
@@ -59,10 +60,29 @@
   .card {
     box-shadow: rgba(59, 59, 59, 0.3) 0px 0px 15px -3px,
       rgba(71, 71, 71, 0.05) 0px 4px 6px -2px !important;
+
     display: grid;
     min-height: 144px;
     @media only screen and (min-width: 768px) {
       min-width: inherit;
     }
   }
+}
+.hover-card {
+  display: none;
+  max-width: 200px;
+  position: absolute;
+  background-color: white;
+  // margin-top: -50px;
+}
+
+.overview-secondary-dark-mode {
+  background-color: rgb(75, 97, 112);
+}
+
+.dark-card {
+  background-color: rgb(55, 79, 96);
+  color: white;
+  box-shadow: rgba(59, 59, 59, 0.2) 0px 0px 15px -3px,
+    rgba(71, 71, 71, 0.05) 0px 4px 6px -2px;
 }

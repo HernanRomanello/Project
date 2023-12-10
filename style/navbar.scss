@@ -49,13 +49,12 @@
     font-weight: bold;
     font-size: 14px;
   }
-  .marked-div {
+  .marked-div,
+  #glance {
     background-color: rgb(255, 255, 255);
     padding: 6px 20px;
     border-radius: 20px;
     margin: 0 4px;
     color: black;
   }
-
-  // nav.classList.toggle("revealed-nav-list");
 }
