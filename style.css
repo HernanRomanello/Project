@@ -109,11 +109,6 @@ h2 {
   width: 47px;
 }
 
-.header-right {
-  padding-inline: 10px 29px;
-  flex-wrap: wrap;
-}
-
 .darkMode-container {
   background: none;
   border: none;
@@ -351,6 +346,20 @@ h2 {
   height: 36px;
 }
 
+.button-container {
+  display: flex;
+  justify-content: flex-end !important;
+  width: 100%;
+  margin-left: 20px;
+}
+
+.button-container-center {
+  display: flex;
+  justify-content: center !important;
+  width: 100%;
+  margin-left: 20px;
+}
+
 .modal-title {
   text-align: center;
   font-size: 32px;
@@ -399,6 +408,15 @@ h2 {
   font-size: 18px;
   color: #fff;
   cursor: pointer;
+}
+
+.footer-background {
+  background: #cce5e5;
+  padding: 120px;
+  margin-top: 10px;
+  margin-bottom: 0;
+  width: 100%;
+  z-index: 10000;
 }
 
 .nav-list {
@@ -468,6 +486,39 @@ h2 {
 .revealed-nav-list {
   display: block;
   transform: translateY(0);
+}
+
+.overview-cards .table-container {
+  max-height: 200px;
+  overflow-y: scroll;
+}
+.overview-cards table {
+  width: 600px;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+.overview-cards th,
+.overview-cards td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  vertical-align: middle;
+}
+.overview-cards th {
+  background-color: #f2f2f2;
+  position: sticky;
+  top: 0;
+  cursor: pointer;
+}
+.overview-cards tbody {
+  display: block;
+  max-height: 160px;
+  overflow-y: scroll;
+}
+.overview-cards tr {
+  display: table;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /*# sourceMappingURL=style.css.map */

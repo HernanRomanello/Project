@@ -12,12 +12,14 @@
     <div id="overlay"></div>
     <div id="myModal" class="modal">
     <div class="modal-content">
+      <div class="button-container">
       <button id="closeModalBtn" class="close-btn" aria-label="כניסה לעולם המידע"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g>
           <path d="M10 26L26 10" stroke="black" stroke-width="3"></path>
           <path d="M26 26L10 10" stroke="black" stroke-width="3"></path>
         </g>
       </svg></button>
+    </div>
       <h2 class="modal-title">תנאי שימוש</h2>
       <div class="terms-body">
         <ul class="terms-list">
@@ -41,14 +43,19 @@
           </label>
         </div>
         <div class="action">
+          <div class="button-container-center">
+
           <button id="otherButton" class="close-button">
             <span class="button-text">כניסה לעולם המידע</span>
           </button>
+        </div>
+
         </div>
         <div class="card-footer">
           <img src="./pics/terms-image.svg" alt="terms image">
         </div>
       </div>
+      <div class="footer-background"></div>
     </div>
   </div>
   <!-- <header class="main-header"> -->
@@ -434,10 +441,193 @@
       </section>
 
     </div>
+    <section class="overview-cards  overview-secondary">
+      <h2>תפוסת מיטות בביה"ח</h2>
+      <div class="cards1">
 
+      <div class="card">
+        <div class="card-header">
+         
+         
+        <div class="card-body">
+        
+      
+        </div>
+
+      </div>
+      
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <img src="./pics/dots.svg" alt="">
+      <h3>תחלואה מחול
+        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24">
+          <g fill="currentColor">
+            <g data-name="info">
+              <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
+              <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"></path>
+            </g>
+          </g>
+        </svg>
+      </h3>
+    </div>
+  
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th id="name" onclick="sortTable(0)">תפוסה מחלקה פנימית %</th>
+            <th class="general-capacity" onclick="sortTable(1)">
+              תפוסה כללית %
+            </th>
+            <th class="internal-capacity" onclick="sortTable(2)">בית חולים</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <!-- Add rows dynamically using JavaScript -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+    
+</div>
+
+
+</div>
+
+    </section>
+    <section class="overview-cards  overview-secondary">
+      <h2>תחלואה מחו"ל</h2>
+      <div class="cards1">
+        <div class="card">
+          <div class="card-header">
+           
+           
+          <div class="card-body">
+          
+        
+          </div>
+  
+        </div>
+        
+    </div>
+      <div class="card">
+        <div class="card-header">
+         
+         
+        <div class="card-body">
+        
+      
+        </div>
+
+      </div>
+      
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <img src="./pics/dots.svg" alt="">
+      <h3> מאומתים הנכנסים מחו"ל לפי מדינות
+        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24">
+          <g fill="currentColor">
+            <g data-name="info">
+              <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
+              <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"></path>
+            </g>
+          </g>
+        </svg>
+      </h3>
+    </div>
+  
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th id="name" onclick="sortTable(0)">תפוסה מחלקה פנימית %</th>
+            <th class="general-capacity" onclick="sortTable(1)">
+              תפוסה כללית %
+            </th>
+            <th class="internal-capacity" onclick="sortTable(2)">בית חולים</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <!-- Add rows dynamically using JavaScript -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+    
+</div>
+
+
+</div>
+
+    </section>
+    <section class="overview-cards  overview-secondary">
+      <h2>רמזור ישובים</h2>
+      <div class="cards1">
+
+   
+  <div class="card">
+    <div class="card-header">
+      <img src="./pics/dots.svg" alt="">
+      <h3> תוכנית הרמזור
+        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24">
+          <g fill="currentColor">
+            <g data-name="info">
+              <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
+              <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"></path>
+            </g>
+          </g>
+        </svg>
+      </h3>
+    </div>
+  
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th id="name" onclick="sortTable(0)">תפוסה מחלקה פנימית %</th>
+            <th class="general-capacity" onclick="sortTable(1)">
+              תפוסה כללית %
+            </th>
+            <th class="internal-capacity" onclick="sortTable(2)">בית חולים</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <!-- Add rows dynamically using JavaScript -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+     
+     
+    <div class="card-body">
+    
+  
+    </div>
+
+  </div>
+  
+</div>
+  
+    
+</div>
+
+
+</div>
+
+    </section>
     <script src="./js/modal-use-conditions.js"></script>
     <script src="./js/header-menu.js"></script>
     <script src="./js/click-humburger.js"></script>
     <script src="./js/dark-mode-button.js"></script>
+    <script src="./js/table.-table-beds-capacity.js"></script>
+    <script src="./js/table-disease-abroad.js"></script>
+    <script src="./js/traffic-light.js"></script>
   </body>
 </html>
