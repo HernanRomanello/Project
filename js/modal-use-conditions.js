@@ -7,13 +7,13 @@ document.addEventListener("DOMContentLoaded", function () {
   function showModal() {
     modal.style.display = "block";
     overlay.style.display = "block";
-    document.body.style.overflow = "hidden"; // Disable scrolling
+    document.body.style.overflow = "hidden";
   }
 
   function hideModal() {
     modal.style.display = "none";
     overlay.style.display = "none";
-    document.body.style.overflow = ""; // Enable scrolling
+    document.body.style.overflow = "";
   }
 
   showModal();

@@ -63,8 +63,13 @@
 
     display: grid;
     min-height: 144px;
+
     @media only screen and (min-width: 768px) {
       min-width: inherit;
+    }
+    h1 {
+      display: inline-block;
+      font-size: 16px !important;
     }
   }
 }
@@ -73,7 +78,22 @@
   max-width: 200px;
   position: absolute;
   background-color: white;
-  // margin-top: -50px;
+}
+.card-header h3:hover + .hover-card {
+  display: flex;
+  height: 310px;
+  width: 630px;
+  flex-direction: column;
+  align-items: flex-start;
+  color: black;
+  font-size: bold;
+  padding: 20px;
+  margin: -7px 10px;
+  gap: 20px;
+  &:hover {
+    color: black;
+    background-color: white;
+  }
 }
 
 .overview-secondary-dark-mode {
