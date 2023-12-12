@@ -44,6 +44,9 @@ body {
 .yellow {
   background-color: rgb(230, 185, 87);
 }
+.line {
+  display: flex;
+}
 
 h3 {
   line-height: 1.5;
@@ -69,4 +72,7 @@ h2 {
 .card-small-number {
   font-weight: 700;
   line-height: 1.25;
+}
+
+.headers {
 }

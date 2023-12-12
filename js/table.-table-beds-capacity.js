@@ -1,94 +1,213 @@
 let data = [
-  ["אלף", 28, "רמבם"],
-  ["Jacob Martinez", 35, "כרמל"],
-  ["Olivia Williams", 22, "חורב"],
-  ["Ethan Reynolds", 30, "העמק"],
-  ["Sophia Nguyen", 25, "בני ציון"],
-  ["Liam Thompson", 32, "פוריה"],
-  ["Ava Miller", 27, "אלישע"],
-  ["Noah Taylor", 29, "הלל יפה"],
-  ["Mia Davis", 24, " אסותא חיפה"],
-  ["Jackson Lee", 31, "האיטלקי"],
-  ["Grace Robinson", 26, "זיו צפת"],
-  ["Logan Harris", 33, "פלימן"],
-  ["Ella White", 23, "שער מנשה"],
-  ["Aiden Clark", 28, "מזרע"],
-  ["Lily Brown", 34, "נווה שלווה"],
-  ["Lucas Garcia", 29, " מדיקל סנטר"],
-  ["Stella Patel", 26, "לנדיאדו"],
-  ["Benjamin Smith", 30, " מאיר"],
-  ["Scarlett Jones", 25, "לוינשטיין"],
-  ["Carter Wilson", 32, " נתניה"],
-  ["Sophie Turner", 31, "שערי צדק"],
-  ["William Johnson", 27, "משגב לדך"],
-  ["Evelyn Davis", 29, "ביקור חולים"],
-  ["Daniel Lee", 26, "הדסה"],
-  ["Chloe Anderson", 33, "הרצוג"],
-  ["Elijah Carter", 24, "וולפסון"],
-  ["Zoe Walker", 30, "אסף הרופא"],
-  ["Leo Miller", 22, "תל-השומר"],
-  ["Victoria Adams", 28, "קפלן"],
-  ["Isaac White", 35, "סורוקה"],
-];
+  ["זיו", "90%", "83%"],
+  ["לניאדו", "95%", "96%"],
+  ["מאיר", "98%", "105%"],
+  ["רמבם", "102%", "105%"],
+  ["תל השומר", "105%", "109%"],
+  ["איכילוב", "110%", "111%"],
+  ["שערי צדק", "112%", "111%"],
+  ["קפלן", "115%", "112%"],
+  ["השרון", "118%", "113%"],
+  ["נהריה", "120%", "113%"],
+  ["אסף הרופא", "125%", "114%"],
+  ["סורוקה", "128%", "114%"],
+  ["בני ציון", "130%", "118%"],
+  ["בילינסון", "135%", "120%"],
+  ["ואולפסון", "140%", "127%"],
+  ["הלל יפה", "145%", "132%"],
+  ["פוריה", "150%", "133%"],
+  ["העמק", "155%", "136%"],
+  ["ברזילי", "160%", "145%"],
+  ["אברבנאל", "165%", "111.19%"],
+  ["גהה", "170%", "96.99%"],
+  ["שיבא", "175%", "104.04%"],
+  ["נתיב העשרה", "180%", "120%"],
+  ["אשדוד", "185%", "125%"],
+  ["צפת", "190%", "130%"],
+  ["כפר סבא", "195%", "135%"],
+  ["חיפה", "200%", "140%"],
+  ["אשקלון", "205%", "145%"],
+  ["באר שבע", "210%", "150%"],
+].map((row) => {
+  const [hospital, capacity, internalCapacity] = row;
+  let covidPercentage = parseFloat(capacity.replace("%", ""));
+  let nonCovidPercentage = parseFloat(internalCapacity.replace("%", ""));
+  covidPercentage -= Math.random() * 50;
+  nonCovidPercentage -= Math.random() * 50;
+  return [
+    hospital,
+    Math.floor(covidPercentage) + "%",
+    Math.floor(nonCovidPercentage) + "%",
+  ];
+});
 
-let nameCount = 0;
+const hospital_select = document.getElementById("hospital_select");
+const hospital_select_hospitals = document.querySelector(
+  "#hospital_select .hospitals"
+);
+const search_input = document.getElementById("search-hospital");
+const search_input_span = document.querySelector("#search-hospital span");
+let counts = { 0: 0, 1: 0, 2: 0 };
+let hospitalNames = [];
+for (let i = 0; i < data.length; i++) {
+  hospitalNames.push(data[i][0]);
+}
+search_input.addEventListener("click", function () {
+  hospital_select.classList.toggle("hide");
+});
 
+function resetTable(render) {
+  const allCheckboxes = document.querySelectorAll(
+    "#hospital_select input[type=checkbox]"
+  );
+  if (render) {
+    displayTable(data);
+    search_input_span.textContent = "חפש בית חולים";
+    allCheckboxes.forEach((checkbox) => {
+      checkbox.checked = false;
+    });
+    selectedHospitals = [];
+  }
+  if (selectedHospitals.length === 0) {
+    data = copyTable(dataOriginal);
+    if (render) displayTable(data);
+  }
+}
+
+function invokeFilter() {
+  data = dataOriginal.filter((row) => {
+    return selectedHospitals.includes(row[0]);
+  });
+  displayTable(data);
+}
+
+let selectedHospitals = [];
+function createHospitalSelect() {
+  // Populate the hospital select
+  for (let i = 0; i < hospitalNames.length; i++) {
+    let option = document.createElement("div");
+    let checkbox = document.createElement("input");
+    let span = document.createElement("span");
+
+    option.addEventListener("click", function (e) {
+      e.stopPropagation();
+    });
+    checkbox.addEventListener("click", function (e) {
+      if (checkbox.checked) {
+        selectedHospitals.push(checkbox.value);
+      } else {
+        selectedHospitals = selectedHospitals.filter(
+          (hospital) => hospital !== checkbox.value
+        );
+      }
+      search_input_span.textContent =
+        "בתי חולים מסומנים " + selectedHospitals.length;
+      // stop the event from bubbling up to the parent
+      e.stopPropagation();
+    });
+    option.classList.add("option-hospital");
+    checkbox.type = "checkbox";
+    checkbox.id = hospitalNames[i];
+    checkbox.name = hospitalNames[i];
+    checkbox.value = hospitalNames[i];
+    option.appendChild(checkbox);
+    option.appendChild(span);
+    span.textContent = hospitalNames[i];
+    hospital_select_hospitals.appendChild(option);
+  }
+}
+
+createHospitalSelect();
 // Display the original table content
 displayTable(data);
-const dataOriginal = data;
-
+const dataOriginal = copyTable(data);
+function copyTable(table) {
+  let newTable = [];
+  for (var row in table) {
+    newTable.push([...table[row]]);
+  }
+  return newTable;
+}
 // Function to display the table
 function displayTable(data) {
   let tableBody = document.getElementById("tableBody");
   tableBody.innerHTML = ""; // Clear existing rows
 
-  //   const name = document.getElementById("name");
-  //   name.addEventListener("click", () => {
-  //     sortTable(nameCount);
-  //     nameCount++;
-  //     // console.log(nameCount);
-  //     if (nameCount > 0) {
-  //       data.reverse();
-  //     }
-  //   });
-
   for (let i = 0; i < data.length; i++) {
     let row = document.createElement("tr");
     for (let j = 0; j < data[i].length; j++) {
       let cell = document.createElement("td");
-      cell.textContent = data[i][j];
+      let span = document.createElement("span");
+
+      span.textContent = data[i][j];
+      if (j === 1 || j === 2) {
+        cell.classList.add("progress-cell");
+        const progress = document.createElement("div");
+        progress.classList.add("progress");
+        const progress_bar = document.createElement("div");
+        progress_bar.classList.add("progress-bar");
+        progress_bar.style.width = data[i][j];
+
+        if (parseFloat(data[i][j].replace("%", "")) > 100) {
+          progress_bar.classList.add("red");
+        } else {
+          progress_bar.classList.add("blue");
+        }
+        progress.appendChild(progress_bar);
+        cell.appendChild(progress);
+      }
+      cell.appendChild(span);
+
       row.appendChild(cell);
     }
     tableBody.appendChild(row);
   }
 }
 
+const tableArrows = {
+  0: document.querySelector(".table-arrow-1"),
+  1: document.querySelector(".table-arrow-2"),
+  2: document.querySelector(".table-arrow-3"),
+};
+
 // Function to sort the table
 function sortTable(columnIndex) {
-  data.sort(function (a, b) {
-    let textA = a[columnIndex];
-    let textB = b[columnIndex];
-    console.log(columnIndex);
-
-    // Specify the locale as 'he' for Hebrew only for the specified column
-    return textA.localeCompare(textB, "he", { sensitivity: "base" });
-  });
+  const isNumber = columnIndex === 0 ? false : true;
+  if (counts[columnIndex] === 0) {
+    tableArrows[columnIndex].classList.remove("table-arrow-up");
+    tableArrows[columnIndex].classList.remove("table-arrow");
+    data.sort(function (a, b) {
+      let textA = a[columnIndex];
+      let textB = b[columnIndex];
+      // console.log(columnIndex);
+      if (isNumber) {
+        textA = parseFloat(textA.replace("%", ""));
+        textB = parseFloat(textB.replace("%", ""));
+        return textA - textB;
+      }
+      // Specify the locale as 'he' for Hebrew only for the specified column
+      return textA.localeCompare(textB, "he", { sensitivity: "base" });
+    });
+  } else if (counts[columnIndex] === 2) {
+    tableArrows[columnIndex].classList.remove("table-arrow-up");
+    tableArrows[columnIndex].classList.add("table-arrow");
+    resetTable();
+  } else {
+    tableArrows[columnIndex].classList.add("table-arrow-up");
+    tableArrows[columnIndex].classList.remove("table-arrow");
+    data.sort(function (a, b) {
+      let textA = a[columnIndex];
+      let textB = b[columnIndex];
+      console.log(columnIndex);
+      if (isNumber) {
+        textA = parseFloat(textA.replace("%", ""));
+        textB = parseFloat(textB.replace("%", ""));
+        return textB - textA;
+      }
+      return textB.localeCompare(textA, "he", { sensitivity: "base" });
+    });
+  }
+  counts[columnIndex]++;
+  counts[columnIndex] %= 3;
   displayTable(data);
 }
-
-// function sortTable(columnIndex, clickedClass) {
-//   data.sort(function (a, b) {
-//     let textA = a[columnIndex].toUpperCase();
-//     let textB = b[columnIndex].toUpperCase();
-//     console.log("Column Index:", columnIndex);
-//     console.log("Clicked Class:", clickedClass);
-//     return textA.localeCompare(textB);
-//   });
-
-//   // Check if the data is sorted
-//   let isSorted = isDataSorted(columnIndex);
-//   console.log("Is data sorted:", isSorted);
-// }
-// document.getElementById("yourButtonId").addEventListener("click", function () {
-//   sortTable(yourColumnIndex, this.className);
-// });
