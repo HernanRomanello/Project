@@ -34,7 +34,6 @@
 }
 
 .overview-cards {
-  margin-inline: 1rem;
   .hover-card {
     display: none;
     max-width: 170px;
@@ -44,17 +43,36 @@
   }
 }
 
+.hover-icon-show {
+  display: flex !important;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    // top: 1000;
+    // left: 0;
+    // right: 0;
+    // bottom: 0;
+    display: block;
+    z-index: 1;
+    &:hover {
+      display: flex !important;
+    }
+  }
+}
+
 .overview-secondary {
   .hover-card {
     max-width: 260px;
   }
-  padding: 0.5rem;
-  background-color: white;
+  // padding: 0.5rem;
+  // background-color: white;
 
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  margin-top: 1rem;
-  margin-bottom: 64px;
-  border-radius: 1rem;
+  // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  // margin-top: 1rem;
+  // margin-bottom: 64px;
+  // border-radius: 1rem;
+
   .cards1 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -66,12 +84,20 @@
       grid-template-columns: repeat(2, 1fr) !important;
     }
   }
+
+  .cards2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
   .card {
+    overflow-x: hidden;
     box-shadow: rgba(59, 59, 59, 0.3) 0px 0px 15px -3px,
       rgba(71, 71, 71, 0.05) 0px 4px 6px -2px !important;
 
     display: grid;
     min-height: 144px;
+    padding-inline: 0;
 
     @media only screen and (min-width: 768px) {
       min-width: inherit;
@@ -85,16 +111,9 @@
 
 .card-header h3:hover + .hover-card,
 .card-header .hover-card:hover {
-  display: flex;
   height: fit-content;
   flex-direction: column;
   align-items: flex-start;
-
-  .hover-card {
-    &:hover {
-      display: flex;
-    }
-  }
 }
 
 .overview-secondary-dark-mode {
@@ -106,4 +125,24 @@
   color: white;
   box-shadow: rgba(59, 59, 59, 0.2) 0px 0px 15px -3px,
     rgba(71, 71, 71, 0.05) 0px 4px 6px -2px;
+}
+
+.space {
+  display: flex;
+  justify-content: space-between;
+}
+
+#part2,
+#part3,
+#part4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 580px !important;
+  background-color: rgba(248, 250, 253);
+
+  .card {
+    background-color: white;
+    flex-grow: 1;
+  }
 }

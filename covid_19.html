@@ -4,7 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>covid-19</title>
+    <script src="js/window_events.js" defer></script>
     <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-...."
+      crossorigin="anonymous"
+    />
    
   </head>
   <body>
@@ -87,19 +94,20 @@
               ></path>
             </svg>
             
-          <div class="nav-list">
-            <ul class="nav-list-ul">
+          <div class="nav-list ">
+            <ul class="nav-list-ul ">
               
-              <li class="nav-list-li home-container">
+              <li class="nav-list-li home-container" >
                 <div class="home">
 
-                <div><img class="close-btn-x" src="./pics/house-solid.svg" alt=""></div>
+                <div><img class="close-btn-x house" src="./pics/house-solid.svg" alt=""></div>
                 <a class="nav-list-link">עמוד הבית</a>
               </div>
 
-                <div class="close-part"><img class="close-btn-x" src="./pics/x.svg" alt=""></div>
+                <div class="close-part" ><img class="close-btn-x x " src="./pics/x.svg" alt=""></div>
             </li>
-            
+          </ul>
+          <ul class="nav-list-ul gray-border">
               <li class="nav-list-li">
                 <a  class="nav-list-link"> שירותים רפואים בישראל</a>
               </li>
@@ -109,9 +117,12 @@
               <li class="nav-list-li">
                 <a  class="nav-list-link">גדילה והנקה בילדים</a>
               </li>
-              <li class="nav-list-li covid">
-                <a  class="nav-list-link">קורונה</a>
+              <li id="covid-link" class="nav-list-li covid">
+               <a class="nav-list-link" href="/covid_19.html">קורונה</a>
               </li>
+
+            </ul>
+            <ul class="nav-list-ul gray-border">
               <li class="nav-list-li">
                 <a  class="nav-list-link"> אודות</a>
               </li>
@@ -178,6 +189,9 @@
         <div class="nav-contaner">
           
             <div id="glance">מבט על</div>
+            <div id="general-illness">מדדי תחלואה כללית</div>
+            <div id="abroad-illness">תחלואה מחו"ל</div>
+            <div id="traffic-light">רמזור ישובים</div>
             <div id="main-index">מדדים מרכזים</div>
             <div id="children-admission">תחלואה ואשפוזי ילדים</div>
             <div id="vaccination-effect"> השפעת התחסנות על תחלואה</div>
@@ -192,7 +206,7 @@
     </div>
     <div class="main-content">
 
-      <section class="overview-cards">
+      <section class="overview-cards ">
         <h2>מבט על</h2>
         <div class="cards1">
 
@@ -200,9 +214,9 @@
           <div class="card-header">
             <h3> מאומתים אתמול <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24"><g fill="currentColor"><g data-name="info"><rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"></path></g></g></svg> </h3>
             <div class="hover-card">
-              <p>מספר המאומתים לנגיף COVID-19 שאותרו משעה 00:00 עד שעה 23:59 של יום אתמול.</p>
-              <p>סה"כ: מספר המאומתים מפרוץ המגיפה, כולל מי שהתגלו כמאומתים לנגיף שוב.</p>
-              <p>מאומתים - מי שנבדקו ונמצאו חיוביים לנגיף COVID-19 בבדיקת PCR או בבדיקת אנטיגן מפוקחת (החל מה 5.1.2022) , בין אם הופיעו אצלם תסמינים ובין אם לא, בין אם הם חולים, החלימו או נפטרו.</p>
+              <p>מספר המאומתים לנגיף COVID-19 שאותרו משעה 00:00 עד שעה 23:59 של יום אתמול.
+             סה"כ: מספר המאומתים מפרוץ המגיפה, כולל מי שהתגלו כמאומתים לנגיף שוב.
+              מאומתים - מי שנבדקו ונמצאו חיוביים לנגיף COVID-19 בבדיקת PCR או בבדיקת אנטיגן מפוקחת (החל מה 5.1.2022) , בין אם הופיעו אצלם תסמינים ובין אם לא, בין אם הם חולים, החלימו או נפטרו.</p>
               
             </div>
            
@@ -367,7 +381,7 @@
 
         <div class="card">
           <div class="card-header">
-            <h3>  מספר המאומתים <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24"><g fill="currentColor"><g data-name="info"><rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"></path></g></g></svg> </h3>
+            <h3 class="">  מספר המאומתים <svg class="icon-hover" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24"><g fill="currentColor"><g data-name="info"><rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"></path></g></g></svg> </h3>
             <div class="hover-card">
               <p>מספר המאומתים לנגיף COVID-19 שאותרו ב-7 הימים האחרונים (לא כולל את יום העדכון) והשינוי באחוזים לעומת 7 הימים הקודמים.</p>
                </div>
@@ -386,8 +400,8 @@
     </div>
     <div class="card">
         <div class="card-header">
-          <h3>   מספר חולים קשה <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24"><g fill="currentColor"><g data-name="info"><rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"></path></g></g></svg> </h3>
-          <div class="hover-card">
+          <h3>   מספר חולים קשה <svg id="hover-icon-1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24"><g fill="currentColor"><g data-name="info"><rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"></path></g></g></svg> </h3>
+          <div class="hover-card" id="hover-card-1">
             <p>מספר החולים החדשים במצב קשה וקריטי במחלת נגיף COVID-19 ב-7 הימים האחרונים (לא כולל את יום העדכון) והשינוי באחוזים לעומת 7 הימים הקודמים.</p>
              </div>
          
@@ -405,8 +419,8 @@
   </div>
   <div class="card">
     <div class="card-header">
-      <h3>     מספר נפטרים <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24"><g fill="currentColor"><g data-name="info"><rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"></path></g></g></svg> </h3>
-      <div class="hover-card">
+      <h3>     מספר נפטרים <svg id="hover-icon-2" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24"><g fill="currentColor"><g data-name="info"><rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"></path></g></g></svg> </h3>
+      <div class="hover-card" id="hover-card-2">
       <p>מספר הנפטרים מנגיף COVID-19 ב-7 הימים האחרונים (לא כולל את יום העדכון) והשינוי באחוזים לעומת 7 הימים הקודמים.</p>
        </div>
      
@@ -424,7 +438,7 @@
 </div>
 <div class="card">
     <div class="card-header">
-      <h3>     מספר נבדקים  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24"><g fill="currentColor"><g data-name="info"><rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"></path></g></g></svg> </h3>
+      <h3>     מספר נבדקים  <svg class="icon-hover"  xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24"><g fill="currentColor"><g data-name="info"><rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"></path></g></g></svg> </h3>
       <div class="hover-card">
         <p>מספר הנבדקים בבדיקות לגילוי נגיף COVID-19 מסוג PCR או אנטיגן ב-7 הימים האחרונים (לא כולל את יום העדכון) והשינוי באחוזים לעומת 7 הימים הקודמים.
           הנתון אינו כולל נבדקים בבדיקות נלוות לקביעת החלמה.</p>
@@ -449,9 +463,11 @@
       </section>
 
     </div>
-    <section class="overview-cards  overview-secondary table-abroad">
-      <h2>תפוסת מיטות בביה"ח</h2>
-      <div class="cards1">
+<div class="line-border"></div>
+
+    <section id="part2" class="overview-cards  overview-secondary table-abroad tables" data-nav="general-illness" >
+      <h2>  מדדי תחלואה כללית</h2>
+      <div class="cards2 ">
 
       <div class="card">
         <div class="card-header">
@@ -465,9 +481,11 @@
       </div>
       
   </div>
-  <div class="card">
-    <div class="card-header line">
-      <h3>תחלואה מחול
+  <div class="card ">
+    <div class="card-header line space table">
+      <div>
+
+      <h3> תפוסת מיטות ביבה"ח
         <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24">
           <g fill="currentColor">
             <g data-name="info">
@@ -476,38 +494,57 @@
             </g>
           </g>
         </svg>
-      <img src="./pics/dots.svg" alt="">
+        <div class="hover-card">
+          <p>חולים פעילים - מי שנבדקו ונמצאו חיוביים לנגיף בבדיקת PCR או בבדיקת אנטיגן מפוקחת (החל מה 5.1.2022) COVID-19, ללא קשר להופעת תסמינים, שעוד לא הוגדרו כמחלימים ושלא נפטרו.</p>
+        </div>
+      </div>
+      <div>
+        <div class="dot-button ">
 
-      </h3>
-    </div>
-  
-
-    <div id="search-hospital">
-      <span>חפש בית חולים</span>
-      <div id = "hospital_select" class="hide">
-        <div class ="hospitals"></div>
-        <div class="search-controls">
-          <button onclick="resetTable(true)">Cancel</button>
-          <button onclick="invokeFilter()">Okay</button>
+          <img src="./pics/dots.svg" alt="">
+        </div>
+      
+      <div class="dropdown-load hide">
+        <div class="box"> <div><img src="./pics/share-nodes-solid.svg" alt=""></div> <div>שיתוף</div></div>
+        <div class="box">
+          <div><img src="./pics/arrow-down-solid.svg" alt=""></div>
+          <div>הורדה</div>
         </div>
       </div>
     </div>
+
+    </h3>
+
+    </div>
+  
+    <div id="search-hospital">
+       <span class="search-button"> 29 בתי חולים / מוסדות נבחרו <img class="" src ="./pics/down-arrow.svg" width="20" height="20"/></span> 
+      <div id = "hospital_select" class="hide">
+        <div class ="hospitals"></div>
+        <div class="search-controls">
+          <button onclick="invokeFilter()">אישור</button>
+          <button onclick="resetTable(true)">ביטול</button>
+        </div>
+      </div>
+    </div>
+    <div class="date-updated"> הנתונים מעודכנים לתאריך 06.06.23</div>
+
     <div class="table-container">
         
-      <table>
+      <table >
         <thead>
          
-          <tr class="headers">
+          <tr class="headers table-header">
             <th id="name" onclick="sortTable(0)">
               <span>בית חולים</span>
               <img class="table-arrow-1 table-arrow" src ="./pics/down-arrow.svg" width="20" height="20"/>
             </th>
             <th class="general-capacity" onclick="sortTable(1)">
-              <span> תפוסה כללית %</span>
+              <span>% תפוסה כללית </span>
               <img class="table-arrow-2 table-arrow" src ="./pics/down-arrow.svg" width="20" height="20"/>
             </th>
             <th class="internal-capacity" onclick="sortTable(2)"> 
-              <span> תפוסה מחלקה פנימית %</span>
+              <span>% תפוסה מחלקה פנימית </span>
               <img class="table-arrow-3 table-arrow" src ="./pics/down-arrow.svg" width="20" height="20"/>
             </th>
           </tr>
@@ -519,29 +556,31 @@
       </table>
     </div>
   </div>
+  <div class="card">
+    <div class="card-header">
+     
+     
+    <div class="card-body">
+    
   
+    </div>
+
+  </div>
+  
+</div>
     
 </div>
 
 
-</div>
+<!-- </div> -->
+<div class="line-border"></div>
 
     </section>
-    <section class="overview-cards  overview-secondary">
+
+    <section id="part3" class="overview-cards  overview-secondary table-abroad tables"  >
       <h2>תחלואה מחו"ל</h2>
-      <div class="cards1">
-        <div class="card">
-          <div class="card-header">
-           
-           
-          <div class="card-body">
-          
-        
-          </div>
-  
-        </div>
-        
-    </div>
+      <div class="cards2 ">
+
       <div class="card">
         <div class="card-header">
          
@@ -554,9 +593,11 @@
       </div>
       
   </div>
-  <div class="card">
-    <div class="card-header line">
-      <h3> מאומתים הנכנסים מחו"ל לפי מדינות
+  <div class="card ">
+    <div class="card-header line space table">
+      <div>
+
+      <h3> מאומתים הנכנסים לישראל לפי מדינות
         <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24">
           <g fill="currentColor">
             <g data-name="info">
@@ -565,28 +606,84 @@
             </g>
           </g>
         </svg>
-      <img src="./pics/dots.svg" alt="">
+        <div class="hover-card">
+          <p>חולים פעילים - מי שנבדקו ונמצאו חיוביים לנגיף בבדיקת PCR או בבדיקת אנטיגן מפוקחת (החל מה 5.1.2022) COVID-19, ללא קשר להופעת תסמינים, שעוד לא הוגדרו כמחלימים ושלא נפטרו.</p>
+        </div>
+      </div>
+      <div>
+        <div class="dot-button ">
 
-      </h3>
+          <img src="./pics/dots.svg" alt="">
+        </div>
+      
+      <div class="dropdown-load hide">
+        <div class="box"> <div><img src="./pics/share-nodes-solid.svg" alt=""></div> <div>שיתוף</div></div>
+        <div class="box">
+          <div><img src="./pics/arrow-down-solid.svg" alt=""></div>
+          <div>הורדה</div>
+        </div>
+      </div>
     </div>
+
+    </h3>
+
+    </div>
+
   
+  
+    <div id="search-country">
+       <span class="search-button-2"> 3 חודשים אחורונים ,47 מדינות נבחרו<img class="" src ="./pics/down-arrow.svg" width="20" height="20"/></span> 
+      <div id = "country-select" class="hide">  <!-- change ID to country-select -->
+        <div class ="countries"></div>   <!-- change class to countries -->
+        <div class="search-controls">
+          <button onclick="invokeCountryFilter()">אישור</button>
+          <button  onclick="resetCountryTable(true)">ביטול</button>
+        </div>
+      </div>
+    </div>
+    <div class="date-updated"> הנתונים מעודכנים  06.06.23</div>
+
+    <div class="areas-colors">
+      <span><img src="./pics/square-full-solid2.svg" alt="">מדינות בסיכון מרבי</span>
+      <span><img src="./pics/square-full-solid1.svg" alt="">מדינות בסיכון</span>
+      <span><img src="./pics/square-full-solid.svg" alt="">מדינות בסיכון נמוך</span>
+    </div>
+
+
     <div class="table-container">
-      <table>
-        <thead>
-          <tr class="headers">
-            <th id="name" onclick="sortTable(0)">
-              <span>תפוסה מחלקה פנימית %</span>
-              <img src ="./pics/down-arrow.svg" width="20" height="20"/></th>
-            <th class="general-capacity" onclick="sortTable(1)">
-             <span> תפוסה כללית %</span>
-             <img src ="./pics/down-arrow.svg" width="20" height="20"/>
-            </th>
-            <th class="internal-capacity" onclick="sortTable(2)">
-              <span>>בית חולים</span>
-              <img src ="./pics/down-arrow.svg" width="20" height="20"/></th>
+        
+      <table >
+        <thead class="gray">
+         
+          <tr id="header-disease-abroud" class="table-header">
+            <td id="country" onclick="sortCountryTable(0)"> <!-- change function name to sortCountryTable -->
+              <span>מדינה</span>
+              <img id ="table-arrow-countries-1" class=" table-arrow" src ="./pics/down-arrow.svg" width="20" height="20"/> <!-- change ID table-arrow-countries-1 -->
+            </td>
+            <td  onclick="sortCountryTable(1)">
+              <span>צבע</span>
+              <img id="table-arrow-countries-2" class=" table-arrow" src ="./pics/down-arrow.svg" width="20" height="20"/> <!-- change ID table-arrow-countries-1 -->
+            </td>
+            <td  onclick="sortCountryTable(2)"> 
+              <span>נכנסים לישראל</span>
+              <img id="table-arrow-countries-3" class="table-arrow" src ="./pics/down-arrow.svg" width="20" height="20"/> <!-- change ID table-arrow-countries-1 -->
+            </td>
+            <td  onclick="sortCountryTable(3)"> 
+              <span>אזרחים מאומתים </span>
+              <img id="table-arrow-countries-4" class="table-arrow-3 table-arrow" src ="./pics/down-arrow.svg" width="20" height="20"/> <!-- change ID table-arrow-countries-1 -->
+            </td>
+            <td  onclick="sortCountryTable(4)"> 
+              <span>זרים מאומתים</span>
+              <img id="table-arrow-countries-5" class="table-arrow-3 table-arrow" src ="./pics/down-arrow.svg" width="20" height="20"/> <!-- change ID table-arrow-countries-1 -->
+            </td>
+            <td  onclick="sortCountryTable(5)"> 
+              <span>% המאומתים הנכנסים</span>
+              <img id="table-arrow-countries-6" class="table-arrow-3 table-arrow" src ="./pics/down-arrow.svg" width="20" height="20"/> <!-- change ID table-arrow-countries-1 -->
+            </td>
           </tr>
         </thead>
-        <tbody id="tableBody">
+       
+        <tbody id="tableBody1">
           <!-- Add rows dynamically using JavaScript -->
         </tbody>
       </table>
@@ -597,16 +694,18 @@
 </div>
 
 
-</div>
-
+<!-- </div> -->
+<div class="line-border"></div>
     </section>
-    <section class="overview-cards  overview-secondary">
+    <section id="part4" class="overview-cards  overview-secondary table-abroad tables"  >
       <h2>רמזור ישובים</h2>
-      <div class="cards1">
+      <div class="cards2 ">
 
    
-  <div class="card">
-    <div class="card-header line">
+  <div class="card large-card">
+    <div class="card-header line space table">
+      <div>
+
       <h3> תוכנית הרמזור
         <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24">
           <g fill="currentColor">
@@ -616,525 +715,88 @@
             </g>
           </g>
         </svg>
-      <img src="./pics/dots.svg" alt="">
+        <div class="hover-card">
+          <p>חולים פעילים - מי שנבדקו ונמצאו חיוביים לנגיף בבדיקת PCR או בבדיקת אנטיגן מפוקחת (החל מה 5.1.2022) COVID-19, ללא קשר להופעת תסמינים, שעוד לא הוגדרו כמחלימים ושלא נפטרו.</p>
+        </div>
+      </div>
+      <div>
+        <div class="dot-button ">
 
-      </h3>
+          <img src="./pics/dots.svg" alt="">
+        </div>
+      
+      <div class="dropdown-load hide">
+        <div class="box"> <div><img src="./pics/share-nodes-solid.svg" alt=""></div> <div>שיתוף</div></div>
+        <div class="box">
+          <div><img src="./pics/arrow-down-solid.svg" alt=""></div>
+          <div>הורדה</div>
+        </div>
+      </div>
     </div>
-  
-    <div class="table-container">
-      <table>
-        <thead>
-          <tr>
-            <th id="name" onclick="sortTable(0)">תפוסה מחלקה פנימית %</th>
-            <th class="general-capacity" onclick="sortTable(1)">
-              תפוסה כללית %
-            </th>
-            <th class="internal-capacity" onclick="sortTable(2)">בית חולים</th>
-          </tr>
-        </thead>
-        <tbody id="tableBody">
-          <!-- Add rows dynamically using JavaScript -->
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-header">
-     
-     
-    <div class="card-body">
-    
-  
-    </div>
-
-  </div>
-  
-</div>
-  
-    
-</div>
-
-
-</div>
-
-    </section>
-    <section class="overview-cards  overview-secondary">
-      <h2>מדדים מרכזים</h2>
-      <div class="cards1">
-
-   
-  <div class="card">
-    <div class="card-header line">
-      <h3> מספר מאושפזים – יומי
-
-
-        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24">
-          <g fill="currentColor">
-            <g data-name="info">
-              <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
-              <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"></path>
-            </g>
-          </g>
-        </svg>
-      <img src="./pics/dots.svg" alt="">
-
-      </h3>
-    </div>
-  
-    <div class="table-container">
-      <table>
-        <thead>
-          <tr>
-            <th id="name" onclick="sortTable(0)">תפוסה מחלקה פנימית %</th>
-            <th class="general-capacity" onclick="sortTable(1)">
-              תפוסה כללית %
-            </th>
-            <th class="internal-capacity" onclick="sortTable(2)">בית חולים</th>
-          </tr>
-        </thead>
-        <tbody id="tableBody">
-          <!-- Add rows dynamically using JavaScript -->
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-header">
-     
-     
-    <div class="card-body">
-    
-  
-    </div>
-
-  </div>
-  
-</div>
-  
-<div class="card">
-  <div class="card-header">
-   
-   
-  <div class="card-body">
-  
-
-  </div>
-
-</div>
-
-</div>
-    
-</div>
-
-
-</div>
-
-    </section>
-    <section class="overview-cards  overview-secondary">
-      <h2> תחלואה ואשפוזי ילדים</h2>
-      <div class="cards1">
-
-   
-  <div class="card">
-    <div class="card-header line">
-      <h3> תחלואה ואשפוזי ילדים
-
-
-        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24">
-          <g fill="currentColor">
-            <g data-name="info">
-              <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
-              <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"></path>
-            </g>
-          </g>
-        </svg>
-      <img src="./pics/dots.svg" alt="">
-
-      </h3>
-    </div>
-  
-    <div class="table-container">
-      <table>
-        <thead>
-          <tr>
-            <!-- <th id="name" onclick="sortTable(0)">תפוסה מחלקה פנימית %</th>
-            <th class="general-capacity" onclick="sortTable(1)">
-              תפוסה כללית %
-            </th> -->
-            <!-- <th class="internal-capacity" onclick="sortTable(2)">בית חולים</th>
-          </tr> -->
-        </thead>
-        <tbody id="tableBody">
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-header">
-     
-     
-    <div class="card-body">
-    
-  
-    </div>
-
-  </div>
-  
-</div>
-  
-<div class="card">
-  <div class="card-header">
-   
-   
-  <div class="card-body">
-  
-
-  </div>
-
-</div>
-
-</div>
-    
-</div>
-
-
-</div>
-
-    </section>
-    <section class="overview-cards  overview-secondary">
-      <h2>   השפעת התחסנות על התחלואה</h2>
-      <div class="cards1">
-
-   
-  <div class="card">
-    <div class="card-header line">
-      <h3> מאומתים יומי - התחסנות
-
-
-        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24">
-          <g fill="currentColor">
-            <g data-name="info">
-              <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
-              <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"></path>
-            </g>
-          </g>
-        </svg>
-      <img src="./pics/dots.svg" alt="">
-
-      </h3>
-    </div>
-  
-    <div class="table-container">
-      <table>
-        <thead>
-          <tr>
-            <th id="name" onclick="sortTable(0)">תפוסה מחלקה פנימית %</th>
-            <th class="general-capacity" onclick="sortTable(1)">
-              תפוסה כללית %
-            </th>
-            <th class="internal-capacity" onclick="sortTable(2)">בית חולים</th>
-          </tr>
-        </thead>
-        <tbody id="tableBody">
-          <!-- Add rows dynamically using JavaScript -->
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-header">
-     
-     
-    <div class="card-body">
-    
-  
-    </div>
-
-  </div>
-  
-</div>
-  
-<div class="card">
-  <div class="card-header">
-   
-   
-  <div class="card-body">
-  
-
-  </div>
-
-</div>
-
-</div>
-    
-</div>
-
-
-</div>
-
-    </section>
-    <section class="overview-cards  overview-secondary">
-      <h2>   נפטרים</h2>
-      <div class="cards1">
-
-   
-  <div class="card">
-    <div class="card-header line">
-      <h3> נפטרים  
-
-
-        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24">
-          <g fill="currentColor">
-            <g data-name="info">
-              <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
-              <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"></path>
-            </g>
-          </g>
-        </svg>
-      <img src="./pics/dots.svg" alt="">
-
-      </h3>
-    </div>
-  
-    <div class="table-container">
-      <table>
-        <thead>
-          <tr>
-            <!-- <th id="name" onclick="sortTable(0)">תפוסה מחלקה פנימית %</th>
-            <th class="general-capacity" onclick="sortTable(1)">
-              תפוסה כללית %
-            </th> -->
-            <!-- <th class="internal-capacity" onclick="sortTable(2)">בית חולים</th>
-          </tr> -->
-        </thead>
-        <tbody id="tableBody">
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-header">
-     
-     
-    <div class="card-body">
-    
-  
-    </div>
-
-  </div>
-  
-</div>
-  
-<!-- <div class="card">
-  <div class="card-header">
-   
-   
-  <div class="card-body">
-  
-
-  </div>
-
-</div>
-
-</div> -->
-    
-</div>
-
-
-</div>
-
-    </section>
-    <section class="overview-cards  overview-secondary">
-      <h2>   בדיקות</h2>
-      <div class="cards1">
-
-   
-  <div class="card">
-    <div class="card-header line">
-      <h3> בדיקות  
-
-
-        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24">
-          <g fill="currentColor">
-            <g data-name="info">
-              <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
-              <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"></path>
-            </g>
-          </g>
-        </svg>
-      <img src="./pics/dots.svg" alt="">
-
-      </h3>
-    </div>
-  
-    <div class="table-container">
-      <table>
-        <thead>
-          <tr>
-            <!-- <th id="name" onclick="sortTable(0)">תפוסה מחלקה פנימית %</th>
-            <th class="general-capacity" onclick="sortTable(1)">
-              תפוסה כללית %
-            </th> -->
-            <!-- <th class="internal-capacity" onclick="sortTable(2)">בית חולים</th>
-          </tr> -->
-        </thead>
-        <tbody id="tableBody">
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-header">
-     
-     
-    <div class="card-body">
-    
-  
-    </div>
-
-  </div>
-  
-</div>
-  
-<div class="card">
-  <div class="card-header">
-   
-   
-  <div class="card-body">
-  
-
-  </div>
-
-</div>
-
-</div>
-    
-</div>
-
-
-</div>
-
-    </section>
-    <section class="overview-cards  overview-secondary">
-      <h2>   תחקורים נוספים</h2>
-      <div class="cards1">
-
-   
-  
-
-  <div class="card">
-    <div class="card-header">
-     
-     
-    <div class="card-body">
-    
-  
-    </div>
-
-  </div>
-  
-</div>
-<div class="card">
-  <div class="card-header line">
-    <h3> פילוח מדדים שונים על פי גיל ומין
-
-
-
-      <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24">
-        <g fill="currentColor">
-          <g data-name="info">
-            <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
-            <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"></path>
-          </g>
-        </g>
-      </svg>
-    <img src="./pics/dots.svg" alt="">
 
     </h3>
-  </div>
 
-  <div class="table-container">
-    <table>
-      <thead>
-        <tr>
-          <!-- <th id="name" onclick="sortTable(0)">תפוסה מחלקה פנימית %</th>
-          <th class="general-capacity" onclick="sortTable(1)">
-            תפוסה כללית %
-          </th> -->
-          <!-- <th class="internal-capacity" onclick="sortTable(2)">בית חולים</th>
-        </tr> -->
-      </thead>
-      <tbody id="tableBody">
-      </tbody>
-    </table>
-  </div>
-</div>
-<div class="card">
-  <div class="card-header">
-   
-   
-  <div class="card-body">
-  
-
-  </div>
-
-</div>
-
-</div>
-    
-</div>
-
-
-</div>
-
-    </section>
-    
-    <section class="overview-cards  overview-secondary">
-      <h2>תחלואה חוזרת ומחלימים</h2>
-      <div class="cards1">
-
-   
-  <div class="card">
-    <div class="card-header line">
-      <h3> תחלואה חוזרת - גיל והתחסנות
-
-
-        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24">
-          <g fill="currentColor">
-            <g data-name="info">
-              <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
-              <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"></path>
-            </g>
-          </g>
-        </svg>
-      <img src="./pics/dots.svg" alt="">
-
-      </h3>
     </div>
   
+    <div id="search-settlement">
+      <span class="search-button-3"> כלל הישובים<img class="" src ="./pics/down-arrow.svg" width="20" height="20"/></span> 
+     <div id = "settlement-select" class="hide"> 
+       <div class ="settlements"></div>   
+       <div class="search-controls">
+         <button onclick="closeserachsettlement()">אישור</button>
+         <button  onclick="closeserachsettlement(true)">ביטול</button>
+       </div>
+     </div>
+   </div>
+    <div class="date-updated"> הנתונים מעודכנים  06.06.23</div>
+
+    <div class="traffic-light-colors">
+      <span><img src="./pics/square-full-solid2.svg" alt=""></span> <span class="color-text"><span class="medium-letters">אדום</span><span class="small-letters">ציון 7.5 ומעלה</span></span>
+      <span><img src="./pics/square-full-solid1.svg" alt=""> </span> <span class="color-text"><span class="medium-letters" >כתום</span><span class="small-letters" >ציון בין 6 ל7.5</span></span>
+      <span><img src="./pics/square-full-solid.svg" alt="">  </span> <span class="color-text"><span class="medium-letters" >צהוב</span><span class="small-letters" >ציון בין 4.5 ל6</span></span>
+      <span><img src="./pics/square-full-solid4.svg" alt=""> </span> <span class="color-text"><span class="medium-letters" >ירוק</span><span class="small-letters" >ציון עד 4.5</span></span>
+    </div>
+
+
     <div class="table-container">
-      <table>
-        <thead>
-          <tr>
-            <!-- <th id="name" onclick="sortTable(0)">תפוסה מחלקה פנימית %</th>
-            <th class="general-capacity" onclick="sortTable(1)">
-              תפוסה כללית %
-            </th> -->
-            <!-- <th class="internal-capacity" onclick="sortTable(2)">בית חולים</th>
-          </tr> -->
+        
+      <table >
+        <thead class="gray">
+         
+          <tr id="traffic-light" class="table-header">
+            <td id="sattelmant" onclick="sortTableSettlements(0)">
+              <span>ישוב</span>
+              <img id="table-arrow-settlements-1" class="table-arrow" src ="./pics/down-arrow.svg" width="20" height="20"/>
+            </td>
+            <td  onclick="sortTableSettlements(1)">
+              <span>ציון וצבע יומי </span>
+              <img id="table-arrow-settlements-2" class="table-arrow" src ="./pics/down-arrow.svg" width="20" height="20"/>
+            </td>
+            <td  onclick="sortTableSettlements(2)"> 
+              <span> חולים חדשים לכל 10,000 נפש</span>
+              <img id="table-arrow-settlements-3" class="table-arrow" src ="./pics/down-arrow.svg" width="20" height="20"/>
+            </td>
+            <td  onclick="sortTableSettlements(3)"> 
+              <span> % הבדיקות החיוביות* </span>
+              <img id="table-arrow-settlements-4" class=" table-arrow" src ="./pics/down-arrow.svg" width="20" height="20"/>
+            </td>
+            <td  onclick="sortTableSettlements(4)"> 
+              <span>שיעור שינוי מאומתים* </span>
+              <img id="table-arrow-settlements-5" class="table-arrow" src ="./pics/down-arrow.svg" width="20" height="20"/>
+            </td>
+            <td  onclick="sortTableSettlements(5)"> 
+              <span> חולים פעילים </span>
+              <img id="table-arrow-settlements-6" class="table-arrow" src ="./pics/down-arrow.svg" width="20" height="20"/>
+            </td>
+          </tr>
         </thead>
-        <tbody id="tableBody">
+       
+        <tbody id="tableBody2">
+          <!-- Add rows dynamically using JavaScript -->
         </tbody>
       </table>
     </div>
   </div>
-
   <div class="card">
     <div class="card-header">
      
@@ -1147,100 +809,37 @@
   </div>
   
 </div>
-  
-<div class="card">
-  <div class="card-header">
-   
-   
-  <div class="card-body">
-  
-
-  </div>
-
-</div>
-
-</div>
     
 </div>
 
 
-</div>
+<!-- </div> -->
 
     </section>
-    <section class="overview-cards  overview-secondary">
-      <h2>התחסנות האוכלוסיה</h2>
-      <div class="cards1">
-
-   
-  <div class="card">
-    <div class="card-header line">
-      <h3> מספר התחסנויות - יומי
 
 
-        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24">
-          <g fill="currentColor">
-            <g data-name="info">
-              <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
-              <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"></path>
-            </g>
-          </g>
-        </svg>
-      <img src="./pics/dots.svg" alt="">
-
-      </h3>
-    </div>
-  
-    <div class="table-container">
-      <table>
-        <thead>
-          <tr>
-            <!-- <th id="name" onclick="sortTable(0)">תפוסה מחלקה פנימית %</th>
-            <th class="general-capacity" onclick="sortTable(1)">
-              תפוסה כללית %
-            </th> -->
-            <!-- <th class="internal-capacity" onclick="sortTable(2)">בית חולים</th>
-          </tr> -->
-        </thead>
-        <tbody id="tableBody">
-        </tbody>
+<!-- 
+    
       </table>
     </div>
   </div>
-
-  <div class="card">
-    <div class="card-header">
-     
-     
-    <div class="card-body">
-    
   
-    </div>
-
-  </div>
-  
-</div>
-  
-<div class="card">
-  <div class="card-header">
-   
-   
-  <div class="card-body">
-  
-
-  </div>
-
-</div>
-
-</div>
     
 </div>
 
 
-</div>
+</div> -->
 
-    </section>
+    </section> 
+    
+   
+    
+ 
+
+
+   
     <script src="./js/modal-use-conditions.js"></script>
-    <script src="./js/header-menu.js"></script>
+    <!-- <script src="./js/header-menu.js"></script> -->
     <script src="./js/click-humburger.js"></script>
     <script src="./js/dark-mode-button.js"></script>
     <script src="./js/table.-table-beds-capacity.js"></script>

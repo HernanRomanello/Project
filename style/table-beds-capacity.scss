@@ -1,7 +1,8 @@
 .overview-cards {
   .table-container {
-    min-width: 600px;
-    width: 60%;
+    // min-width: 600px;
+    // width: 40%;
+
     max-width: 720px;
     position: relative;
   }
@@ -9,6 +10,7 @@
     direction: ltr;
     max-height: 200px;
     overflow-y: scroll;
+    overflow-x: hidden;
 
     th {
       width: max-content;
@@ -30,18 +32,19 @@
         display: flex;
         align-items: start;
         text-align: center;
-        gap: 8px;
+        // gap: 8px;
       }
       td {
         text-align: start;
         width: 100%;
+        // background-color: yellow;
       }
     }
   }
 }
 
 .table-arrow {
-  opacity: 0;
+  display: none;
 }
 
 .table-arrow-up {
@@ -62,17 +65,37 @@
   }
 }
 
-#hospital_select .hospitals {
+#hospital_select .hospitals,
+#country-select .countries,
+#settlement-select .settlements {
   max-height: 200px;
   overflow-y: scroll;
+  background-color: white;
 }
-#hospital_select {
+
+.settlements {
+  display: flex;
+  flex-direction: column;
+  padding-right: 0.25rem;
+  align-items: flex-start;
+}
+.settlements span:hover {
+  background: lightgray;
+}
+.settlements span {
+  width: 100%;
+  text-align: start;
+  cursor: pointer;
+}
+
+#hospital_select,
+#country-select,
+#settlement-select {
   flex-direction: column;
   position: absolute;
   width: 100%;
   color: black;
   font-weight: normal !important;
-  background: rgb(228, 230, 253);
   top: 100%;
   right: 0.55rem;
   padding-inline: 0.25rem;
@@ -82,7 +105,9 @@
     padding-block: 0.15rem;
   }
 }
-.option-hospital input[type="checkbox"] {
+.option-hospital input[type="checkbox"],
+.option-country input[type="checkbox"],
+.option-settlement input[type="checkbox"] {
   background-color: red;
   width: 20px;
   height: 20px;
@@ -92,10 +117,17 @@
   display: none;
 }
 
-#search-hospital {
-  min-width: 50%;
+#search-hospital,
+#search-country,
+#search-settlement {
+  // min-width: 50%;
+  padding: 10px;
+  background-color: rgba(128, 128, 128, 0.1);
+  width: fit-content;
   display: block;
-  z-index: 9999;
+  min-width: 200px;
+  text-align: center;
+  z-index: 998;
   margin-left: auto;
   margin-right: 1rem;
   margin-block: 1rem;
@@ -104,7 +136,9 @@
   border-radius: 100px;
   border: 1px solid lightgray;
 }
-.option-hospital {
+.option-hospital,
+.option-country,
+.option-settlement {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -129,6 +163,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+
   span {
     font-weight: bold;
   }
@@ -140,4 +175,73 @@
 
 .blue {
   background-color: rgb(0, 123, 255);
+}
+
+.table-header {
+  background-color: rgb(190, 204, 219); //// impact on 2 tables
+  width: 100%;
+
+  // width: fit-content;
+  font-weight: bold;
+  th {
+    width: 10px;
+  }
+}
+#tableBody tr {
+  height: 42px;
+  border-top: 0.1px dashed rgba(128, 128, 128, 0.3);
+  border-bottom: 0.1px dashed rgba(128, 128, 128, 0.3);
+  // width: 400px;
+}
+
+#tableBody tr:hover {
+  background-color: #f2f2f2;
+}
+
+.date-updated {
+  display: block;
+  font-size: 10px;
+  // font-weight: bold;
+  padding: 3px;
+  background-color: rgb(190, 204, 219, 0.4);
+  width: fit-content;
+  height: fit-content;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.search-button {
+  display: flex;
+  align-items: center;
+  ::clicked {
+    background-color: red;
+  }
+}
+
+.search-button-clicked {
+  img {
+    rotate: 180deg;
+  }
+}
+
+.search-controls {
+  width: 90%;
+  button {
+    background-color: rgb(190, 204, 219);
+    // border-radius: 5px;
+    border: transparent;
+    padding: 5px;
+    height: 30px;
+  }
+}
+
+.dot-button {
+  // background-color: turquoise;
+  width: 30px;
+}
+
+.tables {
+  background-color: rgb(244, 246, 249);
+  border: 3px dashed rgb(128, 128, 128, 0.3); /* Setting initial border */
+  border: unset !important; /* Unsetting the border with !important */
 }

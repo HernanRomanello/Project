@@ -47,13 +47,16 @@ const hospital_select_hospitals = document.querySelector(
 );
 const search_input = document.getElementById("search-hospital");
 const search_input_span = document.querySelector("#search-hospital span");
+const searchButton = document.querySelector(".search-button");
 let counts = { 0: 0, 1: 0, 2: 0 };
 let hospitalNames = [];
+
 for (let i = 0; i < data.length; i++) {
   hospitalNames.push(data[i][0]);
 }
 search_input.addEventListener("click", function () {
   hospital_select.classList.toggle("hide");
+  searchButton.classList.toggle("search-button-clicked");
 });
 
 function resetTable(render) {
@@ -62,12 +65,14 @@ function resetTable(render) {
   );
   if (render) {
     displayTable(data);
-    search_input_span.textContent = "חפש בית חולים";
+    search_input_span.innerHTML =
+      ' 29 בתי חולים / מוסדות נבחרו <img class="" src ="./pics/down-arrow.svg" width="20" height="20"/>';
     allCheckboxes.forEach((checkbox) => {
       checkbox.checked = false;
     });
     selectedHospitals = [];
   }
+
   if (selectedHospitals.length === 0) {
     data = copyTable(dataOriginal);
     if (render) displayTable(data);
@@ -83,7 +88,6 @@ function invokeFilter() {
 
 let selectedHospitals = [];
 function createHospitalSelect() {
-  // Populate the hospital select
   for (let i = 0; i < hospitalNames.length; i++) {
     let option = document.createElement("div");
     let checkbox = document.createElement("input");
@@ -100,8 +104,9 @@ function createHospitalSelect() {
           (hospital) => hospital !== checkbox.value
         );
       }
-      search_input_span.textContent =
-        "בתי חולים מסומנים " + selectedHospitals.length;
+      search_input_span.innerHTML =
+        selectedHospitals.length +
+        ' בתי חולים / מוסדות נבחרו <img class="" src ="./pics/down-arrow.svg" width="20" height="20"/>';
       // stop the event from bubbling up to the parent
       e.stopPropagation();
     });
@@ -118,9 +123,10 @@ function createHospitalSelect() {
 }
 
 createHospitalSelect();
-// Display the original table content
 displayTable(data);
+
 const dataOriginal = copyTable(data);
+
 function copyTable(table) {
   let newTable = [];
   for (var row in table) {
@@ -168,6 +174,9 @@ const tableArrows = {
   0: document.querySelector(".table-arrow-1"),
   1: document.querySelector(".table-arrow-2"),
   2: document.querySelector(".table-arrow-3"),
+  // 3: document.querySelector(".table-arrow-4"),
+  // 4: document.querySelector(".table-arrow-5"),
+  // 5: document.querySelector(".table-arrow-6"),
 };
 
 // Function to sort the table
@@ -179,7 +188,6 @@ function sortTable(columnIndex) {
     data.sort(function (a, b) {
       let textA = a[columnIndex];
       let textB = b[columnIndex];
-      // console.log(columnIndex);
       if (isNumber) {
         textA = parseFloat(textA.replace("%", ""));
         textB = parseFloat(textB.replace("%", ""));
@@ -198,7 +206,7 @@ function sortTable(columnIndex) {
     data.sort(function (a, b) {
       let textA = a[columnIndex];
       let textB = b[columnIndex];
-      console.log(columnIndex);
+      // console.log(columnIndex);
       if (isNumber) {
         textA = parseFloat(textA.replace("%", ""));
         textB = parseFloat(textB.replace("%", ""));
@@ -209,5 +217,7 @@ function sortTable(columnIndex) {
   }
   counts[columnIndex]++;
   counts[columnIndex] %= 3;
+
   displayTable(data);
+  // createTable(data, "tableBody");
 }

@@ -1,5 +1,6 @@
 .header {
   background: white;
+  z-index: 9998;
   // width: 100vh;
   // height: fit-content;
   // display: flex;
@@ -10,10 +11,7 @@
   height: 205px;
   width: 47px;
 }
-.header-right {
-  // padding-inline: 10px 29px;
-  // flex-wrap: wrap;
-}
+
 .darkMode-container {
   background: none;
   border: none;
