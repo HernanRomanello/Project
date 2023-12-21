@@ -472,7 +472,7 @@ for (let i = 0; i < countryTableData.length; i++) {
   countryNames.push(countryTableData[i][0]);
 }
 country_search_input.addEventListener("click", function () {
-  createTimeSpanSelect(); // no need
+  createTimeSpanSelect(country_select_countries); // no need
   country_select.classList.toggle("hide");
   country_searchButton.classList.toggle("search-button-clicked"); // same
 });
@@ -544,9 +544,9 @@ function changeTimeValues(dataNumber, numerator) {
   }
 } // no need
 
-function createTimeSpanSelect() {
-  country_select_countries.innerHTML = ""; // change placeholder
-  country_select_countries.innerHTML += `
+function createTimeSpanSelect(list) {
+  list.innerHTML = ""; // change placeholder
+  list.innerHTML += `
     <center>
     <input onclick="event.stopPropagation(); createCountriesSelect();" placeholder=" חיפוש מדינה..."/>
     </center/>
@@ -579,7 +579,7 @@ function createTimeSpanSelect() {
     option.appendChild(checkbox);
     option.appendChild(span);
     span.textContent = timeSpans[i][0];
-    country_select_countries.appendChild(option);
+    list.appendChild(option);
   }
 }
 

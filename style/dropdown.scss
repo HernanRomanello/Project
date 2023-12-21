@@ -93,7 +93,7 @@
   position: absolute;
   background-color: white;
   // left: 10px;
-
+  transform: translateX(100%) translateY(-2rem);
   .box {
     display: flex;
     border: 0.1px solid rgba(136, 136, 136, 0.4);

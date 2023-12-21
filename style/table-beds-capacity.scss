@@ -1,14 +1,15 @@
 .overview-cards {
+  margin-inline: 2rem;
   .table-container {
     // min-width: 600px;
     // width: 40%;
-
-    max-width: 720px;
+    max-width: 680px;
     position: relative;
   }
   .table-container {
     direction: ltr;
     max-height: 200px;
+
     overflow-y: scroll;
     overflow-x: hidden;
 
@@ -16,7 +17,8 @@
       width: max-content;
     }
   }
-
+  display: flex;
+  flex-direction: column;
   table {
     margin-inline: auto;
     width: 100%;
@@ -67,8 +69,9 @@
 
 #hospital_select .hospitals,
 #country-select .countries,
-#settlement-select .settlements {
-  max-height: 200px;
+#settlement-select .settlements,
+.graph_select .graphs {
+  max-height: 170px;
   overflow-y: scroll;
   background-color: white;
 }
@@ -90,7 +93,8 @@
 
 #hospital_select,
 #country-select,
-#settlement-select {
+#settlement-select,
+.graph_select {
   flex-direction: column;
   position: absolute;
   width: 100%;
@@ -105,10 +109,16 @@
     padding-block: 0.15rem;
   }
 }
+.graph_select {
+  position: absolute;
+  z-index: 9999;
+  top: 52px;
+  right: 2rem;
+  width: 200px;
+}
 .option-hospital input[type="checkbox"],
 .option-country input[type="checkbox"],
 .option-settlement input[type="checkbox"] {
-  background-color: red;
   width: 20px;
   height: 20px;
   display: block;

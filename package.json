@@ -5,6 +5,7 @@
   },
   "dependencies": {
     "highcharts": "^11.2.0",
+    "@highcharts/dashboards": "^1.2.0",
     "sass": "^1.69.5"
   }
 }

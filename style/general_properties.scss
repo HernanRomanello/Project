@@ -16,10 +16,14 @@
   direction: rtl;
 }
 
+html {
+  background-color: #f8fafd;
+}
 body {
   height: 100%;
   font-family: "OpenSans" !important;
   // background: #f8fafd;
+  background-color: #f8fafd;
   overflow-x: scroll;
   padding-top: 100px;
   overflow-x: hidden;
@@ -54,11 +58,12 @@ h3 {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  font-size: 16px;
   font-weight: 600;
 }
 
 h2 {
-  padding: 0.5rem;
+  padding: 1rem;
   font-size: 19px;
 }
 .card-number {
@@ -108,8 +113,12 @@ h2 {
   margin-top: 300px;
 }
 .line-border {
-  width: 95vw;
-  height: 3px;
+  width: 96%;
+  margin-inline: auto;
+  height: 1px;
   background-color: #d8dde0;
-  margin: auto;
+}
+
+span {
+  font-size: 12px !important;
 }

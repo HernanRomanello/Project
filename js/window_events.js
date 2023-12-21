@@ -46,44 +46,48 @@ cards.addEventListener("mouseout", function () {
 
 const navContainer = document.querySelector(".nav-contaner");
 const navContainerChildren = navContainer.children;
+const sections = document.querySelectorAll("section.overview-cards");
 
-window.addEventListener("scroll", function () {
-  let y;
-  const sections = document.querySelectorAll(".overview-cards");
-  sections.forEach((section) => {
-    const childTop = section.getBoundingClientRect().top;
-    const childBottom = section.getBoundingClientRect().bottom;
-    y = window.scrollY - 600 - section.getBoundingClientRect().height;
-    const firstChildHeight = 600;
+sections.forEach((section) => {
+  section.addEventListener("mouseover", function () {
     const navItemId = section.dataset.nav;
-    const navItem = this.document.querySelector(`#${navItemId}`);
-    if (
-      y + firstChildHeight >= childTop &&
-      y + firstChildHeight < childBottom
-    ) {
-      if (!navItem) return;
-      card - header;
-      navItem.classList.add("marked-div");
-      sections.forEach((section) => {
-        const navItemId = section.dataset.nav;
-        const navItem = this.document.querySelector(`#${navItemId}`);
-        if (!navItem) return;
-        if (navItem !== navItem) navItem.classList.remove("marked-div");
-      });
-    } else {
-      if (!navItem) return;
-      navItem.classList.remove("marked-div");
+    const navItem = document.querySelector(`#${navItemId}`);
+
+    for (let sec of sections) {
+      if (sec === section) continue;
+      const navItemIdOther = sec.dataset.nav;
+      const navItemOther = document.querySelector(`#${navItemIdOther}`);
+      if (!navItemOther) continue;
+      if (
+        navItemOther.classList.contains("marked-div") &&
+        navItemIdOther !== navItem
+      )
+        navItemOther.classList.remove("marked-div");
     }
+    if (!navItem) return;
+    navItem.classList.add("marked-div");
   });
 });
 
-const sections = document.querySelectorAll(".overview-cards");
-
-let navStack = [...navContainerChildren];
 let sectionsStack = [...sections];
+const id0 = "glance";
+const id1 = "general-illness";
+const id2 = "abroad-illness";
+const id3 = "traffic-light";
+const id4 = "main-index";
+const id5 = "children-admission";
+const id6 = "vaccination-effect";
+const id7 = "deceaseds";
+const id8 = "tests";
+const id9 = "additional-investigation";
+const id10 = "rehearse-disease";
+const id11 = "population-vaccination";
+const navStack = [id0, id1, id2, id3, id4, id5, id6, id7, id8, id9, id10, id11];
 
 while (navStack.length > 0) {
-  const navItem = navStack.pop();
-  const section = sectionsStack.pop();
+  const section = sectionsStack.shift();
+  if (section.id === "ignore-nav") continue;
+  const navItem = document.querySelector(`#${navStack.shift()}`);
+
   section.dataset.nav = navItem.id;
 }
