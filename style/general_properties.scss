@@ -122,3 +122,24 @@ h2 {
 span {
   font-size: 12px !important;
 }
+
+hr {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  border: 0;
+  border-top: 1px solid #d8dde0;
+  width: 90%;
+  margin: auto;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #4a4a4a;
+}
+
+.white {
+  background-color: white;
+  position: absolute;
+  z-index: 9999999999999999999999999999999999999999;
+}

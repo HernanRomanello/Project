@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let modal = document.getElementById("myModal");
   let overlay = document.getElementById("overlay");
   let closeModalBtn = document.getElementById("closeModalBtn");
+
   let otherButton = document.getElementById("otherButton");
 
   function showModal() {

@@ -40,6 +40,22 @@
     position: absolute;
     background-color: white;
     font-size: 14px;
+    z-index: 9999;
+    padding: 0.5rem;
+  }
+  .hover-card-2 {
+    display: none;
+    max-width: 170px;
+    bottom: 0;
+    position: absolute;
+    padding: 0.5rem;
+
+    z-index: 9999;
+    background-color: white;
+    font-size: 14px;
+  }
+  .translate {
+    transform: translateY(calc(50% + 1rem));
   }
 }
 
@@ -130,7 +146,7 @@
 }
 
 .dark-card {
-  background-color: rgb(55, 79, 96);
+  background-color: rgb(55, 79, 96) !important;
   color: white;
   box-shadow: rgba(59, 59, 59, 0.2) 0px 0px 15px -3px,
     rgba(71, 71, 71, 0.05) 0px 4px 6px -2px;

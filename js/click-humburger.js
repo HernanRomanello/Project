@@ -15,12 +15,13 @@ humburger.addEventListener("click", () => {
 
 xbutton.addEventListener("click", closeNavList);
 overlay.addEventListener("click", closeNavList);
+navList.addEventListener("click", closeNavList);
 // covidLink.addEventListener("click", closeNavList);
 navList.addEventListener("click", closeNavList);
-function closeNavList() {
+function closeNavList(e) {
+  e.stopPropagation();
   nav.classList.remove("revealed-nav-list");
   // nav.classList.add("red");
   nav.classList.add("display-none");
   overlay.style.display = "none";
-  console.log("clicked");
 }

@@ -4283,18 +4283,28 @@ const chart = Highcharts.chart("g-1", {
 
   legend: {
     verticalAlign: "top",
+    rtl: true,
+    textAnchor: "middle",
     align: "right",
-    // change the position of the legend to flex column and align it to the right
     itemStyle: {
-      transform: "translate(0, -20px)",
       font: 'normal 12px "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif',
     },
   },
-
   tooltip: {
+    useHTML: true,
     shared: true,
     headerFormat: '<span style="font-size:12px"><b>{point.key}</b></span><br>',
+    pointFormat:
+      '<div style="text-align: center; padding: 8px; color:{point.color}; white-space: nowrap;">\u25CF {series.name}: <b>{point.y}</b></div>',
+    backgroundColor: "rgba(255, 255, 255, 1)",
+    style: {
+      fontSize: "12px",
+    },
+    point: {
+      marginInline: "20px",
+    },
   },
+
   plotOptions: {
     series: {
       pointStart: Date.UTC(2023, 10, 18), // Assuming the first date is in November (month index is 10)
@@ -4397,7 +4407,7 @@ function handleTimeSpanChange(checked, value) {
 // Function to handle checkbox click
 function handleCheckboxClick(index) {
   seriesMapping[levels[index]][0] = !seriesMapping[levels[index]][0];
-  updateChartSeries();
+  //updateChartSeries();
 }
 
 // Function to update the chart series based on checked checkboxes
@@ -4443,6 +4453,7 @@ function createLevelCheckbox(level, index, list) {
   list.appendChild(option);
 }
 
+let connt = 0;
 // Function to create radio buttons for time spans
 function createRadioButtons(list) {
   for (let i = 0; i < timeSpans.length; i++) {
@@ -4459,8 +4470,10 @@ function createRadioButtons(list) {
     checkbox.name = "timeSpan-country";
     checkbox.id = timeSpans[i][0];
     checkbox.value = timeSpans[i][1];
-
-    if (i === 0) checkbox.checked = true;
+    if (connt == 0) {
+      if (i === 0) checkbox.checked = true;
+      connt++;
+    }
     // alert(checkbox.value);
 
     span.textContent = timeSpans[i][0];
@@ -4480,11 +4493,12 @@ g1okbutton.addEventListener("click", function () {
     const value = selectedRadio.value;
     const content = radioButtonContent[value];
     const radios = document.querySelectorAll('input[name="timeSpan-country"]');
-    for (let i = 0; i < radios.length; i++) {
-      // dont work need to fix
-      radios[i].checked = false;
-      // alert(radios[i].value);
-    }
+
+    // for (let i = 0; i < radios.length; i++) {
+    //   radios[i].checked = false;
+    //   // alert(radios[i].value);
+    //   // alert(radios[i].checked);
+    // }
     // Uncheck all radios
 
     handleTimeSpanChange(true, value); // Assuming you want to set it as checked
@@ -4499,11 +4513,21 @@ function createGraphTimeSpanSelect(list) {
   list.innerHTML = ""; // change placeholder
 
   // Loop to create checkboxes for levels
+  // list.appendChild(document.createElement("hr"));
+  const label2 = document.createElement("label");
+  label2.innerText = "מצב מאושפזים";
+  list.appendChild(label2);
+
   for (let i = 0; i < levels.length; i++) {
     createLevelCheckbox(levels[i], i, list);
   }
 
   // Create radio buttons for time spans
+  list.appendChild(document.createElement("hr"));
+
+  const label1 = document.createElement("label");
+  label1.innerText = "זמן";
+  list.appendChild(label1);
   createRadioButtons(list);
 }
 
@@ -4515,5 +4539,17 @@ openG1TimeSelect.addEventListener("click", function () {
     openG1TimeSelect.click();
   });
 
+  setTimeout(function () {
+    document
+      .querySelectorAll('text[text-anchor="end"]')
+      .forEach((t) => t.setAttribute("text-anchor", "start"));
+  }, 100);
+
   g1okbutton;
 });
+
+setTimeout(function () {
+  document
+    .querySelectorAll('text[text-anchor="end"]')
+    .forEach((t) => t.setAttribute("text-anchor", "start"));
+}, 100);

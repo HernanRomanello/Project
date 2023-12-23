@@ -1,6 +1,6 @@
-#container {
-  height: 400px;
-}
+// #container {
+//   height: 400px;
+// }
 
 .highcharts-figure,
 .highcharts-data-table table {
@@ -45,66 +45,26 @@
   background: #f1f7ff;
 }
 
-@for $i from 1 through 3 {
-  #g-#{$i} {
-    margin-block: 1rem;
-  }
-}
-
-@for $i from 1 through 3 {
-  #open-g#{$i}-time {
-    padding: 0.5rem;
-    text-align: start;
-    background: #f7f9fc;
-    border: 1px solid lightgray;
-    border-radius: 100px;
-    width: 50%;
-    max-width: 150px;
-    margin-right: 32px;
-  }
-}
-
-#g-1 {
-  margin-block: 1rem;
-}
-
-#g-2 {
-  margin-block: 1rem;
-}
-
+#g-1,
+#g-2,
 #g-3 {
   margin-block: 1rem;
 }
 
-#open-g1-time {
-  padding: 0.5rem;
-  text-align: start;
-  background: #f7f9fc;
-  border: 1px solid lightgray;
-  border-radius: 100px;
-  width: 50%;
-  max-width: 200px;
-  margin-right: 32px;
-}
-
-#open-g2-time {
-  padding: 0.5rem;
-  text-align: start;
-  background: #f7f9fc;
-  border: 1px solid lightgray;
-  border-radius: 100px;
-  width: 50%;
-  max-width: 150px;
-  margin-right: 32px;
-}
-
+#open-g1-time,
+#open-g2-time,
 #open-g3-time {
+  cursor: pointer;
   padding: 0.5rem;
   text-align: start;
   background: #f7f9fc;
   border: 1px solid lightgray;
   border-radius: 100px;
-  width: 50%;
-  max-width: 150px;
+  font-size: 14px;
+  width: fit-content;
   margin-right: 32px;
+}
+
+.graph_select .graphs {
+  margin-top: 47px;
 }

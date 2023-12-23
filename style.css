@@ -126,6 +126,27 @@ span {
   font-size: 12px !important;
 }
 
+hr {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  border: 0;
+  border-top: 1px solid #d8dde0;
+  width: 90%;
+  margin: auto;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #4a4a4a;
+}
+
+.white {
+  background-color: white;
+  position: absolute;
+  z-index: 10000000000000000000000000000000000000000;
+}
+
 #modal {
   display: none;
   position: fixed;
@@ -241,6 +262,21 @@ span {
   position: absolute;
   background-color: white;
   font-size: 14px;
+  z-index: 9999;
+  padding: 0.5rem;
+}
+.overview-cards .hover-card-2 {
+  display: none;
+  max-width: 170px;
+  bottom: 0;
+  position: absolute;
+  padding: 0.5rem;
+  z-index: 9999;
+  background-color: white;
+  font-size: 14px;
+}
+.overview-cards .translate {
+  transform: translateY(calc(50% + 1rem));
 }
 
 .hover-icon-show {
@@ -320,7 +356,7 @@ span {
 }
 
 .dark-card {
-  background-color: rgb(55, 79, 96);
+  background-color: rgb(55, 79, 96) !important;
   color: white;
   box-shadow: rgba(59, 59, 59, 0.2) 0px 0px 15px -3px, rgba(71, 71, 71, 0.05) 0px 4px 6px -2px;
 }
@@ -538,10 +574,6 @@ span {
   z-index: 10000;
 }
 
-#container {
-  height: 400px;
-}
-
 .highcharts-figure,
 .highcharts-data-table table {
   min-width: 310px;
@@ -585,94 +617,28 @@ span {
   background: #f1f7ff;
 }
 
-#g-1 {
-  margin-block: 1rem;
-}
-
-#g-2 {
-  margin-block: 1rem;
-}
-
+#g-1,
+#g-2,
 #g-3 {
   margin-block: 1rem;
 }
 
-#open-g1-time {
-  padding: 0.5rem;
-  text-align: start;
-  background: #f7f9fc;
-  border: 1px solid lightgray;
-  border-radius: 100px;
-  width: 50%;
-  max-width: 150px;
-  margin-right: 32px;
-}
-
-#open-g2-time {
-  padding: 0.5rem;
-  text-align: start;
-  background: #f7f9fc;
-  border: 1px solid lightgray;
-  border-radius: 100px;
-  width: 50%;
-  max-width: 150px;
-  margin-right: 32px;
-}
-
+#open-g1-time,
+#open-g2-time,
 #open-g3-time {
+  cursor: pointer;
   padding: 0.5rem;
   text-align: start;
   background: #f7f9fc;
   border: 1px solid lightgray;
   border-radius: 100px;
-  width: 50%;
-  max-width: 150px;
+  font-size: 14px;
+  width: fit-content;
   margin-right: 32px;
 }
 
-#g-1 {
-  margin-block: 1rem;
-}
-
-#g-2 {
-  margin-block: 1rem;
-}
-
-#g-3 {
-  margin-block: 1rem;
-}
-
-#open-g1-time {
-  padding: 0.5rem;
-  text-align: start;
-  background: #f7f9fc;
-  border: 1px solid lightgray;
-  border-radius: 100px;
-  width: 50%;
-  max-width: 200px;
-  margin-right: 32px;
-}
-
-#open-g2-time {
-  padding: 0.5rem;
-  text-align: start;
-  background: #f7f9fc;
-  border: 1px solid lightgray;
-  border-radius: 100px;
-  width: 50%;
-  max-width: 150px;
-  margin-right: 32px;
-}
-
-#open-g3-time {
-  padding: 0.5rem;
-  text-align: start;
-  background: #f7f9fc;
-  border: 1px solid lightgray;
-  border-radius: 100px;
-  width: 50%;
-  max-width: 150px;
-  margin-right: 32px;
+.graph_select .graphs {
+  margin-top: 47px;
 }
 
 #container {
@@ -888,7 +854,7 @@ span {
 #country-select .countries,
 #settlement-select .settlements,
 .graph_select .graphs {
-  max-height: 170px;
+  max-height: 150px;
   overflow-y: scroll;
   background-color: white;
 }
@@ -954,20 +920,30 @@ span {
 #search-hospital,
 #search-country,
 #search-settlement {
+  max-height: 30px;
   padding: 10px;
   background-color: rgba(128, 128, 128, 0.1);
   width: fit-content;
-  display: block;
+  display: flex;
+  justify-content: center !important;
   min-width: 200px;
   text-align: center;
   z-index: 998;
-  margin-left: auto;
   margin-right: 1rem;
   margin-block: 1rem;
   padding: 0.5rem;
   position: relative;
   border-radius: 100px;
   border: 1px solid lightgray;
+}
+
+.search-button-2,
+.search-button,
+.search-button-3 {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  padding: 0px !important;
 }
 
 .option-hospital,
@@ -1014,6 +990,7 @@ span {
 .table-header {
   background-color: rgb(190, 204, 219);
   width: 100%;
+  height: 50px;
   font-weight: bold;
 }
 .table-header th {

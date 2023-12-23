@@ -60,7 +60,7 @@
 
         </div>
         <div class="card-footer">
-          <img src="./pics/terms-image.svg" alt="terms image">
+          <img src="./pics/terms-image.svg" class="modal-icon" alt="terms image">
         </div>
       </div>
       <div class="footer-background"></div>
@@ -105,7 +105,7 @@
                 <a class="nav-list-link">עמוד הבית</a>
               </div>
 
-                <div class="close-part" ><img class="close-btn-x x " src="./pics/x.svg" alt=""></div>
+                <div class="close-part" ><img class="close-btn-x x" id="close-modal" src="./pics/x.svg" alt=""></div>
             </li>
           </ul>
           <ul class="nav-list-ul gray-border">
@@ -193,7 +193,7 @@
             <div id="general-illness">מדדי תחלואה כללית</div>
             <div id="abroad-illness">תחלואה מחו"ל</div>
             <div id="traffic-light">רמזור ישובים</div>
-            <div id="main-index">מדדים מרכזים</div>
+            <div id="main-index">מדדים מרכזיים</div>
             <div id="children-admission">תחלואה ואשפוזי ילדים</div>
             <div id="vaccination-effect"> השפעת התחסנות על תחלואה</div>
             <div id="deceaseds">נפטרים</div>
@@ -495,10 +495,11 @@
             </g>
           </g>
         </svg>
-        <div class="hover-card">
+        <div class="hover-card translate">
           <p>חולים פעילים - מי שנבדקו ונמצאו חיוביים לנגיף בבדיקת PCR או בבדיקת אנטיגן מפוקחת (החל מה 5.1.2022) COVID-19, ללא קשר להופעת תסמינים, שעוד לא הוגדרו כמחלימים ושלא נפטרו.</p>
         </div>
       </div>
+     
       <div>
         <div class="dot-button ">
 
@@ -606,7 +607,7 @@
             </g>
           </g>
         </svg>
-        <div class="hover-card">
+        <div class="hover-card translate">
           <p>חולים פעילים - מי שנבדקו ונמצאו חיוביים לנגיף בבדיקת PCR או בבדיקת אנטיגן מפוקחת (החל מה 5.1.2022) COVID-19, ללא קשר להופעת תסמינים, שעוד לא הוגדרו כמחלימים ושלא נפטרו.</p>
         </div>
       </div>
@@ -633,8 +634,8 @@
   
     <div id="search-country">
        <span class="search-button-2"> 3 חודשים אחורונים ,47 מדינות נבחרו<img class="" src ="./pics/down-arrow.svg" width="20" height="20"/></span> 
-      <div id = "country-select" class="hide">  <!-- change ID to country-select -->
-        <div class ="countries"></div>   <!-- change class to countries -->
+      <div id = "country-select" class="hide"> 
+        <div class ="countries"></div>   
         <div class="search-controls">
           <button onclick="invokeCountryFilter()">אישור</button>
           <button  onclick="resetCountryTable(true)">ביטול</button>
@@ -716,7 +717,7 @@
             </g>
           </g>
         </svg>
-        <div class="hover-card">
+        <div class="hover-card translate">
           <p>חולים פעילים - מי שנבדקו ונמצאו חיוביים לנגיף בבדיקת PCR או בבדיקת אנטיגן מפוקחת (החל מה 5.1.2022) COVID-19, ללא קשר להופעת תסמינים, שעוד לא הוגדרו כמחלימים ושלא נפטרו.</p>
         </div>
       </div>
@@ -821,7 +822,7 @@
     <div class="line-border"></div>
 
   <section id="part5" class="overview-cards  overview-secondary table-abroad tables" data-nav="general-illness" >
-      <h2>מדדים מרכזים</h2>
+      <h2>מדדים מרכזיים</h2>
       <div class="cards2 ">
 
       <div class="card bg-white">
@@ -838,7 +839,7 @@
                   </g>
                 </g>
               </svg>
-              <div class="hover-card">
+              <div class="hover-card translate">
                 <p>מספר החולים היומי במחלת נגיף COVID-19 המאושפזים בבתי חולים בחלוקה לפי מצב רפואי : קשה (כולל קריטי), בינוני וקל.</p>
               </div>
             </div>
@@ -883,25 +884,84 @@
     <div class="card-header">
      
      
-    <div class="card-body bg-white">
-    
-  
-    </div>
+      <div class="card bg-white">
+        <div class="card-header line space table">
+          <div>
+      
+          <h3>     ממוצע מאומתים שבועי
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24">
+              <g fill="currentColor">
+                <g data-name="info">
+                  <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
+                  <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"></path>
+                </g>
+              </g>
+            </svg>
+            <div class="hover-card translate">
+              <p>מספר החולים היומי במחלת נגיף COVID-19 המאושפזים בבתי חולים בחלוקה לפי מצב רפואי : קשה (כולל קריטי), בינוני וקל.</p>
+              <p></p>
+            </div>
+          </div>
+          <div>
+            <div class="dot-button ">
+      
+              <img src="./pics/dots.svg" alt="">
+            </div>
+          
+          <div class="dropdown-load hide">
+            <div class="box"> <div><img src="./pics/share-nodes-solid.svg" alt=""></div> <div>שיתוף</div></div>
+            <div class="box">
+              <div><img src="./pics/arrow-down-solid.svg" alt=""></div>
+              <div>הורדה</div>
+            </div>
+          </div>
+        </div>
+      
+        </h3>
+      
+        </div>
+      
+      </div>
 
   </div>
   
 </div>
-  <div class="card bg-white">
-    <div class="card-header">
-     
-     
-    <div class="card-body bg-white">
-    
-  
+<div class="card bg-white">
+  <div class="card-header line space table">
+    <div>
+
+    <h3> מאומתים חדשים יומי
+      <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24">
+        <g fill="currentColor">
+          <g data-name="info">
+            <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
+            <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"></path>
+          </g>
+        </g>
+      </svg>
+      <div class="hover-card translate">
+        <p>מאומתים - מי שנבדקו ונמצאו חיוביים לנגיף COVID-19 בבדיקת PCR או בבדיקת אנטיגן מפוקחת (החל מה 5.1.2022) , בין אם הופיעו אצלם תסמינים ובין אם לא, בין אם הם חולים, החלימו או נפטרו.</p>
+      </div>
     </div>
+    <div>
+      <div class="dot-button ">
+
+        <img src="./pics/dots.svg" alt="">
+      </div>
+    
+    <div class="dropdown-load hide">
+      <div class="box"> <div><img src="./pics/share-nodes-solid.svg" alt=""></div> <div>שיתוף</div></div>
+      <div class="box">
+        <div><img src="./pics/arrow-down-solid.svg" alt=""></div>
+        <div>הורדה</div>
+      </div>
+    </div>
+  </div>
+
+  </h3>
 
   </div>
-  
+
 </div>
     
 </div>
@@ -912,17 +972,59 @@
 
     </section>
 
+    <div class="line-border"></div>
 
     <section id="part6" class="overview-cards  overview-secondary table-abroad tables" data-nav="general-illness" >
-      <h2>השפעת התחסנות על התחלואה</h2>
-      <div class="cards2 ">
-
-      <div class="card bg-white">
-        <div class="card-header">
+        <h2>תחלואה ואשפוזי ילדים </h2>
+        <div class="cards2 ">
+  
+          <div class="card bg-white">
+            <div class="card-header line space table">
+              <div>
+          
+              <h3>מגמת ילדים מאומתים – ממוצע נע 7 ימים
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24">
+                  <g fill="currentColor">
+                    <g data-name="info">
+                      <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
+                      <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"></path>
+                    </g>
+                  </g>
+                </svg>
+                <div class="hover-card translate">
+                  <p>מאומתים - מי שנבדקו ונמצאו חיוביים לנגיף COVID-19 בבדיקת PCR או בבדיקת אנטיגן מפוקחת (החל מה 5.1.2022) , בין אם הופיעו אצלם תסמינים ובין אם לא, בין אם הם חולים, החלימו או נפטרו.</p>
+                  <p></p>
+                </div>
+              </div>
+              <div>
+                <div class="dot-button ">
+          
+                  <img src="./pics/dots.svg" alt="">
+                </div>
+              
+              <div class="dropdown-load hide">
+                <div class="box"> <div><img src="./pics/share-nodes-solid.svg" alt=""></div> <div>שיתוף</div></div>
+                <div class="box">
+                  <div><img src="./pics/arrow-down-solid.svg" alt=""></div>
+                  <div>הורדה</div>
+                </div>
+              </div>
+            </div>
+          
+            </h3>
+          
+            </div>
+          
+          </div>
+    <div class="card bg-white">
+      <div class="card-header">
+       
+       
+        <div class="card bg-white">
           <div class="card-header line space table">
             <div>
-      
-            <h3> מספר מאושפזים – יומי
+        
+            <h3>    מגמת ילדים באשפוז - ממוצע שבועי
               <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24">
                 <g fill="currentColor">
                   <g data-name="info">
@@ -931,8 +1033,66 @@
                   </g>
                 </g>
               </svg>
-              <div class="hover-card">
+              <div class="hover-card translate">
                 <p>מספר החולים היומי במחלת נגיף COVID-19 המאושפזים בבתי חולים בחלוקה לפי מצב רפואי : קשה (כולל קריטי), בינוני וקל.</p>
+                <p></p>
+              </div>
+            </div>
+            <div>
+              <div class="dot-button ">
+        
+                <img src="./pics/dots.svg" alt="">
+              </div>
+            
+            <div class="dropdown-load hide">
+              <div class="box"> <div><img src="./pics/share-nodes-solid.svg" alt=""></div> <div>שיתוף</div></div>
+              <div class="box">
+                <div><img src="./pics/arrow-down-solid.svg" alt=""></div>
+                <div>הורדה</div>
+              </div>
+            </div>
+          </div>
+        
+          </h3>
+        
+          </div>
+        
+        </div>
+  
+    </div>
+    
+  </div>
+ 
+      
+  </div>
+  
+  
+  <!-- </div> -->
+  <div class="line-border"></div>
+  
+      </section>
+    <section id="part7" class="overview-cards  overview-secondary table-abroad tables" data-nav="general-illness" >
+      <h2>השפעת התחסנות על התחלואה</h2>
+      <div class="cards2">
+
+      <div class="card bg-white ">
+        <div class="card-header">
+          <div class="card-header line space table">
+            <div>
+      
+            <h3>  מאומתים יומי - התחסנות
+              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24">
+                <g fill="currentColor">
+                  <g data-name="info">
+                    <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
+                    <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"></path>
+                  </g>
+                </g>
+              </svg>
+              <div class="hover-card translate">
+                <p>"מחוסנים" הם:
+                  - מי שקיבלו 2 מנות חיסון או יותר ועבר שבוע מאז קבלת המנה האחרונה (שבועיים בחיסוני מודרנה) אך עוד לא עבר מאז תוקף הזמן שנקבע למנה .
+                  - מי שהחלימו וקיבלו לפחות מנת חיסון אחת אך עוד לא עבר תוקף הזמן שנקבע למנה מאז החיסון או ההחלמה - האחרון שביניהם</p>
               </div>
             </div>
             <div>
@@ -954,7 +1114,7 @@
       
           </div>
          <div>
-        <div id="open-g2-time">קשה,בינוני,קל,חודש אחרון</div>
+        <div id="open-g2-time">ל 100 אלף תושבים,מעל גיל 60, עד עכשיו</div>
         <div class="graph_select hide" id="g2-container">
 
           <div id="time-select-g2" class="graphs"></div>
@@ -972,29 +1132,82 @@
       
   </div>
   <div class="card bg-white">
-    <div class="card-header">
-     
-     
-    <div class="card-body bg-white" id="">
-    
+    <div class="card-header line space table">
+      <div>
+  
+      <h3> חולים קשה - התחסנות
+        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24">
+          <g fill="currentColor">
+            <g data-name="info">
+              <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
+              <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"></path>
+            </g>
+          </g>
+        </svg>
+        <div class="hover-card translate">
+          <p>מספר החולים היומי במחלת נגיף COVID-19 המאושפזים בבתי חולים בחלוקה לפי מצב רפואי : קשה (כולל קריטי), בינוני וקל.</p>
+          <p></p>
+        </div>
+      </div>
+      <div>
+        <div class="dot-button ">
+  
+          <img src="./pics/dots.svg" alt="">
+        </div>
+      
+      <div class="dropdown-load hide">
+        <div class="box"> <div><img src="./pics/share-nodes-solid.svg" alt=""></div> <div>שיתוף</div></div>
+        <div class="box">
+          <div><img src="./pics/arrow-down-solid.svg" alt=""></div>
+          <div>הורדה</div>
+        </div>
+      </div>
+    </div>
+  
+    </h3>
   
     </div>
-
-  </div>
   
-</div>
+  </div>
   <div class="card bg-white">
-    <div class="card-header">
-     
-     
-    <div class="card-body bg-white" id="">
-    
+    <div class="card-header line space table">
+      <div>
+  
+      <h3> חולים פעילים - גיל והתחסנות
+        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24">
+          <g fill="currentColor">
+            <g data-name="info">
+              <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
+              <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"></path>
+            </g>
+          </g>
+        </svg>
+        <div class="hover-card translate">
+          <p>מחוסנים:
+            - מי שקיבלו 2 מנות חיסון או יותר ועבר שבוע מאז קבלת המנה האחרונה (שבועיים בחיסוני מודרנה) אך עוד לא עבר מאז תוקף הזמן שנקבע למנה
+            -מי שהחלימו וקיבלו לפחות מנת חיסון אחת אך עוד לא עבר תוקף הזמן שנקבע למנה מאז החיסון או ההחלמה - האחרון שביניהם</p>
+        </div>
+      </div>
+      <div>
+        <div class="dot-button ">
+  
+          <img src="./pics/dots.svg" alt="">
+        </div>
+      
+      <div class="dropdown-load hide">
+        <div class="box"> <div><img src="./pics/share-nodes-solid.svg" alt=""></div> <div>שיתוף</div></div>
+        <div class="box">
+          <div><img src="./pics/arrow-down-solid.svg" alt=""></div>
+          <div>הורדה</div>
+        </div>
+      </div>
+    </div>
+  
+    </h3>
   
     </div>
-
-  </div>
   
-</div>
+  </div>
     
 </div>
 
@@ -1003,18 +1216,413 @@
 <div class="line-border"></div>
 
     </section>
+    <div class="line-border"></div>
 
-    
-  <section id="part5" class="overview-cards  overview-secondary table-abroad tables" data-nav="general-illness" >
-    <h2>מדדים מרכזים</h2>
-    <div class="cards2 ">
-
+    <section id="part8" class="overview-cards  overview-secondary table-abroad tables" data-nav="general-illness" >
+        <h2>  תחלואה חוזרת ומחלימים </h2>
+        <div class="cards2">
+  
+          <div class="card bg-white">
+            <div class="card-header line space table">
+              <div>
+          
+              <h3>תחלואה חוזרת לפי התחסנות - יומי
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24">
+                  <g fill="currentColor">
+                    <g data-name="info">
+                      <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
+                      <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"></path>
+                    </g>
+                  </g>
+                </svg>
+                <div class="hover-card translate">
+                  <p>מאומתים - מי שנבדקו ונמצאו חיוביים לנגיף COVID-19 בבדיקת PCR או בבדיקת אנטיגן מפוקחת (החל מה 5.1.2022) , בין אם הופיעו אצלם תסמינים ובין אם לא, בין אם הם חולים, החלימו או נפטרו.</p>
+                  <p></p>
+                </div>
+              </div>
+              <div>
+                <div class="dot-button ">
+          
+                  <img src="./pics/dots.svg" alt="">
+                </div>
+              
+              <div class="dropdown-load hide">
+                <div class="box"> <div><img src="./pics/share-nodes-solid.svg" alt=""></div> <div>שיתוף</div></div>
+                <div class="box">
+                  <div><img src="./pics/arrow-down-solid.svg" alt=""></div>
+                  <div>הורדה</div>
+                </div>
+              </div>
+            </div>
+          
+            </h3>
+          
+            </div>
+          
+          </div>
     <div class="card bg-white">
       <div class="card-header">
+       
+       
+        <div class="card bg-white">
+          <div class="card-header line space table">
+            <div>
+        
+            <h3>    תחלואה חוזרת לפי התחסנות - יומי
+
+
+              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24">
+                <g fill="currentColor">
+                  <g data-name="info">
+                    <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
+                    <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"></path>
+                  </g>
+                </g>
+              </svg>
+              <div class="hover-card translate">
+                <p>מאומתים חוזרים - מי שנבדקו ונמצאו חיוביים פעם נוספת לנגיף COVID-19 בבדיקת PCR או בבדיקת אנטיגן מפוקחת (החל מה 5.1.2022) , החל מ-90 יום לאחר הגילוי הקודם, בין אם הופיעו אצלם תסמינים ובין אם לא, בין אם הם חולים, החלימו או נפטרו.</p>
+              </div>
+            </div>
+            <div>
+              <div class="dot-button ">
+        
+                <img src="./pics/dots.svg" alt="">
+              </div>
+            
+            <div class="dropdown-load hide">
+              <div class="box"> <div><img src="./pics/share-nodes-solid.svg" alt=""></div> <div>שיתוף</div></div>
+              <div class="box">
+                <div><img src="./pics/arrow-down-solid.svg" alt=""></div>
+                <div>הורדה</div>
+              </div>
+            </div>
+          </div>
+        
+          </h3>
+        
+          </div>
+        
+        </div>
+
+        
+  
+    </div>
+    
+  </div>
+ 
+      
+  </div>
+  
+  
+  <!-- </div> -->
+  <div class="line-border"></div>
+  
+      </section>
+
+      <div class="line-border"></div>
+
+      <section id="part9" class="overview-cards  overview-secondary table-abroad tables" data-nav="general-illness" >
+          <h2>תחלואה חוזרת ומחלימים</h2>
+          <div class="cards2 ">
+    
+            <div class="card bg-white">
+              <div class="card-header line space table">
+                <div>
+            
+                <h3> תחלואה חוזרת לפי התחסנות - יומי
+                  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24">
+                    <g fill="currentColor">
+                      <g data-name="info">
+                        <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
+                        <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"></path>
+                      </g>
+                    </g>
+                  </svg>
+                  <div class="hover-card translate">
+                    <p>מאומתים חוזרים - מי שנבדקו ונמצאו חיוביים פעם נוספת לנגיף COVID-19 בבדיקת PCR או בבדיקת אנטיגן מפוקחת (החל מה 5.1.2022) , החל מ-90 יום לאחר הגילוי הקודם, בין אם הופיעו אצלם תסמינים ובין אם לא, בין אם הם חולים, החלימו או נפטרו.</p>
+                  </div>
+                </div>
+                <div>
+                  <div class="dot-button ">
+            
+                    <img src="./pics/dots.svg" alt="">
+                  </div>
+                
+                <div class="dropdown-load hide">
+                  <div class="box"> <div><img src="./pics/share-nodes-solid.svg" alt=""></div> <div>שיתוף</div></div>
+                  <div class="box">
+                    <div><img src="./pics/arrow-down-solid.svg" alt=""></div>
+                    <div>הורדה</div>
+                  </div>
+                </div>
+              </div>
+            
+              </h3>
+            
+              </div>
+            
+            </div>
+      <div class="card bg-white">
+        <div class="card-header">
+         
+         
+          <div class="card bg-white">
+            <div class="card-header line space table">
+              <div>
+          
+              <h3>    מגמת ילדים באשפוז - ממוצע שבועי
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24">
+                  <g fill="currentColor">
+                    <g data-name="info">
+                      <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
+                      <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"></path>
+                    </g>
+                  </g>
+                </svg>
+                <div class="hover-card translate">
+                  <p>מספר החולים היומי במחלת נגיף COVID-19 המאושפזים בבתי חולים בחלוקה לפי מצב רפואי : קשה (כולל קריטי), בינוני וקל.</p>
+                  <p></p>
+                </div>
+              </div>
+              <div>
+                <div class="dot-button ">
+          
+                  <img src="./pics/dots.svg" alt="">
+                </div>
+              
+              <div class="dropdown-load hide">
+                <div class="box"> <div><img src="./pics/share-nodes-solid.svg" alt=""></div> <div>שיתוף</div></div>
+                <div class="box">
+                  <div><img src="./pics/arrow-down-solid.svg" alt=""></div>
+                  <div>הורדה</div>
+                </div>
+              </div>
+            </div>
+          
+            </h3>
+          
+            </div>
+          
+          </div>
+    
+      </div>
+      
+    </div>
+    <div class="card bg-white">
+      <div class="card-header">
+       
+       
+        <div class="card bg-white">
+          <div class="card-header line space table">
+            <div>
+        
+            <h3>    מגמת ילדים באשפוז - ממוצע שבועי
+              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24">
+                <g fill="currentColor">
+                  <g data-name="info">
+                    <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
+                    <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"></path>
+                  </g>
+                </g>
+              </svg>
+              <div class="hover-card translate">
+                <p>מספר החולים היומי במחלת נגיף COVID-19 המאושפזים בבתי חולים בחלוקה לפי מצב רפואי : קשה (כולל קריטי), בינוני וקל.</p>
+                <p></p>
+              </div>
+            </div>
+            <div>
+              <div class="dot-button ">
+        
+                <img src="./pics/dots.svg" alt="">
+              </div>
+            
+            <div class="dropdown-load hide">
+              <div class="box"> <div><img src="./pics/share-nodes-solid.svg" alt=""></div> <div>שיתוף</div></div>
+              <div class="box">
+                <div><img src="./pics/arrow-down-solid.svg" alt=""></div>
+                <div>הורדה</div>
+              </div>
+            </div>
+          </div>
+        
+          </h3>
+        
+          </div>
+        
+        </div>
+  
+    </div>
+    
+  </div>
+        
+    </div>
+    
+    
+    <!-- </div> -->
+    <div class="line-border"></div>
+    
+        </section>
+    
+  <section id="part10" class="overview-cards  overview-secondary table-abroad tables" data-nav="general-illness" >
+    <h2>תחקורים נוספים</h2>
+    <div class="cards2 ">
+
+   
+<div class="card bg-white">
+  <div class="card-header line space table">
+    <div>
+
+    <h3> פילוח מדדים שונים על פי מין וגיל
+      <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24">
+        <g fill="currentColor">
+          <g data-name="info">
+            <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
+            <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"></path>
+          </g>
+        </g>
+      </svg>
+      <div class="hover-card translate">
+        <p>מספר החולים היומי במחלת נגיף COVID-19 המאושפזים בבתי חולים בחלוקה לפי מצב רפואי : קשה (כולל קריטי), בינוני וקל.</p>
+      </div>
+    </div>
+    <div>
+      <div class="dot-button ">
+
+        <img src="./pics/dots.svg" alt="">
+      </div>
+    
+    <div class="dropdown-load hide">
+      <div class="box"> <div><img src="./pics/share-nodes-solid.svg" alt=""></div> <div>שיתוף</div></div>
+      <div class="box">
+        <div><img src="./pics/arrow-down-solid.svg" alt=""></div>
+        <div>הורדה</div>
+      </div>
+    </div>
+  </div>
+
+  </h3>
+
+  </div>
+
+</div>
+
+<div class="card bg-white">
+  <div class="card-header">
+    <div class="card-header line space table">
+      <div>
+
+      <h3> פילוח מדדים שונים על פי מין וגיל
+        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24">
+          <g fill="currentColor">
+            <g data-name="info">
+              <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
+              <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"></path>
+            </g>
+          </g>
+        </svg>
+        <div class="hover-card translate">
+          <p>מספר החולים היומי במחלת נגיף COVID-19 המאושפזים בבתי חולים בחלוקה לפי מצב רפואי : קשה (כולל קריטי), בינוני וקל.</p>
+        </div>
+      </div>
+      <div>
+        <div class="dot-button ">
+
+          <img src="./pics/dots.svg" alt="">
+        </div>
+      
+      <div class="dropdown-load hide">
+        <div class="box"> <div><img src="./pics/share-nodes-solid.svg" alt=""></div> <div>שיתוף</div></div>
+        <div class="box">
+          <div><img src="./pics/arrow-down-solid.svg" alt=""></div>
+          <div>הורדה</div>
+        </div>
+      </div>
+    </div>
+
+    </h3>
+
+    </div>
+   <div>
+  <div id="open-g3-time">מאומתים, חודש אחרון</div>
+  <div class="graph_select hide" id="g3-container">
+
+    <div id="time-select-g3" class="graphs"></div>
+    <div class="search-controls">
+      <button id="g3-ok-button" onclick="closeserachsettlement()">אישור</button>
+      <button id="g3-cancel-button"  onclick="closeserachsettlement(true)">ביטול</button>
+    </div>
+
+  </div>
+   </div>
+  <div class="card-body bg-white" id="g-3">
+  
+  </div>
+
+</div>
+
+</div>
+
+<div class="card bg-white">
+  <div class="card-header line space table">
+    <div>
+
+    <h3> פילוח מדדים שונים על פי מין וגיל
+      <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24">
+        <g fill="currentColor">
+          <g data-name="info">
+            <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
+            <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"></path>
+          </g>
+        </g>
+      </svg>
+      <div class="hover-card translate">
+        <p>מספר החולים היומי במחלת נגיף COVID-19 המאושפזים בבתי חולים בחלוקה לפי מצב רפואי : קשה (כולל קריטי), בינוני וקל.</p>
+      </div>
+    </div>
+    <div>
+      <div class="dot-button ">
+
+        <img src="./pics/dots.svg" alt="">
+      </div>
+    
+    <div class="dropdown-load hide">
+      <div class="box"> <div><img src="./pics/share-nodes-solid.svg" alt=""></div> <div>שיתוף</div></div>
+      <div class="box">
+        <div><img src="./pics/arrow-down-solid.svg" alt=""></div>
+        <div>הורדה</div>
+      </div>
+    </div>
+  </div>
+
+  </h3>
+
+  </div>
+
+</div>
+   
+   
+  <div class="card-body bg-white">
+  
+
+  </div>
+
+</div>
+
+</div>
+<div class="line-border"></div>
+
+
+<div class="line-border"></div>
+
+<section id="part11" class="overview-cards  overview-secondary table-abroad tables" data-nav="general-illness" >
+    <h2>תחלואה חוזרת ומחלימים</h2>
+    <div class="cards2 ">
+
+      <div class="card bg-white">
         <div class="card-header line space table">
           <div>
-    
-          <h3> מספר מאושפזים – יומי
+      
+          <h3> תחלואה חוזרת לפי התחסנות - יומי
             <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24">
               <g fill="currentColor">
                 <g data-name="info">
@@ -1023,13 +1631,13 @@
                 </g>
               </g>
             </svg>
-            <div class="hover-card">
-              <p>מספר החולים היומי במחלת נגיף COVID-19 המאושפזים בבתי חולים בחלוקה לפי מצב רפואי : קשה (כולל קריטי), בינוני וקל.</p>
+            <div class="hover-card translate">
+              <p>מאומתים חוזרים - מי שנבדקו ונמצאו חיוביים פעם נוספת לנגיף COVID-19 בבדיקת PCR או בבדיקת אנטיגן מפוקחת (החל מה 5.1.2022) , החל מ-90 יום לאחר הגילוי הקודם, בין אם הופיעו אצלם תסמינים ובין אם לא, בין אם הם חולים, החלימו או נפטרו.</p>
             </div>
           </div>
           <div>
             <div class="dot-button ">
-    
+      
               <img src="./pics/dots.svg" alt="">
             </div>
           
@@ -1041,48 +1649,99 @@
             </div>
           </div>
         </div>
-    
+      
         </h3>
-    
+      
         </div>
-       <div>
-      <div id="open-g1-time">קשה,בינוני,קל,חודש אחרון</div>
-      <div class="graph_select hide" id="g1-container">
-
-        <div id="time-select-g1" class="graphs"></div>
-        <div class="search-controls">
-          <button id="g1-ok-button" onclick="closeserachsettlement()">אישור</button>
-          <button id="g1-cancel-button"  onclick="closeserachsettlement(true)">ביטול</button>
-        </div>
-
-      </div>
-       </div>
-      <div class="card-body bg-white" id="g-3">
       
       </div>
-
-    </div>
+<div class="card bg-white">
+  <div class="card-header">
+   
+   
+    <div class="card bg-white">
+      <div class="card-header line space table">
+        <div>
     
+        <h3>    מגמת ילדים באשפוז - ממוצע שבועי
+          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24">
+            <g fill="currentColor">
+              <g data-name="info">
+                <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
+                <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"></path>
+              </g>
+            </g>
+          </svg>
+          <div class="hover-card translate">
+            <p>מספר החולים היומי במחלת נגיף COVID-19 המאושפזים בבתי חולים בחלוקה לפי מצב רפואי : קשה (כולל קריטי), בינוני וקל.</p>
+            <p></p>
+          </div>
+        </div>
+        <div>
+          <div class="dot-button ">
+    
+            <img src="./pics/dots.svg" alt="">
+          </div>
+        
+        <div class="dropdown-load hide">
+          <div class="box"> <div><img src="./pics/share-nodes-solid.svg" alt=""></div> <div>שיתוף</div></div>
+          <div class="box">
+            <div><img src="./pics/arrow-down-solid.svg" alt=""></div>
+            <div>הורדה</div>
+          </div>
+        </div>
+      </div>
+    
+      </h3>
+    
+      </div>
+    
+    </div>
+
+</div>
+
 </div>
 <div class="card bg-white">
-  <div class="card-header">
-   
-   
-  <div class="card-body bg-white">
+<div class="card-header">
+ 
+ 
+  <div class="card bg-white">
+    <div class="card-header line space table">
+      <div>
   
-
-  </div>
-
-</div>
-
-</div>
-<div class="card bg-white">
-  <div class="card-header">
-   
-   
-  <div class="card-body bg-white">
+      <h3>    מגמת ילדים באשפוז - ממוצע שבועי
+        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24">
+          <g fill="currentColor">
+            <g data-name="info">
+              <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
+              <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"></path>
+            </g>
+          </g>
+        </svg>
+        <div class="hover-card translate">
+          <p>מספר החולים היומי במחלת נגיף COVID-19 המאושפזים בבתי חולים בחלוקה לפי מצב רפואי : קשה (כולל קריטי), בינוני וקל.</p>
+          <p></p>
+        </div>
+      </div>
+      <div>
+        <div class="dot-button ">
   
-
+          <img src="./pics/dots.svg" alt="">
+        </div>
+      
+      <div class="dropdown-load hide">
+        <div class="box"> <div><img src="./pics/share-nodes-solid.svg" alt=""></div> <div>שיתוף</div></div>
+        <div class="box">
+          <div><img src="./pics/arrow-down-solid.svg" alt=""></div>
+          <div>הורדה</div>
+        </div>
+      </div>
+    </div>
+  
+    </h3>
+  
+    </div>
+  
   </div>
 
 </div>
@@ -1095,9 +1754,152 @@
 <!-- </div> -->
 <div class="line-border"></div>
 
-</section>
+  </section>
+<!-- </div> -->
 
-    </section> 
+<div class="line-border"></div>
+
+<section id="part12" class="overview-cards  overview-secondary table-abroad tables" data-nav="general-illness" >
+    <h2>תחלואה חוזרת ומחלימים</h2>
+    <div class="cards2 ">
+
+      <div class="card bg-white">
+        <div class="card-header line space table">
+          <div>
+      
+          <h3> תחלואה חוזרת לפי התחסנות - יומי
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24">
+              <g fill="currentColor">
+                <g data-name="info">
+                  <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
+                  <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"></path>
+                </g>
+              </g>
+            </svg>
+            <div class="hover-card translate">
+              <p>מאומתים חוזרים - מי שנבדקו ונמצאו חיוביים פעם נוספת לנגיף COVID-19 בבדיקת PCR או בבדיקת אנטיגן מפוקחת (החל מה 5.1.2022) , החל מ-90 יום לאחר הגילוי הקודם, בין אם הופיעו אצלם תסמינים ובין אם לא, בין אם הם חולים, החלימו או נפטרו.</p>
+            </div>
+          </div>
+          <div>
+            <div class="dot-button ">
+      
+              <img src="./pics/dots.svg" alt="">
+            </div>
+          
+          <div class="dropdown-load hide">
+            <div class="box"> <div><img src="./pics/share-nodes-solid.svg" alt=""></div> <div>שיתוף</div></div>
+            <div class="box">
+              <div><img src="./pics/arrow-down-solid.svg" alt=""></div>
+              <div>הורדה</div>
+            </div>
+          </div>
+        </div>
+      
+        </h3>
+      
+        </div>
+      
+      </div>
+<div class="card bg-white">
+  <div class="card-header">
+   
+   
+    <div class="card bg-white">
+      <div class="card-header line space table">
+        <div>
+    
+        <h3>    מגמת ילדים באשפוז - ממוצע שבועי
+          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24">
+            <g fill="currentColor">
+              <g data-name="info">
+                <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
+                <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"></path>
+              </g>
+            </g>
+          </svg>
+          <div class="hover-card translate">
+            <p>מספר החולים היומי במחלת נגיף COVID-19 המאושפזים בבתי חולים בחלוקה לפי מצב רפואי : קשה (כולל קריטי), בינוני וקל.</p>
+            <p></p>
+          </div>
+        </div>
+        <div>
+          <div class="dot-button ">
+    
+            <img src="./pics/dots.svg" alt="">
+          </div>
+        
+        <div class="dropdown-load hide">
+          <div class="box"> <div><img src="./pics/share-nodes-solid.svg" alt=""></div> <div>שיתוף</div></div>
+          <div class="box">
+            <div><img src="./pics/arrow-down-solid.svg" alt=""></div>
+            <div>הורדה</div>
+          </div>
+        </div>
+      </div>
+    
+      </h3>
+    
+      </div>
+    
+    </div>
+
+</div>
+
+</div>
+<div class="card bg-white">
+<div class="card-header">
+ 
+ 
+  <div class="card bg-white">
+    <div class="card-header line space table">
+      <div>
+  
+      <h3>    מגמת ילדים באשפוז - ממוצע שבועי
+        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24">
+          <g fill="currentColor">
+            <g data-name="info">
+              <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
+              <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"></path>
+            </g>
+          </g>
+        </svg>
+        <div class="hover-card translate">
+          <p>מספר החולים היומי במחלת נגיף COVID-19 המאושפזים בבתי חולים בחלוקה לפי מצב רפואי : קשה (כולל קריטי), בינוני וקל.</p>
+          <p></p>
+        </div>
+      </div>
+      <div>
+        <div class="dot-button ">
+  
+          <img src="./pics/dots.svg" alt="">
+        </div>
+      
+      <div class="dropdown-load hide">
+        <div class="box"> <div><img src="./pics/share-nodes-solid.svg" alt=""></div> <div>שיתוף</div></div>
+        <div class="box">
+          <div><img src="./pics/arrow-down-solid.svg" alt=""></div>
+          <div>הורדה</div>
+        </div>
+      </div>
+    </div>
+  
+    </h3>
+  
+    </div>
+  
+  </div>
+
+</div>
+
+</div>
+  
+</div>
+
+
+<!-- </div> -->
+<div class="line-border"></div>
+
+  </section>
     
    
     
