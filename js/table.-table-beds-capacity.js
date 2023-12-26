@@ -54,10 +54,6 @@ let hospitalNames = [];
 for (let i = 0; i < data.length; i++) {
   hospitalNames.push(data[i][0]);
 }
-search_input.addEventListener("click", function () {
-  hospital_select.classList.toggle("hide");
-  searchButton.classList.toggle("search-button-clicked");
-});
 
 function resetTable(render) {
   const allCheckboxes = document.querySelectorAll(
@@ -104,6 +100,7 @@ function createHospitalSelect() {
           (hospital) => hospital !== checkbox.value
         );
       }
+
       search_input_span.innerHTML =
         selectedHospitals.length +
         ' בתי חולים / מוסדות נבחרו <img class="" src ="./pics/down-arrow.svg" width="20" height="20"/>';
@@ -174,12 +171,8 @@ const tableArrows = {
   0: document.querySelector(".table-arrow-1"),
   1: document.querySelector(".table-arrow-2"),
   2: document.querySelector(".table-arrow-3"),
-  // 3: document.querySelector(".table-arrow-4"),
-  // 4: document.querySelector(".table-arrow-5"),
-  // 5: document.querySelector(".table-arrow-6"),
 };
 
-// Function to sort the table
 function sortTable(columnIndex) {
   const isNumber = columnIndex === 0 ? false : true;
   if (counts[columnIndex] === 0) {
@@ -206,7 +199,6 @@ function sortTable(columnIndex) {
     data.sort(function (a, b) {
       let textA = a[columnIndex];
       let textB = b[columnIndex];
-      // console.log(columnIndex);
       if (isNumber) {
         textA = parseFloat(textA.replace("%", ""));
         textB = parseFloat(textB.replace("%", ""));
@@ -219,5 +211,9 @@ function sortTable(columnIndex) {
   counts[columnIndex] %= 3;
 
   displayTable(data);
-  // createTable(data, "tableBody");
 }
+
+search_input.addEventListener("click", function () {
+  hospital_select.classList.toggle("hide");
+  searchButton.classList.toggle("search-button-clicked");
+});

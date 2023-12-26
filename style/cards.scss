@@ -1,6 +1,6 @@
 .small-circle {
-  height: 1rem;
-  width: 1rem;
+  height: 9px;
+  width: 9px;
   display: block;
   border-radius: 50%;
   color: transparent;
@@ -28,8 +28,18 @@
   box-shadow: rgba(59, 59, 59, 0.2) 0px 0px 15px -3px,
     rgba(71, 71, 71, 0.05) 0px 4px 6px -2px;
   border-radius: 1rem;
+
   @media only screen and (min-width: 768px) {
     min-width: 190px;
+  }
+}
+
+#part1 {
+  .card {
+    @media only screen and (min-width: 1300px) {
+      width: 200px;
+      height: 210px;
+    }
   }
 }
 
@@ -110,22 +120,20 @@
       grid-template-columns: repeat(2, 1fr) !important;
     }
 
-    @media screen and (max-width: 700px) {
+    @media screen and (max-width: 900px) {
       grid-template-columns: repeat(1, 1fr) !important;
     }
   }
   .card {
-    overflow-x: hidden;
     box-shadow: rgba(170, 170, 170, 0.2) 0px 2px 10px !important;
 
     display: grid;
     min-height: 144px;
     max-height: 350px;
-    overflow-y: hidden;
     padding-inline: auto;
 
     @media only screen and (min-width: 768px) {
-      min-width: inherit;
+      min-width: max(max-content, inherit);
     }
     h1 {
       display: inline-block;
@@ -134,6 +142,9 @@
   }
 }
 
+.card-header h3 {
+  width: max-content;
+}
 .card-header h3:hover + .hover-card,
 .card-header .hover-card:hover {
   height: fit-content;
@@ -164,16 +175,49 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 580px !important;
+  // height: 580px !important;
   background-color: rgba(248, 250, 253);
 
-  .card {
-    background-color: white;
-    flex-grow: 1;
-  }
+  // .card {
+  //   background-color: white;
+  //   flex-grow: 1;
+  // }
 }
 .bg-white {
   background: white !important;
   width: 100%;
   position: relative;
+}
+
+#part1-5 .hover-card {
+  max-width: 210px !important;
+  position: absolute;
+  height: fit-content !important;
+  z-index: 99999999999999;
+}
+
+#part1-5 {
+  background-color: rgb(255, 255, 255, 0.1);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-color: transparent !important;
+  .card {
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+      rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    flex-grow: 1;
+  }
+}
+
+.empty {
+  height: 350px;
+  background-color: rgb(255, 255, 255);
+}
+
+#part4 {
+  .medium-table {
+    width: 700px;
+  }
+  .card {
+    flex-grow: 1;
+  }
 }

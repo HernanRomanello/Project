@@ -15,35 +15,6 @@ document.querySelectorAll(".table").forEach((table) => {
   });
 });
 
-const cards = document.querySelector(".overview-cards");
-document.querySelectorAll(".card-header").forEach((cardHeader) => {
-  const icon = cardHeader.querySelector("svg");
-  const card = cardHeader.querySelector(".hover-card");
-
-  if (!icon || !card) return;
-
-  icon.addEventListener("mouseover", function () {
-    card.classList.add("hover-icon-show");
-
-    document.querySelectorAll(".card-header").forEach((cardHeader) => {
-      const cardOther = cardHeader.querySelector(".hover-card");
-      if (!cardOther) return;
-      if (cardOther !== card) cardOther.classList.remove("hover-icon-show");
-    });
-  });
-
-  card.addEventListener("mouseout", function () {
-    card.classList.remove("hover-icon-show");
-  });
-});
-
-cards.addEventListener("mouseout", function () {
-  document.querySelectorAll(".hover-card").forEach((card) => {
-    if (!card) return;
-    card.classList.remove("hover-icon-show");
-  });
-});
-
 const navContainer = document.querySelector(".nav-contaner");
 const navContainerChildren = navContainer.children;
 const sections = document.querySelectorAll("section.overview-cards");
@@ -61,8 +32,9 @@ sections.forEach((section) => {
       if (
         navItemOther.classList.contains("marked-div") &&
         navItemIdOther !== navItem
-      )
+      ) {
         navItemOther.classList.remove("marked-div");
+      }
     }
     if (!navItem) return;
     navItem.classList.add("marked-div");
@@ -86,8 +58,18 @@ const navStack = [id0, id1, id2, id3, id4, id5, id6, id7, id8, id9, id10, id11];
 
 while (navStack.length > 0) {
   const section = sectionsStack.shift();
-  if (section.id === "ignore-nav") continue;
+  if (section.id === "part1-5") continue;
   const navItem = document.querySelector(`#${navStack.shift()}`);
 
   section.dataset.nav = navItem.id;
 }
+
+let loadingPercent = 0;
+const progressBar = document.querySelector(".loader .progress-bar");
+const loadingInterval = setInterval(() => {
+  loadingPercent += 1;
+  progressBar.style.width = loadingPercent + "%";
+  if (loadingPercent >= 100) {
+    clearInterval(loadingInterval);
+  }
+}, 100); // 10000

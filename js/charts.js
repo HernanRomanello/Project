@@ -4474,7 +4474,6 @@ function createRadioButtons(list) {
       if (i === 0) checkbox.checked = true;
       connt++;
     }
-    // alert(checkbox.value);
 
     span.textContent = timeSpans[i][0];
     option.appendChild(checkbox);
@@ -4494,15 +4493,7 @@ g1okbutton.addEventListener("click", function () {
     const content = radioButtonContent[value];
     const radios = document.querySelectorAll('input[name="timeSpan-country"]');
 
-    // for (let i = 0; i < radios.length; i++) {
-    //   radios[i].checked = false;
-    //   // alert(radios[i].value);
-    //   // alert(radios[i].checked);
-    // }
-    // Uncheck all radios
-
-    handleTimeSpanChange(true, value); // Assuming you want to set it as checked
-    // alert(content); // Display the content instead of the value
+    handleTimeSpanChange(true, value);
     openG1TimeSelect.textContent += ", " + content;
     openG1TimeSelect.click();
   }
@@ -4512,8 +4503,6 @@ g1okbutton.addEventListener("click", function () {
 function createGraphTimeSpanSelect(list) {
   list.innerHTML = ""; // change placeholder
 
-  // Loop to create checkboxes for levels
-  // list.appendChild(document.createElement("hr"));
   const label2 = document.createElement("label");
   label2.innerText = "מצב מאושפזים";
   list.appendChild(label2);
@@ -4522,7 +4511,6 @@ function createGraphTimeSpanSelect(list) {
     createLevelCheckbox(levels[i], i, list);
   }
 
-  // Create radio buttons for time spans
   list.appendChild(document.createElement("hr"));
 
   const label1 = document.createElement("label");
@@ -4532,7 +4520,7 @@ function createGraphTimeSpanSelect(list) {
 }
 
 openG1TimeSelect.addEventListener("click", function () {
-  createGraphTimeSpanSelect(select_time); // no need
+  createGraphTimeSpanSelect(select_time);
   G1Container.classList.toggle("hide");
 
   g1cancelbutton.addEventListener("click", function () {

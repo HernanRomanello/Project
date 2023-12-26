@@ -121,86 +121,41 @@ let tableTrafficLight = [
 
 createTable(tableTrafficLight, "tableBody2");
 
-// const timeSpans = [
-//   ["חודש אחרון", 0.5],
-//   ["3 חודשים אחרונים", 1], // no need
-//   ["6 חודשים אחרונים", 6],
-//   ["שנה אחרונה", 12],
-//   ["עד עכשיו", 18],
-// ];
-
-// let timechoice = 0, // no need
-//   dataNumber = 0;
-
-// function createTable(tableData, tableBodyId) {
-//   const tableBody = document.getElementById(tableBodyId);
-//   tableBody.innerHTML = "";
-//   for (let i = 0; i < tableData.length; i++) {
-//     const row = document.createElement("tr");
-
-//     for (let j = 0; j < tableData[i].length; j++) {
-//       const cell = document.createElement("td");
-//       const span = document.createElement("span");
-
-//       // Add data from the array, including HTML content
-//       span.innerHTML = tableData[i][j];
-
-//       cell.appendChild(span);
-//       row.appendChild(cell);
-//     }
-
-//     tableBody.appendChild(row);
-//   }
-// }
-
-// Call the function to create the table when the script is loaded
-// createTable(countryTableData, "tableBody2");
-
-const settlementSelect = document.getElementById("settlement-select"); // change to country-select id in html
+const settlementSelect = document.getElementById("settlement-select");
 const searchsettlement = document.getElementById("search-settlement");
 const settlement_select_settlements = document.querySelector(
-  "#settlement-select .settlements" // change to country-select id in html
+  "#settlement-select .settlements"
 );
-settlement_select_settlements.style.paddingTop = "32px"; // same
+settlement_select_settlements.style.paddingTop = "32px";
 settlement_select_settlements.style.minHeight = "50px";
-const settlement_search_input = document.getElementById("search-settlement"); // change to search-country id in html
+const settlement_search_input = document.getElementById("search-settlement");
 const settlement_search_input_span = document.querySelector(
-  "#search-settlement span" // change to search-country id in html
+  "#search-settlement span"
 );
-const settlement_searchButton = document.querySelector(".search-button-3"); // change to search-button id in html
-let settlementClickCounts = { 0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 }; // same
-let settlementNames = []; // different names
+const settlement_searchButton = document.querySelector(".search-button-3");
+let settlementClickCounts = { 0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
+let settlementNames = [];
 
 for (let i = 0; i < tableTrafficLight.length; i++) {
-  // different names
   settlementNames.push(tableTrafficLight[i][0]);
 }
 settlement_search_input.addEventListener("click", function () {
-  // createTimeSpanSelect(); // no need
   createSettlementSelect();
   settlementSelect.classList.toggle("hide");
-  settlement_searchButton.classList.toggle("search-button-clicked"); // same
+  settlement_searchButton.classList.toggle("search-button-clicked");
 });
 
 function resetSettlementTable(render) {
-  // const allCheckboxesMarked = document.querySelectorAll(
-  //   "#settlement-select input[type=checkbox]" // change to country-select id in html
-  // );
   if (render) {
     createTable(tableTrafficLight, "tableBody2");
     settlement_search_input_span.innerHTML =
       "כלל ישובים" +
       `<img class="" src =  "./pics/down-arrow.svg" width="20" height="20"/>`;
 
-    // allCheckboxesMarked.forEach((checkbox) => {
-    //   // add  only input that start in the same letter
-    //   checkbox.checked = false;
-    // });
     selectedSettlements = [];
   }
 
   if (selectedSettlements.length === 0) {
-    // change name of selectedCountries
     tableTrafficLight = copyTable(settlementDataOriginal);
     if (render) createTable(tableTrafficLight, "tableBody2");
   }
@@ -209,7 +164,7 @@ function resetSettlementTable(render) {
 function closeSettlementsSelect(resetTable = false) {
   settlementSelect.classList.toggle("hide");
 
-  settlement_searchButton.classList.remove("search-button-clicked"); // same
+  settlement_searchButton.classList.remove("search-button-clicked");
   // searchsettlement.click();
   resetSettlementTable(resetTable);
 }
@@ -230,8 +185,6 @@ function invokeSettlementFilter() {
     selectedSettlements.includes(row[0])
   );
 
-  // changeTimeValues(dataNumber, 1);
-
   tableTrafficLight = settlementDataOriginal.filter((row) => {
     return selectedSettlements.includes(row[0]);
   });
@@ -241,19 +194,6 @@ function invokeSettlementFilter() {
 
 let selectedSettlements = [];
 
-// function changeTimeValues(dataNumber, numerator) {
-//   let copyTable = countryTableData;
-
-//   for (let i = 0; i < copyTable.length; i++) {
-//     for (let j = 0; j < copyTable[i].length; j++) {
-//       if (j >= 1) {
-//         let cell = copyTable[i][j];
-//         copyTable[i][j] = ((cell * dataNumber) / numerator).toFixed(0);
-//       }
-//     }
-//   }
-// }
-
 function onsettlementsearch(input) {
   let filter = input.value.toLowerCase();
   let options = settlement_select_settlements.children;
@@ -261,7 +201,7 @@ function onsettlementsearch(input) {
     let option = options[i];
     let txtValue = option.textContent || option.innerText;
     if (txtValue.toLowerCase().includes(filter)) {
-      option.style.display = "";
+      option.style.display = "block";
     } else {
       option.style.display = "none";
     }
@@ -269,7 +209,7 @@ function onsettlementsearch(input) {
 }
 
 function createSettlementSelect() {
-  settlement_select_settlements.innerHTML = ""; // change placeholder
+  settlement_select_settlements.innerHTML = "";
   settlement_select_settlements.innerHTML += `
     <center style="position:absolute; top:0px; background:white;">
     <input style="margin-top:8px;" oninput="onsettlementsearch(this)" onclick="event.stopPropagation();" placeholder=" חפש ישוב"/>
@@ -280,36 +220,31 @@ function createSettlementSelect() {
     // think what to change in the options
     let span = document.createElement("span");
 
-    span.addEventListener(
-      "click",
-      function (e) {
-        // change name of selectedCountries
-        if (selectedSettlements.includes(span.textContent)) {
-          selectedSettlements = selectedSettlements.filter(
-            (settlement) => settlement !== span.textContent
-          );
-        } else {
-          selectedSettlements = [span.textContent];
-        }
+    span.addEventListener("click", function (e) {
+      if (selectedSettlements.includes(span.textContent)) {
+        selectedSettlements = selectedSettlements.filter(
+          (settlement) => settlement !== span.textContent
+        );
+      } else {
+        selectedSettlements = [span.textContent];
+      }
 
-        settlement_search_input_span.innerHTML =
-          span.textContent +
-          ` 
+      settlement_search_input_span.innerHTML =
+        span.textContent +
+        ` 
           <img class="" src ="./pics/down-arrow.svg" width="20" height="20"/>
         `;
-        invokeSettlementFilter();
-        closeSettlementsSelect();
-        // Stop the event from bubbling up to the parent
-        e.stopPropagation();
-      } // change name of selectedCountries
-    );
+      invokeSettlementFilter();
+      closeSettlementsSelect();
+      // Stop the event from bubbling up to the parent
+      e.stopPropagation();
+    });
     span.textContent = settlementNames[i];
     settlement_select_settlements.appendChild(span);
   }
 }
 
 function createSettlementsSelect() {
-  // think what to change in the options  // change name of placeholder
   settlement_select_settlements.innerHTML = "";
   settlement_select_settlements.innerHTML += `
   <center>
@@ -322,30 +257,6 @@ function createSettlementsSelect() {
     let checkbox = document.createElement("input");
     let span = document.createElement("span");
 
-    // option.addEventListener("click", function (e) {
-    //   e.stopPropagation();
-    // });
-    // checkbox.addEventListener("click", function (e) {
-    //   if (checkbox.checked) {
-    //     // selectedCountries.push(checkbox.value);
-    //   } else {
-    //     // selectedCountries = selectedCountries.filter(
-    //     //   (settlement) => settlement !== checkbox.value
-    //     // );
-    //   }
-
-    //   //   settlement_search_input_span.innerHTML =          לבדוק אם למחוק
-    //   //     // change to selectedCountries
-    //   //     // timechoice +
-
-    //   //     /// change name of ישוב
-    //   //     `
-    //   // , ישוב
-    //   //   <img class="" src ="./pics/down-arrow.svg" width="20" height="20"/>
-    //   // `;
-
-    //   e.stopPropagation();
-    // });
     option.classList.add("option-settlement");
     checkbox.type = "checkbox";
     checkbox.id = settlementNames[i];
@@ -360,13 +271,6 @@ function createSettlementsSelect() {
 
 const settlementDataOriginal = copyTable(tableTrafficLight);
 
-// function copyTable(table) {     // לראות אם למחוק
-//   let newTable = [];
-//   for (var row in table) {
-//     newTable.push([...table[row]]);
-//   }
-//   return newTable;
-// }
 const settlementTableArrows = {
   0: document.querySelector("#table-arrow-settlements-1"),
   1: document.querySelector("#table-arrow-settlements-2"),

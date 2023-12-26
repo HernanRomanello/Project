@@ -43,3 +43,24 @@
 .logo {
   width: 100px;
 }
+
+.loader {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99998;
+  height: 3px;
+}
+
+.loader .progress-bar {
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 0;
+  display: block;
+  background: linear-gradient(45deg, #35b7a6, #35b7a6, #35b7a6, #d9ff5e);
+  height: 2px;
+  position: absolute;
+}

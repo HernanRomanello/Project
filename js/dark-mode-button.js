@@ -25,9 +25,33 @@ const cardheaderlinespacetableheader = document.querySelectorAll(
 const body = document.querySelectorAll("body");
 const hovercard = document.querySelectorAll(".hover-card");
 const dropdownload = document.querySelectorAll(".dropdown-load");
+const searchcontrols = document.querySelectorAll(".search-controls");
+const g1container = document.getElementById("g1-container");
+const openg1time = document.getElementById("open-g1-time");
+const openg2time = document.getElementById("open-g2-time");
+const openg3time = document.getElementById("open-g3-time");
+let countClick = 0;
+
+function updateChartColorsByCountClick(countClick) {
+  if (countClick % 2 === 0) {
+    reverseChartColors();
+  } else {
+    updateChartColors();
+  }
+}
 
 button.addEventListener("click", () => {
-  console.log("Dark mode toggled");
+  g1container.classList.toggle("dark-card");
+  openg1time.classList.toggle("dark-card");
+  openg2time.classList.toggle("dark-card");
+  openg3time.classList.toggle("dark-card");
+
+  countClick++;
+  updateChartColorsByCountClick(countClick);
+
+  searchcontrols.forEach((element) => {
+    element.classList.toggle("dark-card");
+  });
 
   darkModeElements.forEach((element) => {
     element.classList.toggle("overview-secondary-dark-mode");
@@ -52,14 +76,6 @@ button.addEventListener("click", () => {
   th.forEach((element) => {
     element.classList.toggle("dark-card");
   });
-
-  // tr.forEach((element) => {
-  //   element.classList.toggle("dark-card");
-  // });
-
-  // td.forEach((element) => {
-  //   element.classList.toggle("dark-card");
-  // });
 
   bgwhite.forEach((element) => {
     element.classList.toggle("dark-card");
@@ -105,9 +121,9 @@ button.addEventListener("click", () => {
     element.classList.toggle("dark-card");
   });
 
-  body.forEach((element) => {
-    element.classList.toggle("dark-card");
-  });
+  // body.forEach((element) => {
+  //   element.classList.toggle("dark-card");
+  // });
 
   hovercard.forEach((element) => {
     element.classList.toggle("dark-card");

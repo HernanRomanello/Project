@@ -55,7 +55,6 @@ body {
 }
 
 h3 {
-  line-height: 1.5;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -144,7 +143,120 @@ label {
 .white {
   background-color: white;
   position: absolute;
-  z-index: 10000000000000000000000000000000000000000;
+  z-index: 990;
+}
+
+.exclamation-div {
+  position: relative; /* Make sure the container is positioned */
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  background-color: rgb(35, 51, 51);
+}
+.exclamation-div i {
+  color: white;
+  font-size: 12px;
+  text-align: center !important;
+}
+.exclamation-div .hover-card {
+  display: none;
+  position: absolute;
+  background-color: white;
+  z-index: 9999;
+  padding: 0.5rem;
+  font-weight: 300 !important;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.exclamation-div:hover {
+  cursor: pointer;
+}
+.exclamation-div:hover .hover-card {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  font-size: 12px;
+  padding: 8px 0 0;
+  list-style-type: none;
+}
+
+.hover-icon-show {
+  display: flex !important;
+  position: relative;
+}
+.hover-icon-show::after {
+  content: "";
+  position: absolute;
+  display: block;
+  z-index: 1;
+}
+.hover-icon-show::after:hover {
+  display: flex !important;
+}
+
+.medium-font {
+  font-size: 17.8px !important;
+}
+
+.vaccination-numbers {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  justify-content: space-between;
+  margin-bottom: 2px;
+  width: 80%;
+  margin-top: 2px;
+  font-size: 17.8px !important;
+}
+.vaccination-numbers .card-text {
+  padding: 5px;
+  font-size: 12.8px !important;
+  margin: 2px;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
+.margin-number {
+  direction: ltr;
+  margin: 5px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.section-header img {
+  margin-right: 3px;
+  height: 18px; /* Adjust the height as needed */
+  width: 16px;
+  color: rgb(122, 128, 143);
+}
+.section-header button {
+  margin-right: 10px;
+  cursor: pointer;
+  padding: 10;
+  outline: none;
+  display: flex;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  font-size: 14px;
+  min-width: 114px;
+  max-width: 130px;
+  padding: 4px 12px;
+  border: 2px solid rgb(225, 229, 233);
+  border-radius: 16px;
+}
+
+ul {
+  list-style: none;
 }
 
 #modal {
@@ -219,9 +331,30 @@ label {
   width: 100px;
 }
 
+.loader {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99998;
+  height: 3px;
+}
+
+.loader .progress-bar {
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 0;
+  display: block;
+  background: linear-gradient(45deg, #35b7a6, #35b7a6, #35b7a6, #d9ff5e);
+  height: 2px;
+  position: absolute;
+}
+
 .small-circle {
-  height: 1rem;
-  width: 1rem;
+  height: 9px;
+  width: 9px;
   display: block;
   border-radius: 50%;
   color: transparent;
@@ -253,6 +386,13 @@ label {
 @media only screen and (min-width: 768px) {
   .card {
     min-width: 190px;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  #part1 .card {
+    width: 200px;
+    height: 210px;
   }
 }
 
@@ -320,28 +460,30 @@ label {
     grid-template-columns: repeat(2, 1fr) !important;
   }
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 900px) {
   .overview-secondary .cards2 {
     grid-template-columns: repeat(1, 1fr) !important;
   }
 }
 .overview-secondary .card {
-  overflow-x: hidden;
   box-shadow: rgba(170, 170, 170, 0.2) 0px 2px 10px !important;
   display: grid;
   min-height: 144px;
   max-height: 350px;
-  overflow-y: hidden;
   padding-inline: auto;
 }
 @media only screen and (min-width: 768px) {
   .overview-secondary .card {
-    min-width: inherit;
+    min-width: max(max-content, inherit);
   }
 }
 .overview-secondary .card h1 {
   display: inline-block;
   font-size: 16px !important;
+}
+
+.card-header h3 {
+  width: max-content;
 }
 
 .card-header h3:hover + .hover-card,
@@ -373,20 +515,43 @@ label {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 580px !important;
   background-color: rgb(248, 250, 253);
-}
-#part2 .card,
-#part3 .card,
-#part4 .card {
-  background-color: white;
-  flex-grow: 1;
 }
 
 .bg-white {
   background: white !important;
   width: 100%;
   position: relative;
+}
+
+#part1-5 .hover-card {
+  max-width: 210px !important;
+  position: absolute;
+  height: fit-content !important;
+  z-index: 99999999999999;
+}
+
+#part1-5 {
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-color: transparent !important;
+}
+#part1-5 .card {
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  flex-grow: 1;
+}
+
+.empty {
+  height: 350px;
+  background-color: rgb(255, 255, 255);
+}
+
+#part4 .medium-table {
+  width: 700px;
+}
+#part4 .card {
+  flex-grow: 1;
 }
 
 .header-second-part {
@@ -806,6 +971,9 @@ label {
 .overview-cards .table-container th {
   width: max-content;
 }
+.overview-cards .table-container th td {
+  text-align: center;
+}
 .overview-cards table {
   margin-inline: auto;
   width: 100%;
@@ -817,6 +985,7 @@ label {
   width: 100%;
   box-sizing: border-box;
   padding: 0 20px;
+  height: 42px;
 }
 .overview-cards table tr th {
   display: flex;
@@ -826,6 +995,35 @@ label {
 .overview-cards table tr td {
   text-align: start;
   width: 100%;
+}
+
+@media screen and (min-width: 1000px) {
+  #name,
+  .internal-capacity,
+  .general-capacity {
+    padding-left: 5px;
+  }
+}
+@media screen and (max-width: 900px) and (min-width: 775px) {
+  .internal-capacity {
+    margin-left: 90px !important;
+  }
+}
+@media screen and (max-width: 775px) and (min-width: 650px) {
+  .internal-capacity {
+    margin-left: 70px !important;
+  }
+}
+
+@media screen and (max-width: 900px) and (min-width: 775px) {
+  .general-capacity {
+    margin-right: 80px !important;
+  }
+}
+@media screen and (max-width: 775px) and (min-width: 650px) {
+  .general-capacity {
+    margin-right: 20px !important;
+  }
 }
 
 .table-arrow {
@@ -854,7 +1052,7 @@ label {
 #country-select .countries,
 #settlement-select .settlements,
 .graph_select .graphs {
-  max-height: 150px;
+  max-height: 120px;
   overflow-y: scroll;
   background-color: white;
 }
@@ -928,7 +1126,7 @@ label {
   justify-content: center !important;
   min-width: 200px;
   text-align: center;
-  z-index: 998;
+  z-index: 980;
   margin-right: 1rem;
   margin-block: 1rem;
   padding: 0.5rem;
@@ -991,6 +1189,8 @@ label {
   background-color: rgb(190, 204, 219);
   width: 100%;
   height: 50px;
+  height: max-content;
+  cursor: pointer;
   font-weight: bold;
 }
 .table-header th {
@@ -1068,11 +1268,46 @@ label {
   text-align: center;
 }
 
+#header-disease-abroud {
+  padding-inline-end: 0;
+}
+
 td,
 th {
   font-weight: normal !important;
   padding-inline: 0 !important;
   margin-inline: 0 !important;
+}
+td td,
+th td {
+  display: flex !important;
+  justify-content: center !important;
+  text-align: end;
+  align-items: center !important;
+  width: max-content;
+}
+
+#header-disease-abroud td {
+  text-align: center !important;
+  padding-inline: 0 !important;
+  text-align: end;
+  width: 100%;
+  display: flex;
+}
+#header-disease-abroud td span {
+  padding-inline: 0 !important;
+  text-align: center !important;
+  width: fit-content;
+}
+@media only screen and (max-width: 620px) {
+  #header-disease-abroud td span {
+    transform: translateX(-1.25rem);
+  }
+}
+@media only screen and (min-width: 620px) and (max-width: 900px) {
+  #header-disease-abroud td span {
+    transform: translateX(-2rem);
+  }
 }
 
 #tableBody1 tr,
@@ -1107,9 +1342,9 @@ th {
 }
 
 .large-card {
-  width: 65vw !important;
+  width: 500px !important;
   margin-left: 20px;
-  height: 400px;
+  height: 450px;
 }
 
 .color-text {

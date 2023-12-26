@@ -3158,7 +3158,6 @@ const series_chart2_age_above_60 = [
   },
 ];
 
-// deep copy
 const chart_2 = Highcharts.chart("g-2", {
   chart: {
     type: "area",
@@ -3333,7 +3332,6 @@ const chart_2 = Highcharts.chart("g-2", {
   ],
 });
 
-// G2
 const openG1TimeSelect_chart2 = document.querySelector("#open-g2-time");
 const select_time_chart2 = document.querySelector("#time-select-g2");
 const g1cancelbutton_chart2 = document.getElementById("g2-cancel-button");
@@ -3424,11 +3422,11 @@ const radioButtonContent_chart2 = {
   12: "שנה",
   18: "עד עכשיו",
 };
-const seriesByPopulationSpan = {
-  1: series, // 1 month
-  2: series_3, // 3 months
-  3: series_6, // 6 months
-};
+// const seriesByPopulationSpan = {
+//   1: series, // 1 month
+//   2: series_3, // 3 months
+//   3: series_6, // 6 months
+// };
 const radioButtionPopulation_chart2 = {
   1: "מעל גיל 60",
   2: "מתחת לגיל 60",
@@ -3450,10 +3448,6 @@ function handleChartChange_chart2(
   timeSpanValue,
   populationValue
 ) {
-  // console.log(timeSpanValue, populationValue);
-  /*for (let i = 0; i < levels_chart2.length; i++) {
-    seriesMapping_2[levels_chart2[i]][1] = seriesByTimeSpan_chart2[timeSpan][i];
-  }*/
   if (timeSpanValue) {
     lastTimeSpan_chart2 = timeSpanValue;
   }
@@ -3719,6 +3713,7 @@ openG1TimeSelect_chart2.addEventListener("click", function () {
   g1cancelbutton_chart2.addEventListener("click", function () {
     openG1TimeSelect_chart2.click();
   });
+
   setTimeout(function () {
     document
       .querySelectorAll('text[text-anchor="end"]')
@@ -3727,3 +3722,87 @@ openG1TimeSelect_chart2.addEventListener("click", function () {
 
   g1okbutton_chart2;
 });
+
+function updateChartColors() {
+  console.log("chart_2:");
+
+  const chartBackground = document.querySelectorAll(
+    "#g-2 rect.highcharts-plot-background"
+  )[0];
+  chartBackground.setAttribute("fill", "rgb(55,79,96)");
+
+  const chartBackgroundAndAxes = document.querySelectorAll(
+    "#g-2 .highcharts-background, #g-2 .highcharts-xaxis, #g-2 .highcharts-yaxis"
+  );
+  chartBackgroundAndAxes.forEach((element) => {
+    element.setAttribute("stroke", "rgb(55,79,96)");
+  });
+
+  const elementsWithColor1 = document.querySelectorAll(
+    '#g-2 [fill="rgb(0,127,127)"]'
+  );
+  const elementsWithColor2 = document.querySelectorAll(
+    '#g-2 [fill="rgb(182,202,81)"]'
+  );
+  const elementsWithColor3 = document.querySelectorAll(
+    '#g-2 [fill="rgb(80,203,253)"]'
+  );
+
+  // Change the color of elements with RGB(0,127,127) to red
+  elementsWithColor1.forEach((element) => {
+    element.setAttribute("fill", "rgb(44,210,219)");
+  });
+
+  // Change the color of elements with RGB(182,202,81) to red
+  elementsWithColor2.forEach((element) => {
+    element.setAttribute("fill", "rgb(253,130,100)");
+  });
+
+  // Change the color of elements with RGB(80,203,253) to red
+  elementsWithColor3.forEach((element) => {
+    element.setAttribute("fill", "rgb(155,233,133)");
+  });
+}
+
+// setInterval(updateChartColors, 1000);
+function reverseChartColors() {
+  console.log("chart_2 (reversed):");
+
+  // Reset chart background color to white
+  const chartBackground = document.querySelectorAll(
+    "#g-2 rect.highcharts-plot-background"
+  )[0];
+  chartBackground.setAttribute("fill", "rgb(255,255,255)");
+
+  // Reset chart background and axes stroke color to white
+  const chartBackgroundAndAxes = document.querySelectorAll(
+    "#g-2 .highcharts-background, #g-2 .highcharts-xaxis, #g-2 .highcharts-yaxis"
+  );
+  chartBackgroundAndAxes.forEach((element) => {
+    element.setAttribute("stroke", "rgb(255,255,255)");
+  });
+
+  // Reset the color of elements with RGB(44,210,219) to their original color
+  const elementsWithColor1 = document.querySelectorAll(
+    '#g-2 [fill="rgb(44,210,219)"]'
+  );
+  elementsWithColor1.forEach((element) => {
+    element.setAttribute("fill", "rgb(0,127,127)");
+  });
+
+  // Reset the color of elements with RGB(253,130,100) to their original color
+  const elementsWithColor2 = document.querySelectorAll(
+    '#g-2 [fill="rgb(253,130,100)"]'
+  );
+  elementsWithColor2.forEach((element) => {
+    element.setAttribute("fill", "rgb(182,202,81)");
+  });
+
+  // Reset the color of elements with RGB(155,233,133) to their original color
+  const elementsWithColor3 = document.querySelectorAll(
+    '#g-2 [fill="rgb(155,233,133)"]'
+  );
+  elementsWithColor3.forEach((element) => {
+    element.setAttribute("fill", "rgb(80,203,253)");
+  });
+}

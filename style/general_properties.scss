@@ -54,7 +54,7 @@ body {
 }
 
 h3 {
-  line-height: 1.5;
+  // line-height: 1.5;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -141,5 +141,143 @@ label {
 .white {
   background-color: white;
   position: absolute;
-  z-index: 9999999999999999999999999999999999999999;
+  z-index: 990;
+}
+
+.exclamation-div {
+  position: relative; /* Make sure the container is positioned */
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  background-color: rgb(35, 51, 51);
+
+  i {
+    color: white;
+    font-size: 12px;
+    text-align: center !important;
+  }
+
+  .hover-card {
+    display: none;
+    position: absolute;
+    background-color: white;
+    // font-size: 14px;
+    z-index: 9999;
+    padding: 0.5rem;
+    font-weight: 300 !important;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    .hover-card {
+      display: block;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 180px;
+      font-size: 12px;
+      padding: 8px 0 0;
+      list-style-type: none;
+    }
+  }
+}
+
+.hover-icon-show {
+  display: flex !important;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    z-index: 1;
+    &:hover {
+      display: flex !important;
+    }
+  }
+}
+
+.medium-font {
+  font-size: 17.8px !important;
+}
+
+.vaccination-numbers {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  justify-content: space-between;
+  margin-bottom: 2px;
+  width: 80%;
+  margin-top: 2px;
+  font-size: 17.8px !important;
+  .card-text {
+    padding: 5px;
+    font-size: 12.8px !important;
+    margin: 2px;
+  }
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
+.margin-number {
+  direction: ltr;
+  margin: 5px;
+}
+.section-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  img {
+    margin-right: 3px;
+    height: 18px; /* Adjust the height as needed */
+    width: 16px;
+    color: rgb(122, 128, 143);
+  }
+  button {
+    // background: none;
+    // border: none;
+    margin-right: 10px;
+    cursor: pointer;
+    padding: 10;
+    outline: none;
+    display: flex;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    font-size: 14px;
+    min-width: 114px;
+    max-width: 130px;
+    padding: 4px 12px;
+    // background: var(--card-background-color);
+    border: 2px solid rgb(225, 229, 233);
+    // color: var(--text-basic-color);
+    border-radius: 16px;
+  }
+}
+// .section-header button {
+//   background: none;
+//   border: none;
+//   cursor: pointer;
+//   padding: 0;
+//   outline: none;
+//   display: flex;
+//   align-items: center;
+// }
+
+// .section-header button img {
+//   margin-left: 5px;
+//   height: 12px; /* Adjust the height as needed */
+//   width: auto;
+// }
+
+ul {
+  list-style: none;
 }
