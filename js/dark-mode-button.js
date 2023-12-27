@@ -36,7 +36,9 @@ function updateChartColorsByCountClick(countClick) {
   if (countClick % 2 === 0) {
     reverseChartColors();
   } else {
-    updateChartColors();
+    setInterval(() => {
+      updateChartColors();
+    }, 100);
   }
 }
 

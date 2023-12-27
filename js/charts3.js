@@ -349,18 +349,20 @@ var options_g3 = {
   plotOptions: {
     bar: {
       horizontal: true,
-      barHeight: "80%",
+      barHeight: "100%",
       style: { overflow: "visible" },
     },
   },
   dataLabels: {
     enabled: true,
-    // position left to show values outside the bar
     textAnchor: "middle",
+    align: "right",
     style: {
       colors: ["#000000", "#000000"],
-      potion: "absulte",
+      potion: "absolute", // Fix the typo here (from "absulte" to "absolute")
     },
+    offsetX: 0,
+    offsetY: 0,
     formatter: function (val, { seriesIndex, dataPointIndex, w }) {
       return Math.abs(val) + "%";
     },
@@ -375,28 +377,39 @@ var options_g3 = {
         show: false,
       },
     },
+    labels: {
+      formatter: function (val) {
+        // Customize the content of the x-axis labels (tspan)
+        return (
+          '<tspan class="custom-x-axis-label">' +
+          Math.abs(Math.round(val)) +
+          "%</tspan>"
+        );
+      },
+    },
+    // tickPositions: [30, 20, 10, 0, 10, 20, 30],
   },
   yaxis: {
     min: -30,
     max: 30,
-    title: {},
+    title: {
+      text: "קבוצת גיל",
+    },
   },
-
-  Xaxis: {
+  xaxis: {
     min: 0,
     max: 30,
     title: {
       useHTML: true,
       text: "מספר מאושפזים",
     },
-    labels: {
-      formatter: function (val) {
-        return Math.abs(Math.round(val)) + "%";
-      },
-    },
-    tickPositions: [0, 20, 40, 60, 80, 100], // Custom x-axis scale
+    // labels: {
+    //   formatter: function (val) {
+    //     return Math.abs(Math.round(val));
+    //   },
+    // },
+    // tickPositions: [0, 20, 40, 60, 80, 100],
   },
-
   tooltip: {
     shared: true,
     intersect: false,
@@ -415,7 +428,11 @@ var options_g3 = {
   title: {
     text: "",
   },
+  legend: {
+    position: "top", // Set the legend position
+  },
   xaxis: {
+    type: "category",
     categories: [
       "90+",
       "80-89",
@@ -428,13 +445,14 @@ var options_g3 = {
       "10-19",
       "0-9",
     ],
-
     title: {
-      text: "סה״כ %",
+      text: "% סה״כ",
     },
     labels: {
-      formatter: function (val) {
-        return Math.abs(Math.round(val)) + "%";
+      formatter: function (val, index) {
+        // Customize the content of the x-axis labels
+        var customLabels = ["30", "20", "10", "10", "20", "30"];
+        return customLabels[index];
       },
     },
   },
@@ -710,3 +728,30 @@ openG1TimeSelect_chart3.addEventListener("click", function () {
 
   g1okbutton_chart3;
 });
+
+function customizeLegendStylesAndMarker(borderRadius) {
+  // Find the legend element
+  var legend = document.querySelector(
+    ".apexcharts-legend.apx-legend-position-top.apexcharts-align-center"
+  );
+
+  // Apply the custom styles to the legend
+  if (legend) {
+    legend.style.justifyContent = "start";
+  }
+
+  // Get all legend marker elements
+  var legendMarkers = document.querySelectorAll(".apexcharts-legend-marker");
+
+  // Loop through each legend marker and set the border radius
+  legendMarkers.forEach(function (marker) {
+    marker.style.borderRadius = borderRadius;
+  });
+}
+
+// Call the function with your desired border radius value
+// customizeLegendStylesAndMarker("10px");
+
+setInterval(() => {
+  customizeLegendStylesAndMarker("10px");
+}, 100);

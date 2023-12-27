@@ -63,8 +63,14 @@
   font-size: 14px;
   width: fit-content;
   margin-right: 32px;
+  display: flex;
 }
 
 .graph_select .graphs {
   margin-top: 47px;
+}
+
+.rotate-arrow {
+  transform: rotate(180deg);
+  transition: transform 0.5s linear;
 }

@@ -1,0 +1,72 @@
+/* styles.css */
+
+/* Styles for the chart container */
+#chart-container {
+  width: 100% !important;
+  max-width: 800px !important;
+  margin: 0 auto !important;
+}
+
+/* Styles for the bar series */
+#chart-container .apexcharts-bar-series {
+  margin-bottom: 20px !important;
+}
+
+/* Styles for individual bars within the series */
+#chart-container .apexcharts-bar-series .apexcharts-bar {
+  transition: all 0.3s ease !important;
+}
+
+/* Hover effect for individual bars */
+#chart-container .apexcharts-bar-series .apexcharts-bar:hover {
+  opacity: 0.8 !important;
+}
+
+/* Tooltip styling */
+#chart-container .apexcharts-tooltip {
+  background-color: #fff !important;
+  border: 1px solid #ccc !important;
+  padding: 10px !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* X-axis labels */
+#chart-container .apexcharts-xaxis-labels {
+  font-size: 12px !important;
+  color: #333 !important;
+}
+
+/* Y-axis labels */
+#chart-container .apexcharts-yaxis-label {
+  font-size: 12px !important;
+  color: #333 !important;
+}
+
+/* Title styling */
+#chart-container .apexcharts-title-text {
+  font-size: 180px !important;
+  font-weight: bold !important;
+  color: #333 !important;
+}
+
+/* Legend styling */
+#chart-container .apexcharts-legend {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+#chart-container .apexcharts-legend-item {
+  font-size: 14px !important;
+  margin-bottom: 5px !important;
+}
+
+/* Adjust the color of the legend markers */
+#chart-container .apexcharts-legend-marker {
+  border-color: #333 !important;
+}
+
+/* Adjust the color of the legend text */
+#chart-container .apexcharts-legend-text {
+  color: #56ac34 !important;
+}

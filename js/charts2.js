@@ -3766,8 +3766,6 @@ function updateChartColors() {
 
 // setInterval(updateChartColors, 1000);
 function reverseChartColors() {
-  console.log("chart_2 (reversed):");
-
   // Reset chart background color to white
   const chartBackground = document.querySelectorAll(
     "#g-2 rect.highcharts-plot-background"
