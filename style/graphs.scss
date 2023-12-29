@@ -70,3 +70,23 @@
 #chart-container .apexcharts-legend-text {
   color: #56ac34 !important;
 }
+
+#time-select-g1 .search-controls {
+  width: 890px !important;
+  background-color: #56ac34 !important;
+}
+
+.legend-item-label {
+  display: inline-block !important;
+  min-width: 75px !important;
+  margin: auto !important;
+  padding: auto;
+  // color: #56ac34 !important;
+  // font-size: 14px !important;
+  // margin-left: 5px !important;
+}
+
+.custom-y-axis-title {
+  font-weight: 10; // Adjust the font weight as needed
+  color: #56ac34 !important;
+}

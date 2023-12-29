@@ -3339,10 +3339,11 @@ const g1okbutton_chart2 = document.getElementById("g2-ok-button");
 const G1Container_chart2 = document.querySelector("#g2-container");
 
 const showingSeries_2 = JSON.parse(JSON.stringify(series));
-const populations = ["מעל גיל 60", "מתחת לגיל 60", "כלל האוכלוסיה"];
-const populationsSelection = [false, false, true];
-const timeSpanSelection = [false, false, false, false, true];
-const seriesMapping_2 = {
+// const populations = ["מעל גיל 60", "מתחת לגיל 60", "כלל האוכלוסיה"];
+let populationsSelection = [false, false, true];
+let timeSpanSelection = [false, false, false, false, true];
+let calculationNumber = [false, true];
+const population_2 = {
   "מעל גיל 60": [true, showingSeries_2[0]],
   "מתחת לגיל 60": [true, showingSeries_2[1]],
   "כלל האוכלוסיה": [true, showingSeries_2[2]],
@@ -3422,11 +3423,7 @@ const radioButtonContent_chart2 = {
   12: "שנה",
   18: "עד עכשיו",
 };
-// const seriesByPopulationSpan = {
-//   1: series, // 1 month
-//   2: series_3, // 3 months
-//   3: series_6, // 6 months
-// };
+
 const radioButtionPopulation_chart2 = {
   1: "מעל גיל 60",
   2: "מתחת לגיל 60",
@@ -3435,7 +3432,7 @@ const radioButtionPopulation_chart2 = {
 
 const radioButtionCount_chart2 = {
   1: "מספר מוחלט",
-  2: "ל-100 אל; ,ושבים",
+  2: "ל-100 אלף תושבים",
 };
 
 let lastTimeSpan_chart2 = 0.5;
@@ -3478,14 +3475,6 @@ function updateChartSeries_chart2(chartId) {
     radioButtonContent_chart2[values[0]] +
     "," +
     radioButtionPopulation_chart2[values[1]];
-  /*for (var j = 0; j < populations.length; j++) {
-    if (seriesMapping_2[populations[j]][0]) {
-      chart_2.addSeries(seriesMapping_2[populations[j]][1]);
-      openG1TimeSelect_chart2.textContent += populations[j];
-      if (j < populations.length - 1)
-        openG1TimeSelect_chart2.textContent += ", ";
-    }
-  }*/
 }
 
 // Function to create a checkbox for a level
@@ -3508,7 +3497,7 @@ function createLevelCheckbox_chart2(level, index, list) {
   checkbox.type = "checkbox";
   checkbox.name = "level-country";
   checkbox.id = level;
-  checkbox.checked = seriesMapping_2[level][0];
+  checkbox.checked = population_2[level][0];
   checkbox.value = level;
 
   option.appendChild(checkbox);
@@ -3519,6 +3508,45 @@ let selectedRadio2;
 // Function to create radio buttons for time spans
 function createRadioButtons_chart2(list) {
   // Append populationEntries first
+  let Countpopulation = Object.entries(radioButtionCount_chart2);
+
+  for (let i = 0; i < Countpopulation.length; i++) {
+    let option = document.createElement("div");
+    let checkbox = document.createElement("input");
+    let span = document.createElement("span");
+
+    option.addEventListener("click", function (e) {
+      e.stopPropagation();
+    });
+
+    option.classList.add("option-country");
+    checkbox.type = "radio";
+    checkbox.name = "Countpopulation-g2";
+    checkbox.id = Countpopulation[i][1];
+    checkbox.value = Countpopulation[i][0];
+    checkbox.checked =
+      selectedRadio2 && selectedRadio2.id === Countpopulation[i][1];
+
+    checkbox.addEventListener("click", function (e) {
+      // Countpopulation[i].checked = true;
+      // selectedRadio2 = checkbox;
+      calculationNumber[i] = true;
+      alert(i);
+      e.stopPropagation();
+    });
+    if (calculationNumber[i]) {
+      checkbox.checked = true;
+      calculationNumber[i] = true;
+    } else {
+      calculationNumber[i] = false;
+    }
+
+    span.textContent = Countpopulation[i][1];
+    option.appendChild(checkbox);
+    option.appendChild(span);
+    list.appendChild(option);
+  }
+  list.appendChild(document.createElement("hr"));
 
   const label1 = document.createElement("label");
   label1.innerText = "אוכלוסיה";
@@ -3544,10 +3572,14 @@ function createRadioButtons_chart2(list) {
       selectedRadio2 && selectedRadio2.id === populationEntries[i][1];
 
     checkbox.addEventListener("click", function (e) {
-      populationsSelection[i] = !populationsSelection[i];
-      selectedRadio2 = checkbox;
+      // populationsSelection[i] = !populationsSelection[i];
+      // selectedRadio2 = checkbox;
       e.stopPropagation();
     });
+    if (populationsSelection[i]) {
+      checkbox.checked = true;
+      populationsSelection[i] = true;
+    }
 
     span.textContent = populationEntries[i][1];
     option.appendChild(checkbox);
@@ -3578,48 +3610,19 @@ function createRadioButtons_chart2(list) {
     checkbox.id = timeSpans[i][0];
     checkbox.value = timeSpans[i][1];
 
-    checkbox.checked = timeSpanSelection[i];
+    // alert(timeSpanSelection[3]);
+    if (timeSpanSelection[i]) {
+      checkbox.checked = true;
+      timeSpanSelection[i] = true;
+    }
+    // checkbox.checked = timeSpanSelection[i];
 
     span.textContent = timeSpans[i][0];
     option.appendChild(checkbox);
     option.appendChild(span);
     list.appendChild(option);
   }
-
-  // // Append another horizontal line
-  // list.appendChild(document.createElement("hr"));
-
-  // Append the "זמן" label
 }
-
-// Event listener for the "OK" button
-// const changeSeriesTimeSpan_chart2 = function (timeSpan) {
-//   const tickPositions = tickPositionsByTimeSpan_chart2[timeSpan] || [];
-//   const tickInterval = tickIntervalByTimeSpan_chart2[timeSpan] || 1;
-
-//   console.log("timeSpan:", timeSpan);
-//   console.log("tickPositions:", tickPositions);
-//   console.log("tickInterval:", tickInterval);
-
-//   chart.yAxis[0].update({
-//     tickPositions: tickPositions,
-//   });
-
-//   chart.xAxis[0].update({
-//     tickInterval: tickInterval,
-//     labels: {
-//       formatter: function () {
-//         const date = new Date(this.value);
-//         const day = date.getDate();
-//         const month = date.getMonth() + 1;
-//         return `${day}.${month}`;
-//       },
-//     },
-//   });
-
-//   // You might need to call chart.redraw() to force the chart to redraw with the new settings
-//   chart.redraw();
-// };
 
 g1okbutton_chart2.addEventListener("click", function () {
   const selectedRadio = document.querySelector(
@@ -3660,6 +3663,9 @@ g1okbutton_chart2.addEventListener("click", function () {
     selectedRadioValue,
     selectedRadioValue2
   );
+
+  openG1TimeSelect_chart2.innerHTML +=
+    '<img class="" src ="./pics/down-arrow.svg" width="20" height="20"/>';
   // changeSeriesTimeSpan_chart2(selectedTimeSpanValue);
 
   // alert(selectedRadioValue2);
@@ -3709,6 +3715,7 @@ function createGraphPupoltionAmountSelect_chart2(list) {
 openG1TimeSelect_chart2.addEventListener("click", function () {
   createGraphTimeSpanSelect_chart2(select_time_chart2);
   G1Container_chart2.classList.toggle("hide");
+  const arrow2 = document.querySelector("#open-g2-time img");
 
   g1cancelbutton_chart2.addEventListener("click", function () {
     openG1TimeSelect_chart2.click();
@@ -3720,12 +3727,12 @@ openG1TimeSelect_chart2.addEventListener("click", function () {
       .forEach((t) => t.setAttribute("text-anchor", "start"));
   }, 100);
 
+  arrow2.classList.toggle("rotate-arrow");
+
   g1okbutton_chart2;
 });
 
 function updateChartColors() {
-  console.log("chart_2:");
-
   const chartBackground = document.querySelectorAll(
     "#g-2 rect.highcharts-plot-background"
   )[0];

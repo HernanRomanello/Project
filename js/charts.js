@@ -438,6 +438,7 @@ const g1cancelbutton = document.getElementById("g1-cancel-button");
 const g1okbutton = document.getElementById("g1-ok-button");
 const G1Container = document.querySelector("#g1-container");
 const levels = ["קל", "בינוני", "קשה"];
+const timeSpanSelection1 = [false, false, false, false, true];
 const seriesMapping = {
   קל: [true, showingSeries[0]],
   בינוני: [true, showingSeries[1]],
@@ -561,18 +562,23 @@ function createRadioButtons(list) {
     let checkbox = document.createElement("input");
     let span = document.createElement("span");
 
-    option.addEventListener("click", function (e) {
-      e.stopPropagation();
-    });
+    // option.addEventListener("click", function (e) {
+
+    //   e.stopPropagation();
+    // });
 
     option.classList.add("option-country");
     checkbox.type = "radio";
     checkbox.name = "timeSpan-country";
     checkbox.id = timeSpans[i][0];
     checkbox.value = timeSpans[i][1];
-    if (connt == 0) {
-      if (i === 0) checkbox.checked = true;
-      connt++;
+    // if (connt == 0) {
+    //   if (i === 0) checkbox.checked = true;
+    //   connt++;
+    // }
+    // checkbox.checked = true;
+    if (timeSpanSelection1[i]) {
+      checkbox.checked = true;
     }
 
     span.textContent = timeSpans[i][0];
@@ -584,19 +590,27 @@ function createRadioButtons(list) {
 
 // Event listener for the "OK" button
 g1okbutton.addEventListener("click", function () {
-  const selectedRadio = document.querySelector(
+  let selectedRadio = document.querySelector(
     'input[name="timeSpan-country"]:checked'
   );
   if (selectedRadio) {
-    const checked = selectedRadio.checked;
     const value = selectedRadio.value;
     const content = radioButtonContent[value];
-    const radios = document.querySelectorAll('input[name="timeSpan-country"]');
 
+    // Set the checked property of the selected radio button to true
+    // selectedRadio.checked = true;
+
+    // Call the handleTimeSpanChange function with the updated values
     handleTimeSpanChange(true, value);
+
+    // Update the content of openG1TimeSelect
     openG1TimeSelect.textContent += ", " + content;
+
+    // Trigger a click event on openG1TimeSelect
     openG1TimeSelect.click();
   }
+  openG1TimeSelect.innerHTML +=
+    '<img class="" src ="./pics/down-arrow.svg" width="20" height="20"/>';
 });
 
 // Function to create the entire graph time span select
@@ -623,7 +637,6 @@ openG1TimeSelect.addEventListener("click", function () {
   createGraphTimeSpanSelect(select_time);
   G1Container.classList.toggle("hide");
   const arrow = document.querySelector("#open-g1-time img");
-  arrow.classList.toggle("rotate-arrow");
 
   g1cancelbutton.addEventListener("click", function () {
     openG1TimeSelect.click();
@@ -634,6 +647,8 @@ openG1TimeSelect.addEventListener("click", function () {
       .querySelectorAll('text[text-anchor="end"]')
       .forEach((t) => t.setAttribute("text-anchor", "start"));
   }, 100);
+
+  arrow.classList.toggle("rotate-arrow");
 
   g1okbutton;
 });

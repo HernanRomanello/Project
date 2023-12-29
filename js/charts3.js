@@ -2,11 +2,11 @@ const series_18_chart3 = {
   series: [
     {
       name: "גברים",
-      data: [0.2, 0.9, 2.1, 3, 3.8, 5.3, 5.8, 5.8, 9.3, 9.3],
+      data: [3.2, 3.9, 2.1, 3, 3.8, 5.3, 5.8, 5.8, 9.3, 9.3],
     },
     {
       name: "נשים",
-      data: [-0.4, -1.2, -2.6, -4.1, -5.4, -7.6, -8.4, -8.2, -9.1, -7.6],
+      data: [-3.4, -3.2, -2.6, -4.1, -5.4, -7.6, -8.4, -8.2, -9.1, -7.6],
     },
   ],
 };
@@ -15,11 +15,11 @@ const series_12_chart3 = {
   series: [
     {
       name: "גברים",
-      data: [3.4, 9.6, 11.4, 7.3, 3.2, 2.6, 1.7, 2.1, 3.9, 1.3],
+      data: [3.4, 9.6, 11.4, 7.3, 3.2, 2.6, 3.7, 2.1, 3.9, 2.3],
     },
     {
       name: "נשים",
-      data: [-2.5, -6.4, -8.8, -8, -7.5, -6.9, -6.2, -6.5, -3.8, -1.3],
+      data: [-2.5, -6.4, -8.8, -8, -7.5, -6.9, -6.2, -6.5, -3.8, -2.3],
     },
   ],
 };
@@ -28,11 +28,11 @@ const series_6_chart3 = {
   series: [
     {
       name: "גברים",
-      data: [2.5, 8.2, 11.8, 7, 4.5, 3.6, 3.1, 2.4, 1.3, 1.6],
+      data: [2.5, 8.2, 11.8, 7, 4.5, 3.6, 3.1, 2.4, 3.3, 2.6],
     },
     {
       name: "נשים",
-      data: [-4, -9.5, -11.5, -8.3, -5.7, -4.3, -4.2, -3.8, -1.4, -1.5],
+      data: [-4, -9.5, -11.5, -8.3, -5.7, -4.3, -4.2, -3.8, -2.4, -2.5],
     },
   ],
 };
@@ -41,11 +41,11 @@ const series_3_chart3 = {
   series: [
     {
       name: "גברים",
-      data: [2.6, 8.2, 12.4, 7.3, 4.9, 3.5, 2.5, 2.5, 1.2, 2],
+      data: [2.6, 8.2, 12.4, 7.3, 4.9, 3.5, 2.5, 3.5, 3.2, 3],
     },
     {
       name: "נשים",
-      data: [-4.6, -10.2, -10.8, -7.7, -5.5, -4.2, -4.2, -2.8, -1.1, -1.7],
+      data: [-4.6, -10.2, -10.8, -7.7, -5.5, -4.2, -4.2, -2.8, -3.1, -2.7],
     },
   ],
 };
@@ -56,11 +56,11 @@ const series_chart3 =
     series: [
       {
         name: "גברים",
-        data: [2.6, 8.2, 12.4, 7.3, 4.9, 3.5, 2.5, 2.5, 1.2, 2],
+        data: [2.6, 8.2, 12.4, 7.3, 4.9, 3.5, 2.5, 2.5, 2.5, 3],
       },
       {
         name: "נשים",
-        data: [-4.6, -10.2, -10.8, -7.7, -5.5, -4.2, -4.2, -2.8, -1.1, -1.7],
+        data: [-4.6, -10.2, -10.8, -7.7, -5.5, -4.2, -4.2, -2.8, -3.1, -2.7],
       },
     ],
   };
@@ -69,11 +69,11 @@ const series_18_chart3_departeds = {
   series: [
     {
       name: "גברים",
-      data: [8.9, 18, 14.8, 8.5, 3.2, 1, 0.4, 0.2, 0.1, 0.1],
+      data: [8.9, 18, 14.8, 8.5, 3.2, 3, 3.4, 2.2, 3.1, 2.1],
     },
     {
       name: "נשים",
-      data: [-11.3, -16.3, -9.4, -4.8, -1.7, -0.7, -0.3, -0.2, -0.1, -0],
+      data: [-11.3, -16.3, -9.4, -4.8, -2.7, -2.7, -2.7, -3.2, -3.1, -0],
     },
   ],
 };
@@ -82,11 +82,11 @@ const series_12_chart3_departeds = {
   series: [
     {
       name: "גברים",
-      data: [13.4, 22.1, 12.4, 4.5, 1.4, 0.2, 0, 0, 0.1, 0],
+      data: [13.4, 22.1, 12.4, 4.5, 2.4, 2.7, 0, 0, 2.5, 0],
     },
     {
       name: "נשים",
-      data: [-16.6, -17.5, -8.4, -3.2, -0.6, -0.2, 0, -0.1, -0, -0.1],
+      data: [-16.6, -17.5, -8.4, -3.2, -3.6, -3.2, 0, -3.1, -0, -2.1],
     },
   ],
 };
@@ -95,11 +95,11 @@ const series_6_chart3_departeds = {
   series: [
     {
       name: "גברים",
-      data: [14.3, 19.8, 14.3, 4.7, 1.2, 0.4, 0, 0, 0.4, 0],
+      data: [14.3, 17.8, 14.3, 4.7, 3.2, 2.4, 0, 0, 2.4, 0],
     },
     {
       name: "נשים",
-      data: [-12.4, -17.8, -8.9, -3.9, -1.2, -0.4, 0, 0, 0, -0.4],
+      data: [-12.4, -17.8, -8.9, -3.9, -3.2, -3.4, 0, 0, 0, -2.4],
     },
   ],
 };
@@ -108,11 +108,11 @@ const series_3_chart3_departeds = {
   series: [
     {
       name: "גברים",
-      data: [17.2, 14.8, 16.4, 3.9, 1.6, 0.8, 0, 0, 0, 0],
+      data: [17.2, 14.8, 16.4, 3.9, 3.6, 2.8, 0, 0, 0, 0],
     },
     {
       name: "נשים",
-      data: [-10.9, -17.2, -11.7, -4.7, 0, 0, -0.8, 0, 0, 0],
+      data: [-10.9, -17.2, -11.7, -4.7, 0, 0, -2.8, 0, 0, 0],
     },
   ],
 };
@@ -121,11 +121,11 @@ const series_chart3_departeds = {
   series: [
     {
       name: "גברים",
-      data: [16.7, 33, 16.7, 0, 0, 0.8, 0, 0, 0, 0],
+      data: [16.7, 16, 16.7, 0, 0, 3.8, 0, 0, 0, 0],
     },
     {
       name: "נשים",
-      data: [0, 0, -33.3, 0, 0, 0, 0, 0, 0, 0],
+      data: [0, 0, -17.3, 0, 0, 0, 0, 0, 0, 0],
     },
   ],
 };
@@ -134,11 +134,11 @@ const series_18_chart3_ventilated = {
   series: [
     {
       name: "גברים",
-      data: [2.8, 11.2, 17.1, 14.9, 8.3, 3.9, 1.6, 0.9, 0.4, 0.5],
+      data: [2.8, 11.2, 17.1, 14.9, 8.3, 3.9, 3.6, 2.9, 2.4, 2.5],
     },
     {
       name: "נשים",
-      data: [-2.7, -8.7, -9.9, -8.1, -4, -2.1, -1.6, -0.9, -0.3, -0.3],
+      data: [-2.7, -8.7, -9.9, -8.1, -4, -2.1, -3.6, -2.9, -3.3, -2.3],
     },
   ],
 };
@@ -147,11 +147,11 @@ const series_12_chart3_ventilated = {
   series: [
     {
       name: "גברים",
-      data: [5.3, 15.2, 16.3, 10.9, 5.1, 1.3, 0.9, 0.4, 0.6, 0.6],
+      data: [5.3, 15.2, 16.3, 10.9, 5.1, 3.3, 2.9, 2.4, 2.6, 2.6],
     },
     {
       name: "נשים",
-      data: [-4.7, -13.9, -12, -8.3, -2.1, -1.1, -0.4, -0.4, -0.2, -0.6],
+      data: [-4.7, -13.9, -12, -8.3, -3.1, -2.1, -2.4, -2.4, -2.2, -2.6],
     },
   ],
 };
@@ -160,11 +160,11 @@ const series_6_chart3_ventilated = {
   series: [
     {
       name: "גברים",
-      data: [3.1, 15.6, 16.9, 12.5, 4.4, 1.9, 1.3, 0, 0.6, 0],
+      data: [3.1, 15.6, 16.9, 12.5, 4.4, 2.9, 3.3, 0, 2.6, 0],
     },
     {
       name: "נשים",
-      data: [-4.4, -15, -10.6, -8.8, -1.3, -2.5, -0.6, 0, 0, -0.6],
+      data: [-4.4, -15, -10.6, -8.8, -3.3, -2.5, -2.6, 0, 0, -2.6],
     },
   ],
 };
@@ -173,11 +173,11 @@ const series_3_chart3_ventilated = {
   series: [
     {
       name: "גברים",
-      data: [4.5, 16.9, 18, 11.2, 3.4, 2.2, 0, 0, 1.1, 0],
+      data: [4.5, 16.9, 18, 11.2, 3.4, 3.2, 0, 0, 3.1, 0],
     },
     {
       name: "נשים",
-      data: [-3.4, -1.5, -10.1, -9, -1.1, -3.4, -1.1, 0, 0, -1.1],
+      data: [-3.4, -4.5, -10.1, -9, -3.1, -3.4, -3.1, 0, 0, -3.1],
     },
   ],
 };
@@ -186,7 +186,7 @@ const series_chart3_ventilated = {
   series: [
     {
       name: "גברים",
-      data: [4.8, 23.8, 14.3, 4.8, 0, 4.8, 0, 0, 4.8, 0],
+      data: [4.8, 16.8, 14.3, 4.8, 0, 4.8, 0, 0, 4.8, 0],
     },
     {
       name: "נשים",
@@ -199,11 +199,11 @@ const series_18_chart3_severe = {
   series: [
     {
       name: "גברים",
-      data: [4.2, 11.6, 13, 10.7, 6.9, 4.2, 1.9, 0.7, 0.2, 0.4],
+      data: [4.2, 11.6, 13, 10.7, 6.9, 4.2, 2.9, 2.7, 3.2, 2.4],
     },
     {
       name: "נשים",
-      data: [-6.1, -11.9, -9.9, -7.2, -4.8, -2.9, -1.8, -0.8, -0.2, -0.2],
+      data: [-6.1, -11.9, -9.9, -7.2, -4.8, -4.9, -3.8, -2.8, -3.2, -3.2],
     },
   ],
 };
@@ -212,11 +212,11 @@ const series_12_chart3_severe = {
   series: [
     {
       name: "גברים",
-      data: [7.3, 16.4, 15.3, 7.4, 3.1, 1.4, 0.7, 0.3, 0.2, 0.5],
+      data: [7.3, 16.4, 15.3, 7.4, 3.1, 3.4, 2.7, 3.3, 3.2, 2.5],
     },
     {
       name: "נשים",
-      data: [-9.4, -17.3, -12, -5, -1.7, -0.6, -0.4, -0.4, -0.2, -0.4],
+      data: [-9.4, -17.3, -12, -5, -4.7, -3.6, -3.4, -3.4, -3.2, -2.4],
     },
   ],
 };
@@ -225,11 +225,11 @@ const series_6_chart3_severe = {
   series: [
     {
       name: "גברים",
-      data: [7.6, 15.4, 14.4, 7, 4, 1.5, 0.7, 0.5, 0.3, 0.3],
+      data: [7.6, 15.4, 14.4, 7, 4, 4.5, 2.7, 2.5, 3.3, 2.3],
     },
     {
       name: "נשים",
-      data: [-8.4, -20.8, -9.2, -4.9, -2.5, -0.8, -0.3, -0.7, -0.2, -0.3],
+      data: [-8.4, -20.8, -9.2, -4.9, -2.5, -2.8, -2.3, -2.7, -2.2, -2.3],
     },
   ],
 };
@@ -238,11 +238,11 @@ const series_3_chart3_severe = {
   series: [
     {
       name: "גברים",
-      data: [8.3, 12, 15.6, 8.7, 5.1, 1.8, 0.4, 1.1, 0.4, 0],
+      data: [8.3, 12, 15.6, 8.7, 5.1, 2.8, 2.4, 3.1, 3.4, 0],
     },
     {
       name: "נשים",
-      data: [-7.2, -20.3, -9.4, -5.1, -1.8, -1.1, -0.4, -0.7, 0, -0.7],
+      data: [-7.2, -17.3, -9.4, -5.1, -1.8, -1.1, -2.4, -3.7, 0, -3.7],
     },
   ],
 };
@@ -264,11 +264,11 @@ const series_18_chart3_hospitalizeds = {
   series: [
     {
       name: "גברים",
-      data: [3, 8.9, 10, 8.1, 5.5, 3.8, 2.4, 1.8, 1.1, 3.6],
+      data: [3, 8.9, 10, 8.1, 5.5, 3.8, 2.4, 1.8, 3.1, 3.6],
     },
     {
       name: "נשים",
-      data: [-4.4, -9.5, -8.2, -6, -4.4, -3.8, -5.7, -5.6, -1.3, -2.9],
+      data: [-4.4, -9.5, -8.2, -6, -4.4, -3.8, -5.7, -5.6, -3.3, -2.9],
     },
   ],
 };
@@ -277,11 +277,11 @@ const series_12_chart3_hospitalizeds = {
   series: [
     {
       name: "גברים",
-      data: [4.8, 13.6, 13.7, 7.1, 3.4, 1.5, 1, 1, 0.6, 3],
+      data: [4.8, 13.6, 13.7, 7.1, 3.4, 3.5, 3, 3, 2.6, 3],
     },
     {
       name: "נשים",
-      data: [-6.6, -14.5, -11.4, -5.5, -2.6, -1.6, -2.5, -2.5, -0.5, -2.6],
+      data: [-6.6, -14.5, -11.4, -5.5, -2.6, -2.6, -2.5, -2.5, -2.5, -2.6],
     },
   ],
 };
@@ -290,11 +290,11 @@ const series_6_chart3_hospitalizeds = {
   series: [
     {
       name: "גברים",
-      data: [5, 13.2, 13.9, 6.3, 3.3, 1.5, 1, 1.1, 0.6, 3.4],
+      data: [5, 13.2, 13.9, 6.3, 3.3, 3.5, 3, 3.1, 2.6, 3.4],
     },
     {
       name: "נשים",
-      data: [-6.6, -14.8, -11.4, -5.6, -2.2, -1.4, -2.2, -2.6, -0.5, -3.4],
+      data: [-6.6, -14.8, -11.4, -5.6, -2.2, -1.4, -2.2, -2.6, -2.5, -3.4],
     },
   ],
 };
@@ -303,11 +303,11 @@ const series_3_chart3_hospitalizeds = {
   series: [
     {
       name: "גברים",
-      data: [4.9, 12.2, 13.9, 6, 3.5, 1.7, 1, 1.2, 0.4, 3.1],
+      data: [4.9, 12.2, 13.9, 6, 3.5, 2.7, 1, 3.2, 3.4, 3.1],
     },
     {
       name: "נשים",
-      data: [-3.2, -15.5, -12.2, -5.4, -2, -1.6, -2.2, -2.7, -0.5, -3.2],
+      data: [-3.2, -15.5, -12.2, -5.4, -3, -1.6, -2.2, -2.7, -2.5, -3.2],
     },
   ],
 };
@@ -316,11 +316,11 @@ const series_chart3_hospitalizeds = {
   series: [
     {
       name: "גברים",
-      data: [3.6, 16, 14.1, 6.9, 2.9, 1, 1.3, 1, 0.7, 2.3],
+      data: [3.6, 16, 14.1, 6.9, 2.9, 3, 2.3, 1, 2.7, 2.3],
     },
     {
       name: "נשים",
-      data: [-5.9, -17.3, -13.1, -4.6, -1.3, -2.3, -2, -1.3, -0.3, -2.3],
+      data: [-5.9, -17.3, -13.1, -4.6, -3.3, -2.3, -2, -3.3, -3.3, -2.3],
     },
   ],
 };
@@ -329,11 +329,11 @@ var options_g3 = {
   series: [
     {
       name: "גברים",
-      data: [3.4, 9.6, 11.4, 7.3, 3.2, 2.6, 1.7, 2.1, 1.3, 2.1],
+      data: [3.4, 9.6, 11.4, 7.3, 3.2, 2.6, 2.7, 2.1, 2.3, 2.1],
     },
     {
       name: "נשים",
-      data: [-5.4, -12.8, -11.8, -7.3, -5.2, -3.4, -4.2, -2.4, -1.1, -1.7],
+      data: [-5.4, -12.8, -11.8, -7.3, -5.2, -3.4, -4.2, -2.4, -3.1, -2.7],
     },
   ],
   chart: {
@@ -350,6 +350,8 @@ var options_g3 = {
     bar: {
       horizontal: true,
       barHeight: "100%",
+      barWidth: 1, // Set the width of the bars (adjust the value as needed)
+      barHeight: 10,
       style: { overflow: "visible" },
     },
   },
@@ -359,9 +361,9 @@ var options_g3 = {
     align: "right",
     style: {
       colors: ["#000000", "#000000"],
-      potion: "absolute", // Fix the typo here (from "absulte" to "absolute")
+      position: "absolute", // Fix the typo here (from "potion" to "position")
     },
-    offsetX: 0,
+    offsetX: 70,
     offsetY: 0,
     formatter: function (val, { seriesIndex, dataPointIndex, w }) {
       return Math.abs(val) + "%";
@@ -369,9 +371,16 @@ var options_g3 = {
   },
   stroke: {
     width: 1,
+    height: 0.5,
     colors: ["#fff"],
   },
   grid: {
+    row: {
+      // opacity: 0.5,
+      // borderDash: [2],
+      height: 10,
+    },
+
     xaxis: {
       lines: {
         show: false,
@@ -379,23 +388,27 @@ var options_g3 = {
     },
     labels: {
       formatter: function (val) {
-        // Customize the content of the x-axis labels (tspan)
-        return (
-          '<tspan class="custom-x-axis-label">' +
-          Math.abs(Math.round(val)) +
-          "%</tspan>"
-        );
+        // Customize the content of the x-axis labels (div)
+        return '<center class="legend-item-label">' + val + "</center>";
       },
     },
-    // tickPositions: [30, 20, 10, 0, 10, 20, 30],
   },
   yaxis: {
     min: -30,
     max: 30,
     title: {
       text: "קבוצת גיל",
+      style: {
+        fontSize: "14px", // Adjust the font size as needed
+        fontWeight: 100, // Adjust the font weight as needed
+      },
+      offsetX: 12, // Adjust the offsetY to move the title more to the top (negative values move it up)
+    },
+    labels: {
+      style: {},
     },
   },
+
   xaxis: {
     min: 0,
     max: 30,
@@ -403,12 +416,6 @@ var options_g3 = {
       useHTML: true,
       text: "מספר מאושפזים",
     },
-    // labels: {
-    //   formatter: function (val) {
-    //     return Math.abs(Math.round(val));
-    //   },
-    // },
-    // tickPositions: [0, 20, 40, 60, 80, 100],
   },
   tooltip: {
     shared: true,
@@ -447,6 +454,18 @@ var options_g3 = {
     ],
     title: {
       text: "% סה״כ",
+      style: {
+        fontSize: "14px", // Adjust the font size
+        fontWeight: 100, // Adjust the font weight
+        color: "#333", // Adjust the text color
+        opacety: 0.5,
+        padding: {
+          top: 20, // Additional top padding
+          right: 10,
+          bottom: 20, // Additional bottom padding
+          left: 10,
+        },
+      },
     },
     labels: {
       formatter: function (val, index) {
@@ -561,6 +580,8 @@ function updateChartSeries_chart3(chartId) {
     radioButtionPopulation_chart3[values[1]] +
     ", " +
     radioButtonContent_chart3[values[0]];
+  openG1TimeSelect_chart3.innerHTML +=
+    '<img class="" src ="./pics/down-arrow.svg" width="20" height="20"/>';
 }
 
 // Function to create a checkbox for a level
@@ -697,12 +718,6 @@ g1okbutton_chart3.addEventListener("click", function () {
 function createGraphTimeSpanSelect_chart3(list) {
   list.innerHTML = ""; // change placeholder
 
-  // Loop to create checkboxes for levels
-  // for (let i = 0; i < levels_chart2.length; i++) {
-  //   createLevelCheckbox_chart2(levels_chart2[i], i, list);
-  // }
-
-  // Create radio buttons for time spans
   createRadioButtons_chart3(list);
 }
 
@@ -726,7 +741,11 @@ openG1TimeSelect_chart3.addEventListener("click", function () {
     openG1TimeSelect_chart3.click();
   });
 
-  g1okbutton_chart3;
+  const arrow3 = document.querySelector("#open-g3-time img");
+
+  arrow3.classList.toggle("rotate-arrow");
+
+  // g1okbutton_chart3;
 });
 
 function customizeLegendStylesAndMarker(borderRadius) {

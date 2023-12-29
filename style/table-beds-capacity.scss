@@ -55,15 +55,6 @@
   @media screen and (min-width: 1000px) {
     padding-left: 5px;
   }
-  @media screen and (max-width: 900px) {
-    // padding-inline-start: 100px;
-    // width: calc(100% / 3);
-    // text-align: start;
-    // width: fit-content;
-    // margin: 0 !important;
-    // padding: 0 !important;
-    // margin: auto !important;
-  }
 }
 
 .internal-capacity {
@@ -98,7 +89,7 @@
   justify-content: space-between;
   align-items: center;
   position: absolute;
-  bottom: -32px;
+  // bottom: -32px;
   z-index: 9999;
   width: 100%;
   background-color: white;
@@ -111,9 +102,26 @@
 #country-select .countries,
 #settlement-select .settlements,
 .graph_select .graphs {
-  max-height: 120px;
+  max-height: 240px;
   overflow-y: scroll;
   background-color: white;
+
+  scrollbar-color: darkgrey white; /* For Firefox */
+
+  /* For WebKit (Chrome, Safari, etc.) */
+  &::-webkit-scrollbar {
+    width: 8px;
+    // border-radius: 50%;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    border-radius: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: white;
+  }
 }
 
 .settlements {
@@ -151,9 +159,10 @@
 }
 .graph_select {
   position: absolute;
-  z-index: 9999;
+  z-index: 99;
   top: 52px;
   right: 2rem;
+
   width: 200px;
 }
 .option-hospital input[type="checkbox"],
@@ -170,21 +179,32 @@
 #search-hospital,
 #search-country,
 #search-settlement {
-  max-height: 30px;
-  padding: 10px;
+  // max-height: 30px;
+  // padding: 10px;
   background-color: rgba(128, 128, 128, 0.1);
   width: fit-content;
   display: flex;
   justify-content: center !important;
   min-width: 200px;
+  width: fit-content;
   text-align: center;
   z-index: 980;
+  height: fit-content;
   margin-right: 1rem;
   margin-block: 1rem;
   padding: 0.5rem;
   position: relative;
   border-radius: 100px;
   border: 1px solid lightgray;
+}
+
+#search-settlement .search-controls,
+#search-hospital .search-controls {
+  width: 190px;
+}
+
+#search-country .search-controls {
+  width: 200px;
 }
 
 .search-button-2,
@@ -202,6 +222,10 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  font-size: 14px !important;
+  padding: 4px;
+  // width: 200px;
+  // background-color: yellow;
 }
 
 .progress {
@@ -209,7 +233,7 @@
   max-width: 50px;
   height: 10px;
   background-color: rgb(228, 230, 253);
-  margin-block: 0.5rem;
+  // margin-block: 0.5rem;
   position: relative;
   overflow: hidden;
 }
@@ -243,7 +267,6 @@
   height: max-content;
   cursor: pointer;
 
-  // width: fit-content;
   font-weight: bold;
   th {
     width: 10px;
@@ -287,8 +310,9 @@
 .search-controls {
   width: 90%;
   button {
-    background-color: rgb(190, 204, 219);
+    background-color: rgb(230, 241, 244);
     // border-radius: 5px;
+    font-weight: 500;
     border: transparent;
     padding: 5px;
     height: 30px;
@@ -297,10 +321,11 @@
 
 .dot-button {
   width: 30px;
+  cursor: pointer;
 }
 
 .tables {
   background-color: rgb(244, 246, 249);
-  border: 3px dashed rgb(128, 128, 128, 0.3); /* Setting initial border */
-  border: unset !important; /* Unsetting the border with !important */
+  border: 3px dashed rgb(128, 128, 128, 0.3);
+  border: unset !important;
 }

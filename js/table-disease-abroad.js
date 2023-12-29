@@ -385,21 +385,33 @@ let countryTableData = [
     verifiedsForeigners,
     landingsVerifieds,
   ] = row;
-  let modifiedLandingsVerifieds = parseFloat(
-    landingsVerifieds.replace("%", "")
+  let modifiedLandingsVerifieds = Math.max(
+    parseFloat(landingsVerifieds.replace("%", "")),
+    0
   );
-  let modifiedLandings = parseInt(landings) - Math.random() * 1500;
+
+  let modifiedLandings = Math.max(parseInt(landings) - Math.random() * 1500, 0);
+
   modifiedLandingsVerifieds -= Math.random() * 15;
-  let modifiedverifieds = parseInt(verifieds) - Math.random() * 10500;
+
+  let modifiedverifieds = Math.max(
+    parseInt(verifieds) - Math.random() * 10500,
+    0
+  );
+
   modifiedLandingsVerifieds -= Math.random() * 7;
-  let modifiedlandingsVerifieds =
-    parseInt(landingsVerifieds) + Math.random() * 1500;
+
+  let modifiedlandingsVerifieds = Math.max(
+    parseInt(landingsVerifieds) + Math.random() * 1500,
+    0
+  );
+
   modifiedLandingsVerifieds += Math.random() * 15;
-  // nonCovidPercentage -= Math.random() * 50;
+
   return [
     country,
     color,
-    modifiedLandings.toFixed(0), // change to variables
+    modifiedLandings.toFixed(0),
     modifiedverifieds.toFixed(0),
     modifiedlandingsVerifieds.toFixed(0),
     Math.floor(modifiedLandingsVerifieds) + "%",
@@ -463,7 +475,7 @@ const country_search_input = document.getElementById("search-country"); // chang
 const country_search_input_span = document.querySelector(
   "#search-country span" // change to search-country id in html
 );
-const country_searchButton = document.querySelector(".search-button"); // change to search-button id in html
+const country_searchButton = document.querySelector(".search-button-2"); // change to search-button id in html
 let countryClickCounts = { 0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 }; // same
 let countryNames = []; // different names
 
