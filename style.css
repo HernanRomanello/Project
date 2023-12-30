@@ -264,6 +264,22 @@ ul {
   max-height: 440px !important;
 }
 
+.black {
+  color: black !important;
+}
+
+.white {
+  background-color: white !important;
+}
+
+.dot-button-white img {
+  filter: invert(100%) !important;
+}
+
+.dark-blue {
+  background-color: rgb(55, 79, 96) !important;
+}
+
 #modal {
   display: none;
   position: fixed;
@@ -524,7 +540,7 @@ ul {
 }
 
 .bg-white {
-  background: white !important;
+  background: white;
   width: 100%;
   position: relative;
 }

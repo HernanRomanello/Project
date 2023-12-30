@@ -15,11 +15,11 @@ const series_12_chart3 = {
   series: [
     {
       name: "גברים",
-      data: [3.4, 9.6, 11.4, 7.3, 3.2, 2.6, 3.7, 2.1, 3.9, 2.3],
+      data: [3.4, 9.6, 11.4, 7.3, 3.2, 2.6, 3.7, 2.7, 3.9, 2.3],
     },
     {
       name: "נשים",
-      data: [-2.5, -6.4, -8.8, -8, -7.5, -6.9, -6.2, -6.5, -3.8, -2.3],
+      data: [-2.5, -6.4, -8.8, -8, -7.5, -6.9, -6.2, -6.5, -3.8, -2.6],
     },
   ],
 };
@@ -32,7 +32,7 @@ const series_6_chart3 = {
     },
     {
       name: "נשים",
-      data: [-4, -9.5, -11.5, -8.3, -5.7, -4.3, -4.2, -3.8, -2.4, -2.5],
+      data: [-4, -9.5, -11.5, -8.3, -5.7, -4.3, -4.2, -3.8, -2.7, -2.5],
     },
   ],
 };
@@ -69,7 +69,7 @@ const series_18_chart3_departeds = {
   series: [
     {
       name: "גברים",
-      data: [8.9, 18, 14.8, 8.5, 3.2, 3, 3.4, 2.2, 3.1, 2.1],
+      data: [8.9, 18, 14.8, 8.5, 3.2, 3, 3.4, 2.2, 3.1, 2.9],
     },
     {
       name: "נשים",
@@ -82,11 +82,11 @@ const series_12_chart3_departeds = {
   series: [
     {
       name: "גברים",
-      data: [13.4, 22.1, 12.4, 4.5, 2.4, 2.7, 0, 0, 2.5, 0],
+      data: [13.4, 16.1, 12.4, 4.5, 2.4, 2.7, 0, 0, 2.5, 0],
     },
     {
       name: "נשים",
-      data: [-16.6, -17.5, -8.4, -3.2, -3.6, -3.2, 0, -3.1, -0, -2.1],
+      data: [-16.6, -17.5, -8.4, -3.2, -3.6, -3.2, 0, -3.1, -0, -2.8],
     },
   ],
 };
@@ -99,7 +99,7 @@ const series_6_chart3_departeds = {
     },
     {
       name: "נשים",
-      data: [-12.4, -17.8, -8.9, -3.9, -3.2, -3.4, 0, 0, 0, -2.4],
+      data: [-12.4, -17.8, -8.9, -3.9, -3.2, -3.4, 0, 0, 0, -2.8],
     },
   ],
 };
@@ -138,7 +138,7 @@ const series_18_chart3_ventilated = {
     },
     {
       name: "נשים",
-      data: [-2.7, -8.7, -9.9, -8.1, -4, -2.1, -3.6, -2.9, -3.3, -2.3],
+      data: [-2.7, -8.7, -9.9, -8.1, -4, -2.8, -3.6, -2.9, -3.3, -2.8],
     },
   ],
 };
@@ -151,7 +151,7 @@ const series_12_chart3_ventilated = {
     },
     {
       name: "נשים",
-      data: [-4.7, -13.9, -12, -8.3, -3.1, -2.1, -2.4, -2.4, -2.2, -2.6],
+      data: [-4.7, -13.9, -12, -8.3, -3.1, -2.7, -3.4, -2.8, -2.6, -2.6],
     },
   ],
 };
@@ -199,7 +199,7 @@ const series_18_chart3_severe = {
   series: [
     {
       name: "גברים",
-      data: [4.2, 11.6, 13, 10.7, 6.9, 4.2, 2.9, 2.7, 3.2, 2.4],
+      data: [4.2, 11.6, 13, 10.7, 6.9, 4.2, 2.9, 2.7, 3.2, 2.8],
     },
     {
       name: "נשים",
@@ -216,7 +216,7 @@ const series_12_chart3_severe = {
     },
     {
       name: "נשים",
-      data: [-9.4, -17.3, -12, -5, -4.7, -3.6, -3.4, -3.4, -3.2, -2.4],
+      data: [-9.4, -17.3, -12, -5, -4.7, -3.6, -3.4, -3.4, -3.2, -2.8],
     },
   ],
 };
@@ -229,7 +229,7 @@ const series_6_chart3_severe = {
     },
     {
       name: "נשים",
-      data: [-8.4, -20.8, -9.2, -4.9, -2.5, -2.8, -2.3, -2.7, -2.2, -2.3],
+      data: [-8.4, -17.8, -9.2, -4.9, -2.5, -2.8, -3.3, -2.7, -2.8, -2.9],
     },
   ],
 };
@@ -242,7 +242,7 @@ const series_3_chart3_severe = {
     },
     {
       name: "נשים",
-      data: [-7.2, -17.3, -9.4, -5.1, -1.8, -1.1, -2.4, -3.7, 0, -3.7],
+      data: [-7.2, -17.3, -9.4, -5.1, -2.8, -3.1, -2.8, -3.7, 0, -3.7],
     },
   ],
 };
@@ -255,7 +255,7 @@ const series_chart3_severe = {
     },
     {
       name: "נשים",
-      data: [-8.3, -22.2, -11.1, -11.1, -2.8, -2.8, 0, 0, 0, -2.8],
+      data: [-8.3, -16.2, -11.1, -11.1, -2.8, -2.8, 0, 0, 0, -2.8],
     },
   ],
 };
@@ -264,7 +264,7 @@ const series_18_chart3_hospitalizeds = {
   series: [
     {
       name: "גברים",
-      data: [3, 8.9, 10, 8.1, 5.5, 3.8, 2.4, 1.8, 3.1, 3.6],
+      data: [3, 8.9, 10, 8.1, 5.5, 3.8, 2.4, 3.8, 3.1, 3.6],
     },
     {
       name: "נשים",
@@ -281,7 +281,7 @@ const series_12_chart3_hospitalizeds = {
     },
     {
       name: "נשים",
-      data: [-6.6, -14.5, -11.4, -5.5, -2.6, -2.6, -2.5, -2.5, -2.5, -2.6],
+      data: [-6.6, -14.5, -11.4, -5.5, -2.6, -2.6, -2.9, -3.5, -2.8, -2.6],
     },
   ],
 };
@@ -290,11 +290,11 @@ const series_6_chart3_hospitalizeds = {
   series: [
     {
       name: "גברים",
-      data: [5, 13.2, 13.9, 6.3, 3.3, 3.5, 3, 3.1, 2.6, 3.4],
+      data: [5, 13.2, 13.9, 6.3, 3.3, 3.5, 3, 3.1, 2.9, 3.4],
     },
     {
       name: "נשים",
-      data: [-6.6, -14.8, -11.4, -5.6, -2.2, -1.4, -2.2, -2.6, -2.5, -3.4],
+      data: [-6.6, -14.8, -11.4, -5.6, -2.2, -3.4, -2.8, -2.6, -2.8, -3.4],
     },
   ],
 };
@@ -303,11 +303,11 @@ const series_3_chart3_hospitalizeds = {
   series: [
     {
       name: "גברים",
-      data: [4.9, 12.2, 13.9, 6, 3.5, 2.7, 1, 3.2, 3.4, 3.1],
+      data: [4.9, 12.2, 13.9, 6, 3.5, 2.7, 3, 3.2, 3.4, 3.1],
     },
     {
       name: "נשים",
-      data: [-3.2, -15.5, -12.2, -5.4, -3, -1.6, -2.2, -2.7, -2.5, -3.2],
+      data: [-3.2, -15.5, -12.2, -5.4, -3, -3.6, -2.8, -2.7, -2.5, -3.2],
     },
   ],
 };
@@ -316,11 +316,11 @@ const series_chart3_hospitalizeds = {
   series: [
     {
       name: "גברים",
-      data: [3.6, 16, 14.1, 6.9, 2.9, 3, 2.3, 1, 2.7, 2.3],
+      data: [3.6, 16, 14.1, 6.9, 2.9, 3, 2.8, 3, 2.7, 2.3],
     },
     {
       name: "נשים",
-      data: [-5.9, -17.3, -13.1, -4.6, -3.3, -2.3, -2, -3.3, -3.3, -2.3],
+      data: [-5.9, -17.3, -13.1, -4.6, -3.3, -2.8, -3, -3.3, -3.3, -2.6],
     },
   ],
 };
@@ -329,11 +329,11 @@ var options_g3 = {
   series: [
     {
       name: "גברים",
-      data: [3.4, 9.6, 11.4, 7.3, 3.2, 2.6, 2.7, 2.1, 2.3, 2.1],
+      data: [3.4, 9.6, 11.4, 7.3, 3.2, 2.6, 2.7, 5.7, 2.3, 2.1],
     },
     {
       name: "נשים",
-      data: [-5.4, -12.8, -11.8, -7.3, -5.2, -3.4, -4.2, -2.4, -3.1, -2.7],
+      data: [-5.4, -12.8, -11.8, -7.3, -5.2, -3.4, -4.2, -3.4, -3.1, -2.7],
     },
   ],
   chart: {
@@ -341,6 +341,8 @@ var options_g3 = {
     height: 300,
     stacked: true,
     parentHeightOffset: 0,
+    background: "rgb(255,255,255)", // Example background color
+
     toolbar: {
       show: false,
     },
@@ -349,9 +351,7 @@ var options_g3 = {
   plotOptions: {
     bar: {
       horizontal: true,
-      barHeight: "100%",
-      barWidth: 1, // Set the width of the bars (adjust the value as needed)
-      barHeight: 10,
+      barWidth: 1,
       style: { overflow: "visible" },
     },
   },
@@ -360,8 +360,9 @@ var options_g3 = {
     textAnchor: "middle",
     align: "right",
     style: {
-      colors: ["#000000", "#000000"],
-      position: "absolute", // Fix the typo here (from "potion" to "position")
+      colors: ["black", "black"],
+      position: "absolute",
+      fontWeight: 100,
     },
     offsetX: 70,
     offsetY: 0,
@@ -376,11 +377,8 @@ var options_g3 = {
   },
   grid: {
     row: {
-      // opacity: 0.5,
-      // borderDash: [2],
       height: 10,
     },
-
     xaxis: {
       lines: {
         show: false,
@@ -388,10 +386,10 @@ var options_g3 = {
     },
     labels: {
       formatter: function (val) {
-        // Customize the content of the x-axis labels (div)
         return '<center class="legend-item-label">' + val + "</center>";
       },
     },
+    background: "rgb(255, 0, 0)",
   },
   yaxis: {
     min: -30,
@@ -399,22 +397,27 @@ var options_g3 = {
     title: {
       text: "קבוצת גיל",
       style: {
-        fontSize: "14px", // Adjust the font size as needed
-        fontWeight: 100, // Adjust the font weight as needed
+        fontSize: "14px",
+        fontWeight: 100,
+        color: "black", // Change the font color to black
       },
-      offsetX: 12, // Adjust the offsetY to move the title more to the top (negative values move it up)
+      offsetX: 10,
     },
     labels: {
-      style: {},
+      // style: {},
     },
   },
-
   xaxis: {
     min: 0,
     max: 30,
     title: {
       useHTML: true,
       text: "מספר מאושפזים",
+      style: {
+        fontSize: "14px",
+        fontWeight: 100,
+        color: "black", // Change the font color to black
+      },
     },
   },
   tooltip: {
@@ -436,7 +439,7 @@ var options_g3 = {
     text: "",
   },
   legend: {
-    position: "top", // Set the legend position
+    position: "top",
   },
   xaxis: {
     type: "category",
@@ -455,21 +458,20 @@ var options_g3 = {
     title: {
       text: "% סה״כ",
       style: {
-        fontSize: "14px", // Adjust the font size
-        fontWeight: 100, // Adjust the font weight
-        color: "#333", // Adjust the text color
-        opacety: 0.5,
+        color: "black", // Change the font color to black
+        fontSize: "14px",
+        fontWeight: 100,
+        opacity: 0.5,
         padding: {
-          top: 20, // Additional top padding
+          top: 20,
           right: 10,
-          bottom: 20, // Additional bottom padding
+          bottom: 20,
           left: 10,
         },
       },
     },
     labels: {
       formatter: function (val, index) {
-        // Customize the content of the x-axis labels
         var customLabels = ["30", "20", "10", "10", "20", "30"];
         return customLabels[index];
       },
@@ -477,9 +479,232 @@ var options_g3 = {
   },
 };
 
-var chart_3 = new ApexCharts(document.querySelector("#g-3"), options_g3);
+function changeChartBackgroundColor(chart, color) {
+  chart.updateOptions({
+    chart: {
+      background: color,
+    },
+  });
+}
 
+function changeFontColorToWhite(chart, color) {
+  chart.updateOptions({
+    dataLabels: {
+      style: {
+        colors: [color, color], // Change the font color to white
+        position: "absolute",
+        fontWeight: 100,
+      },
+    },
+    yaxis: {
+      title: {
+        style: {
+          color: color, // Change the font color to white
+          fontSize: "14px",
+          fontWeight: 100,
+        },
+      },
+    },
+    xaxis: {
+      title: {
+        style: {
+          color: color, // Change the font color to white
+          fontSize: "14px",
+          fontWeight: 100,
+        },
+      },
+    },
+    legend: {
+      labels: {
+        colors: ["white", "white"], // Change the font color to white
+      },
+    },
+    xaxis: {
+      title: {
+        style: {
+          color: "white", // Change the font color to white
+          fontSize: "14px",
+          fontWeight: 100,
+        },
+      },
+      labels: {
+        style: {
+          colors: [
+            "white",
+            "white",
+            "white",
+            "white",
+            "white",
+            "white",
+            "white",
+            "white",
+            "white",
+            "white",
+          ], // Change the font color to white
+        },
+      },
+    },
+  });
+}
+
+function changeChartStyle(
+  chart,
+  fontColor,
+  backgroundColor,
+  manColor,
+  womanColor
+) {
+  chart.updateOptions({
+    chart: {
+      type: "bar",
+      height: 300,
+      stacked: true,
+      parentHeightOffset: 0,
+      background: backgroundColor,
+      toolbar: {
+        show: false,
+      },
+    },
+    colors: [manColor, womanColor],
+    dataLabels: {
+      enabled: true,
+      textAnchor: "middle",
+      align: "right",
+      style: {
+        colors: [fontColor, fontColor],
+        position: "absolute",
+        fontWeight: 100,
+      },
+      offsetX: 70,
+      offsetY: 0,
+      formatter: function (val, { seriesIndex, dataPointIndex, w }) {
+        return Math.abs(val) + "%";
+      },
+    },
+    stroke: {
+      width: 1,
+      height: 0.5,
+      // colors: ["red"],
+    },
+    grid: {
+      background: backgroundColor,
+    },
+    yaxis: {
+      min: -30,
+      max: 30,
+      title: {
+        text: "קבוצת גיל",
+        style: {
+          fontSize: "14px",
+          fontWeight: 100,
+          color: fontColor,
+        },
+        offsetX: 10,
+      },
+      labels: {
+        style: {
+          colors: [
+            fontColor,
+            fontColor,
+            fontColor,
+            fontColor,
+            fontColor,
+            fontColor,
+            fontColor,
+            fontColor,
+            fontColor,
+            fontColor,
+          ], // Change the font color to white
+        },
+      },
+    },
+    // xaxis: {
+    //   min: 0,
+    //   max: 30,
+    //   title: {
+    //     useHTML: true,
+    //     text: "מספר מאושפזים",
+    //     style: {
+    //       fontSize: "14px",
+    //       fontWeight: 100,
+    //       color: fontColor,
+    //     },
+    //   },
+    // },
+    // tooltip: {
+    //   shared: true,
+    //   intersect: false,
+    //   x: {
+    //     formatter: function (val) {
+    //       return val;
+    //     },
+    //   },
+    //   y: {
+    //     formatter: function (val, { seriesIndex, dataPointIndex, w }) {
+    //       var seriesName = w.config.series[seriesIndex].name;
+    //       return seriesName + ": " + Math.abs(val) + "%";
+    //     },
+    //   },
+    // },
+    title: {
+      text: "",
+    },
+    legend: {
+      position: "top",
+      labels: {
+        colors: [fontColor, fontColor], // Change the font color to white
+      },
+    },
+    xaxis: {
+      // type: "category",
+      // categories: [
+      //   "90+",
+      //   "80-89",
+      //   "70-79",
+      //   "60-69",
+      //   "50-59",
+      //   "40-49",
+      //   "30-39",
+      //   "20-29",
+      //   "10-19",
+      //   "0-9",
+      // ],
+      title: {
+        text: "% סה״כ",
+        style: {
+          color: fontColor,
+          fontSize: "14px",
+          fontWeight: 100,
+          opacity: 0.5,
+          padding: {
+            top: 20,
+            right: 10,
+            bottom: 20,
+            left: 10,
+          },
+        },
+      },
+      labels: {
+        style: {
+          colors: [fontColor],
+        },
+        formatter: function (val, index) {
+          var customLabels = ["30", "20", "10", "10", "20", "30"];
+          return customLabels[index];
+        },
+      },
+    },
+  });
+}
+
+// Example usage:
+let chart_3 = new ApexCharts(document.querySelector("#g-3"), options_g3);
 chart_3.render();
+
+// Call the function to change the chart style
+
+// Call the function to change font colors to white
+// changeFontColorToWhite(chart_3);
 
 // G3
 const openG1TimeSelect_chart3 = document.querySelector("#open-g3-time");

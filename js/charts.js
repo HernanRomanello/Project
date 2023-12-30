@@ -554,7 +554,6 @@ function createLevelCheckbox(level, index, list) {
   list.appendChild(option);
 }
 
-let connt = 0;
 // Function to create radio buttons for time spans
 function createRadioButtons(list) {
   for (let i = 0; i < timeSpans.length; i++) {
@@ -597,26 +596,20 @@ g1okbutton.addEventListener("click", function () {
     const value = selectedRadio.value;
     const content = radioButtonContent[value];
 
-    // Set the checked property of the selected radio button to true
-    // selectedRadio.checked = true;
-
-    // Call the handleTimeSpanChange function with the updated values
     handleTimeSpanChange(true, value);
 
-    // Update the content of openG1TimeSelect
     openG1TimeSelect.textContent += ", " + content;
 
-    // Trigger a click event on openG1TimeSelect
     openG1TimeSelect.click();
   }
   openG1TimeSelect.innerHTML +=
     '<img class="" src ="./pics/down-arrow.svg" width="20" height="20"/>';
 });
 
-// Function to create the entire graph time span select
 function createGraphTimeSpanSelect(list) {
-  list.innerHTML = ""; // change placeholder
+  // Function to create the entire graph time span select
 
+  list.innerHTML = "";
   const label2 = document.createElement("label");
   label2.innerText = "מצב מאושפזים";
   list.appendChild(label2);
@@ -633,14 +626,13 @@ function createGraphTimeSpanSelect(list) {
   createRadioButtons(list);
 }
 
+let connt = 0;
+
 openG1TimeSelect.addEventListener("click", function () {
+  connt++;
   createGraphTimeSpanSelect(select_time);
   G1Container.classList.toggle("hide");
   const arrow = document.querySelector("#open-g1-time img");
-
-  g1cancelbutton.addEventListener("click", function () {
-    openG1TimeSelect.click();
-  });
 
   setTimeout(function () {
     document
@@ -658,3 +650,54 @@ setTimeout(function () {
     .querySelectorAll('text[text-anchor="end"]')
     .forEach((t) => t.setAttribute("text-anchor", "start"));
 }, 100);
+
+g1cancelbutton.addEventListener("click", function () {
+  openG1TimeSelect.click();
+});
+
+function changeChartColors(chart, backgroundColor, fontColor) {
+  if (chart) {
+    chart.update({
+      chart: {
+        backgroundColor: backgroundColor,
+      },
+      xAxis: {
+        labels: {
+          style: {
+            color: fontColor,
+          },
+        },
+      },
+      yAxis: {
+        labels: {
+          style: {
+            color: fontColor,
+          },
+        },
+        title: {
+          useHTML: true,
+          // text: "מספר מאושפזים",
+          style: {
+            color: fontColor,
+          },
+        },
+      },
+      legend: {
+        itemStyle: {
+          color: fontColor,
+        },
+      },
+      tooltip: {
+        style: {
+          color: fontColor,
+        },
+      },
+    });
+  }
+}
+
+// changeChartColors(chart, "red", "white");
+
+// changeChartColors(chart, "rgb(255, 255, 255)", "black");
+
+// changeChartColors(chart, "rgb(55,79,96)", "white");

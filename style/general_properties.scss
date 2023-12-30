@@ -158,6 +158,7 @@ label {
     color: white;
     font-size: 12px;
     text-align: center !important;
+    // color: black !important;
   }
 
   .hover-card {
@@ -266,4 +267,20 @@ ul {
 .medium {
   height: 440px !important;
   max-height: 440px !important;
+}
+
+.black {
+  color: black !important;
+}
+
+.white {
+  background-color: white !important;
+}
+
+.dot-button-white img {
+  filter: invert(100%) !important;
+}
+
+.dark-blue {
+  background-color: rgb(55, 79, 96) !important;
 }

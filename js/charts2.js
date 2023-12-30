@@ -3161,7 +3161,7 @@ const series_chart2_age_above_60 = [
 const chart_2 = Highcharts.chart("g-2", {
   chart: {
     type: "area",
-    width: 420, // Set the width of the chart
+    width: 420,
     height: 220,
     style: {
       marginInline: "auto",
@@ -3210,9 +3210,7 @@ const chart_2 = Highcharts.chart("g-2", {
     style: {
       fontSize: "12px",
     },
-    point: {
-      // marginInline: "20px",
-    },
+    point: {},
   },
 
   plotOptions: {
@@ -3267,7 +3265,6 @@ const chart_2 = Highcharts.chart("g-2", {
       marker: {
         symbol: "circle",
       },
-      // Set lineColor to match the color of the series
       lineColor: "rgb(0,127,127)",
     },
     {
@@ -3339,7 +3336,6 @@ const g1okbutton_chart2 = document.getElementById("g2-ok-button");
 const G1Container_chart2 = document.querySelector("#g2-container");
 
 const showingSeries_2 = JSON.parse(JSON.stringify(series));
-// const populations = ["מעל גיל 60", "מתחת לגיל 60", "כלל האוכלוסיה"];
 let populationsSelection = [false, false, true];
 let timeSpanSelection = [false, false, false, false, true];
 let calculationNumber = [false, true];
@@ -3349,71 +3345,65 @@ const population_2 = {
   "כלל האוכלוסיה": [true, showingSeries_2[2]],
 };
 const seriesByTimeSpan_chart2 = {
-  "[0.5,1]": series_chart2_age_above_60, // 1 month
-  "[0.5,2]": series_chart2_age_under_60, // 1 month
-  "[0.5,3]": series_chart2, // 1 month
-  "[1,1]": series_3_chart2_age_above_60, // 1 month
-  "[1,2]": series_3_chart2_age_under_60, // 1 month
-  "[1,3]": series_3_chart2, // 1 month
+  "[0.5,1]": series_chart2_age_above_60,
+  "[0.5,2]": series_chart2_age_under_60,
+  "[0.5,3]": series_chart2,
+  "[1,1]": series_3_chart2_age_above_60,
+  "[1,2]": series_3_chart2_age_under_60,
+  "[1,3]": series_3_chart2,
 
-  "[6,1]": series_6_chart2_age_above_60, // 1 month
-  "[6,2]": series_6_chart2_age_under_60, // 1 month
-  "[6,3]": series_6_chart2, // 1 month
+  "[6,1]": series_6_chart2_age_above_60,
+  "[6,2]": series_6_chart2_age_under_60,
+  "[6,3]": series_6_chart2,
 
-  "[12,1]": series_12_chart2_age_above_60, // 1 month
-  "[12,2]": series_12_chart2_age_under_60, // 1 month
-  "[12,3]": series_12_chart2, // 1 month
+  "[12,1]": series_12_chart2_age_above_60,
+  "[12,2]": series_12_chart2_age_under_60,
+  "[12,3]": series_12_chart2,
 
-  "[18,1]": series_18_chart2_age_above_60, // 1 month
-  "[18,2]": series_18_chart2_age_under_60, // 1 month
-  "[18,3]": series_18_chart2, // 1 month
+  "[18,1]": series_18_chart2_age_above_60,
+  "[18,2]": series_18_chart2_age_under_60,
+  "[18,3]": series_18_chart2,
 };
 const tickPositionsByTimeSpan_chart2 = {
-  "[0.5,1]": [0, 20, 40, 60, 80, 1000], //  1 month
-  "[0.5,2]": [0, 20, 40, 60, 80, 1000], // 3 months
-  "[0.5,3]": [0, 20, 40, 60, 80, 1000], // 3 months
-  "[1,1]": [0, 20, 40, 60, 80, 1000], // 3 months
-  "[1,2]": [0, 20, 40, 60, 80, 1000], // 3 months
-  "[1,3]": [0, 20, 40, 60, 80, 1000], // 3 months
+  "[0.5,1]": [0, 20, 40, 60, 80, 1000],
+  "[0.5,2]": [0, 20, 40, 60, 80, 1000],
+  "[0.5,3]": [0, 20, 40, 60, 80, 1000],
+  "[1,1]": [0, 20, 40, 60, 80, 1000],
+  "[1,2]": [0, 20, 40, 60, 80, 1000],
+  "[1,3]": [0, 20, 40, 60, 80, 1000],
 
-  "[6,1]": [0, 20, 40, 60, 80, 1000], // 3 months
-  "[6,2]": [0, 20, 40, 60, 80, 1000], // 3 months
-  "[6,3]": [0, 20, 40, 60, 80, 1000], // 3 months
+  "[6,1]": [0, 20, 40, 60, 80, 1000],
+  "[6,2]": [0, 20, 40, 60, 80, 1000],
+  "[6,3]": [0, 20, 40, 60, 80, 1000],
 
-  "[12,1]": [0, 20, 40, 60, 80, 1000], // 3 months
-  "[12,2]": [0, 20, 40, 60, 80, 1000], // 3 months
-  "[12,3]": [0, 20, 40, 60, 80, 1000], // 3 months
+  "[12,1]": [0, 20, 40, 60, 80, 1000],
+  "[12,2]": [0, 20, 40, 60, 80, 1000],
+  "[12,3]": [0, 20, 40, 60, 80, 1000],
 
-  "[18,1]": [0, 20, 40, 60, 80, 1000], // 3 months
-  "[18,2]": [0, 20, 40, 60, 80, 1000], // 3 months
-  "[18,3]": [0, 20, 40, 60, 80, 100], // 3 months
+  "[18,1]": [0, 20, 40, 60, 80, 1000],
+  "[18,2]": [0, 20, 40, 60, 80, 1000],
+  "[18,3]": [0, 20, 40, 60, 80, 100],
 };
 
 const tickIntervalByTimeSpan_chart2 = {
-  // 0.5: 4 * 24 * 3600 * 1000, // 1 month
-  // 1: 12 * 24 * 3600 * 1000, // 3 months
-  // 6: 24 * 24 * 3600 * 1000, // 6 months
-  // 12: 24 * 24 * 3600 * 1000, // 1 year
-  // 18: 24 * 24 * 3600 * 1000, // 2 years
+  "[0.5,1]": 4 * 24 * 3600 * 1000,
+  "[0.5,2]": 4 * 24 * 3600 * 1000,
+  "[0.5,3]": 4 * 24 * 3600 * 1000,
+  "[1,1]": 4 * 24 * 3600 * 1000,
+  "[1,2]": 4 * 24 * 3600 * 1000,
+  "[1,3]": 4 * 24 * 3600 * 1000,
 
-  "[0.5,1]": 4 * 24 * 3600 * 1000, //  1 month
-  "[0.5,2]": 4 * 24 * 3600 * 1000, //  1 month
-  "[0.5,3]": 4 * 24 * 3600 * 1000, //  1 month
-  "[1,1]": 4 * 24 * 3600 * 1000, //  1 month
-  "[1,2]": 4 * 24 * 3600 * 1000, //  1 month
-  "[1,3]": 4 * 24 * 3600 * 1000, //  1 month
+  "[6,1]": 12 * 24 * 3600 * 1000,
+  "[6,2]": 12 * 24 * 3600 * 1000,
+  "[6,3]": 12 * 24 * 3600 * 1000,
 
-  "[6,1]": 12 * 24 * 3600 * 1000, // 3 months
-  "[6,2]": 12 * 24 * 3600 * 1000, // 3 months
-  "[6,3]": 12 * 24 * 3600 * 1000, // 3 months
+  "[12,1]": 24 * 24 * 3600 * 1000,
+  "[12,2]": 24 * 24 * 3600 * 1000,
+  "[12,3]": 24 * 24 * 3600 * 1000,
 
-  "[12,1]": 24 * 24 * 3600 * 1000, // 6 months
-  "[12,2]": 24 * 24 * 3600 * 1000, // 6 months
-  "[12,3]": 24 * 24 * 3600 * 1000, // 6 months
-
-  "[18,1]": 24 * 24 * 3600 * 1000, // 2 years
-  "[18,2]": 24 * 24 * 3600 * 1000, // 2 years
-  "[18,3]": 24 * 24 * 3600 * 1000, // 2 years
+  "[18,1]": 24 * 24 * 3600 * 1000,
+  "[18,2]": 24 * 24 * 3600 * 1000,
+  "[18,3]": 24 * 24 * 3600 * 1000,
 };
 
 const radioButtonContent_chart2 = {
@@ -3438,13 +3428,14 @@ const radioButtionCount_chart2 = {
 let lastTimeSpan_chart2 = 0.5;
 let lastPopulation_chart2 = 1;
 
-// Function to change the time span and update the chart
 function handleChartChange_chart2(
   timespanChecked,
   populationChecked,
   timeSpanValue,
   populationValue
 ) {
+  // Function to change the time span and update the chart
+
   if (timeSpanValue) {
     lastTimeSpan_chart2 = timeSpanValue;
   }
@@ -3457,15 +3448,17 @@ function handleChartChange_chart2(
     updateChartSeries_chart2(JSON.stringify([+timeSpan, +population]));
 }
 
-// Function to handle checkbox click
 function handleCheckboxClick_chart2(index) {
+  // Function to handle checkbox click
+
   seriesMapping_chart2[levels_chart2[index]][0] =
     !seriesMapping_chart2[levels_chart2[index]][0];
   updateChartSeries_chart2();
 }
 
-// Function to update the chart series based on checked checkboxes
 function updateChartSeries_chart2(chartId) {
+  // Function to update the chart series based on checked checkboxes
+
   chart_2.series.forEach((s) => s.remove());
   chart_2.series.forEach((s) => s.remove());
   openG1TimeSelect_chart2.textContent = "";
@@ -3477,8 +3470,9 @@ function updateChartSeries_chart2(chartId) {
     radioButtionPopulation_chart2[values[1]];
 }
 
-// Function to create a checkbox for a level
 function createLevelCheckbox_chart2(level, index, list) {
+  // Function to create a checkbox for a level
+
   let option = document.createElement("div");
   let checkbox = document.createElement("input");
   let span = document.createElement("span");
@@ -3505,9 +3499,9 @@ function createLevelCheckbox_chart2(level, index, list) {
   list.appendChild(option);
 }
 let selectedRadio2;
-// Function to create radio buttons for time spans
 function createRadioButtons_chart2(list) {
-  // Append populationEntries first
+  // Function to create radio buttons for time spans
+
   let Countpopulation = Object.entries(radioButtionCount_chart2);
 
   for (let i = 0; i < Countpopulation.length; i++) {
@@ -3528,8 +3522,6 @@ function createRadioButtons_chart2(list) {
       selectedRadio2 && selectedRadio2.id === Countpopulation[i][1];
 
     checkbox.addEventListener("click", function (e) {
-      // Countpopulation[i].checked = true;
-      // selectedRadio2 = checkbox;
       calculationNumber[i] = true;
       alert(i);
       e.stopPropagation();
@@ -3572,8 +3564,6 @@ function createRadioButtons_chart2(list) {
       selectedRadio2 && selectedRadio2.id === populationEntries[i][1];
 
     checkbox.addEventListener("click", function (e) {
-      // populationsSelection[i] = !populationsSelection[i];
-      // selectedRadio2 = checkbox;
       e.stopPropagation();
     });
     if (populationsSelection[i]) {
@@ -3587,15 +3577,15 @@ function createRadioButtons_chart2(list) {
     list.appendChild(option);
   }
 
-  // Append a horizontal line
   list.appendChild(document.createElement("hr"));
 
   const label2 = document.createElement("label");
   label2.innerText = "זמן";
   list.appendChild(label2);
 
-  // Append timeSpans
   for (let i = 0; i < timeSpans.length; i++) {
+    // Append timeSpans
+
     let option = document.createElement("div");
     let checkbox = document.createElement("input");
     let span = document.createElement("span");
@@ -3610,12 +3600,10 @@ function createRadioButtons_chart2(list) {
     checkbox.id = timeSpans[i][0];
     checkbox.value = timeSpans[i][1];
 
-    // alert(timeSpanSelection[3]);
     if (timeSpanSelection[i]) {
       checkbox.checked = true;
       timeSpanSelection[i] = true;
     }
-    // checkbox.checked = timeSpanSelection[i];
 
     span.textContent = timeSpans[i][0];
     option.appendChild(checkbox);
@@ -3654,9 +3642,6 @@ g1okbutton_chart2.addEventListener("click", function () {
     openG1TimeSelect_chart2.textContent = [...set].join(", ");
   }
 
-  // Declare selectedTimeSpanValue here
-  const selectedTimeSpanValue = selectedRadioValue;
-
   handleChartChange_chart2(
     selectedRadio,
     selectedRadio2,
@@ -3666,10 +3651,6 @@ g1okbutton_chart2.addEventListener("click", function () {
 
   openG1TimeSelect_chart2.innerHTML +=
     '<img class="" src ="./pics/down-arrow.svg" width="20" height="20"/>';
-  // changeSeriesTimeSpan_chart2(selectedTimeSpanValue);
-
-  // alert(selectedRadioValue2);
-  // updateYAxisTickPositions([0.5, 1]);
 });
 
 function updateYAxisTickPositions(timeSpan) {
@@ -3680,35 +3661,22 @@ function updateYAxisTickPositions(timeSpan) {
     tickPositions: tickPositions,
   });
 
-  // You might need to call chart_2.redraw() to force the chart to redraw with the new tick positions
   chart_2.redraw();
 }
 
-// Example usage:
-// Replace the argument with the desired time span from tickPositionsByTimeSpan_chart2
-
-// Function to create the entire graph time span select
 function createGraphTimeSpanSelect_chart2(list) {
-  list.innerHTML = ""; // change placeholder
+  list.innerHTML = "";
 
-  // Loop to create checkboxes for levels
-  // for (let i = 0; i < levels_chart2.length; i++) {
-  //   createLevelCheckbox_chart2(levels_chart2[i], i, list);
-  // }
-
-  // Create radio buttons for time spans
   createRadioButtons_chart2(list);
 }
 
 function createGraphPupoltionAmountSelect_chart2(list) {
-  list.innerHTML = ""; // change placeholder
+  list.innerHTML = "";
 
-  // Loop to create checkboxes for levels
   for (let i = 0; i < levels_chart2.length; i++) {
     createLevelCheckbox_chart2(levels_chart2[i], i, list);
   }
 
-  // Create radio buttons for time spans
   createRadioButtons_chart2(list);
 }
 
@@ -3732,82 +3700,96 @@ openG1TimeSelect_chart2.addEventListener("click", function () {
   g1okbutton_chart2;
 });
 
-function updateChartColors() {
+function updateChartColors(chartId, backgroundColor, axisColor, colorMappings) {
   const chartBackground = document.querySelectorAll(
-    "#g-2 rect.highcharts-plot-background"
+    `#${chartId} rect.highcharts-plot-background`
   )[0];
-  chartBackground.setAttribute("fill", "rgb(55,79,96)");
+  chartBackground.setAttribute("fill", backgroundColor);
 
   const chartBackgroundAndAxes = document.querySelectorAll(
-    "#g-2 .highcharts-background, #g-2 .highcharts-xaxis, #g-2 .highcharts-yaxis"
+    `#${chartId} .highcharts-background, #${chartId} .highcharts-xaxis, #${chartId} .highcharts-yaxis`
   );
   chartBackgroundAndAxes.forEach((element) => {
-    element.setAttribute("stroke", "rgb(55,79,96)");
+    element.setAttribute("stroke", backgroundColor);
   });
 
-  const elementsWithColor1 = document.querySelectorAll(
-    '#g-2 [fill="rgb(0,127,127)"]'
-  );
-  const elementsWithColor2 = document.querySelectorAll(
-    '#g-2 [fill="rgb(182,202,81)"]'
-  );
-  const elementsWithColor3 = document.querySelectorAll(
-    '#g-2 [fill="rgb(80,203,253)"]'
-  );
+  colorMappings.forEach((colorMapping) => {
+    const elementsWithColor = document.querySelectorAll(
+      `#${chartId} [fill="${colorMapping.fromColor}"]`
+    );
 
-  // Change the color of elements with RGB(0,127,127) to red
-  elementsWithColor1.forEach((element) => {
-    element.setAttribute("fill", "rgb(44,210,219)");
-  });
-
-  // Change the color of elements with RGB(182,202,81) to red
-  elementsWithColor2.forEach((element) => {
-    element.setAttribute("fill", "rgb(253,130,100)");
-  });
-
-  // Change the color of elements with RGB(80,203,253) to red
-  elementsWithColor3.forEach((element) => {
-    element.setAttribute("fill", "rgb(155,233,133)");
+    elementsWithColor.forEach((element) => {
+      element.setAttribute("fill", colorMapping.toColor);
+    });
   });
 }
 
-// setInterval(updateChartColors, 1000);
-function reverseChartColors() {
-  // Reset chart background color to white
-  const chartBackground = document.querySelectorAll(
-    "#g-2 rect.highcharts-plot-background"
-  )[0];
-  chartBackground.setAttribute("fill", "rgb(255,255,255)");
-
-  // Reset chart background and axes stroke color to white
-  const chartBackgroundAndAxes = document.querySelectorAll(
-    "#g-2 .highcharts-background, #g-2 .highcharts-xaxis, #g-2 .highcharts-yaxis"
+function reverseChartColors(
+  chartId,
+  backgroundColor,
+  axisColor,
+  colorMappings
+) {
+  updateChartColors(
+    chartId,
+    backgroundColor,
+    axisColor,
+    colorMappings.reverse()
   );
-  chartBackgroundAndAxes.forEach((element) => {
-    element.setAttribute("stroke", "rgb(255,255,255)");
-  });
+}
 
-  // Reset the color of elements with RGB(44,210,219) to their original color
-  const elementsWithColor1 = document.querySelectorAll(
-    '#g-2 [fill="rgb(44,210,219)"]'
-  );
-  elementsWithColor1.forEach((element) => {
-    element.setAttribute("fill", "rgb(0,127,127)");
-  });
+const colorMappings = [
+  { fromColor: "rgb(0,127,127)", toColor: "rgb(44,210,219)" },
+  { fromColor: "rgb(182,202,81)", toColor: "rgb(253,130,100)" },
+  { fromColor: "rgb(80,203,253)", toColor: "rgb(155,233,133)" },
+];
 
-  // Reset the color of elements with RGB(253,130,100) to their original color
-  const elementsWithColor2 = document.querySelectorAll(
-    '#g-2 [fill="rgb(253,130,100)"]'
-  );
-  elementsWithColor2.forEach((element) => {
-    element.setAttribute("fill", "rgb(182,202,81)");
-  });
+function updateChartSeriesColors(chart, newColors) {
+  if (chart && newColors.length === chart.series.length) {
+    chart.series.forEach((series, index) => {
+      series.update({ color: newColors[index] });
+    });
+  }
+}
 
-  // Reset the color of elements with RGB(155,233,133) to their original color
-  const elementsWithColor3 = document.querySelectorAll(
-    '#g-2 [fill="rgb(155,233,133)"]'
-  );
-  elementsWithColor3.forEach((element) => {
-    element.setAttribute("fill", "rgb(80,203,253)");
-  });
+const newSeriesColors = [
+  "rgb(74,183,134)",
+  "rgb(253,130,100)",
+  "rgb(44,210,219)",
+];
+const oldSeriesColors = [
+  "rgb(0,127,127)",
+
+  "rgb(182,202,81)",
+  "rgb(80,203,253)",
+];
+
+function changeChartColors1(chart, backgroundColor, fontColor) {
+  if (chart) {
+    chart.update({
+      chart: {
+        backgroundColor: backgroundColor,
+      },
+      xAxis: {
+        labels: {
+          style: {
+            color: fontColor,
+          },
+        },
+      },
+      yAxis: {
+        labels: {
+          style: {
+            color: fontColor,
+          },
+        },
+        title: {
+          useHTML: true,
+          style: {
+            color: fontColor,
+          },
+        },
+      },
+    });
+  }
 }

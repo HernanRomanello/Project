@@ -84,6 +84,7 @@ function invokeFilter() {
 
 let selectedHospitals = [];
 function createHospitalSelect() {
+  //This function dynamically generates the hospital selection dropdown.
   for (let i = 0; i < hospitalNames.length; i++) {
     let option = document.createElement("div");
     let checkbox = document.createElement("input");
@@ -104,7 +105,6 @@ function createHospitalSelect() {
       search_input_span.innerHTML =
         selectedHospitals.length +
         ' בתי חולים / מוסדות נבחרו <img class="" src ="./pics/down-arrow.svg" width="20" height="20"/>';
-      // stop the event from bubbling up to the parent
       e.stopPropagation();
     });
     option.classList.add("option-hospital");
@@ -175,6 +175,7 @@ const tableArrows = {
 
 function sortTable(columnIndex) {
   const isNumber = columnIndex === 0 ? false : true;
+
   if (counts[columnIndex] === 0) {
     tableArrows[columnIndex].classList.remove("table-arrow-up");
     tableArrows[columnIndex].classList.remove("table-arrow");
