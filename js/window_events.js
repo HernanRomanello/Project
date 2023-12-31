@@ -72,4 +72,4 @@ const loadingInterval = setInterval(() => {
   if (loadingPercent >= 100) {
     clearInterval(loadingInterval);
   }
-}, 100); // 10000
+}, 100); // 0.1 second

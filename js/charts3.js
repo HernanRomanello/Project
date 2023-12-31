@@ -697,23 +697,15 @@ function changeChartStyle(
   });
 }
 
-// Example usage:
 let chart_3 = new ApexCharts(document.querySelector("#g-3"), options_g3);
 chart_3.render();
 
-// Call the function to change the chart style
-
-// Call the function to change font colors to white
-// changeFontColorToWhite(chart_3);
-
-// G3
 const openG1TimeSelect_chart3 = document.querySelector("#open-g3-time");
 const select_time_chart3 = document.querySelector("#time-select-g3");
 const g1cancelbutton_chart3 = document.getElementById("g3-cancel-button");
 const g1okbutton_chart3 = document.getElementById("g3-ok-button");
 const G1Container_chart3 = document.querySelector("#g3-container");
 
-const showingSeries_3 = JSON.parse(JSON.stringify(series));
 const populations_chart3 = [
   "מאומתים",
   "נפטרים",
@@ -775,14 +767,13 @@ const radioButtionPopulation_chart3 = {
 let lastPopulationGroup = 1;
 let lastTimeSpan = 0.5;
 
-// Function to change the time span and update the chart
 function handleChartChange_chart3(
   timespanChecked,
   populationChecked,
   timeSpanValue,
   populationValue
 ) {
-  // console.log(timeSpanValue, populationValue);
+  // Function to change the time span and update the chart
 
   if (timeSpanValue) {
     lastTimeSpan = timeSpanValue;
@@ -796,8 +787,9 @@ function handleChartChange_chart3(
     updateChartSeries_chart3(JSON.stringify([+timeSpan, +population]));
 }
 
-// Function to update the chart series based on checked checkboxes
 function updateChartSeries_chart3(chartId) {
+  // Function to update the chart series based on checked checkboxes
+
   openG1TimeSelect_chart3.textContent = "";
   chart_3.updateOptions(seriesByTimeSpan_chart3[chartId]);
   const values = JSON.parse(chartId);
@@ -809,36 +801,10 @@ function updateChartSeries_chart3(chartId) {
     '<img class="" src ="./pics/down-arrow.svg" width="20" height="20"/>';
 }
 
-// Function to create a checkbox for a level
-function createLevelCheckbox_chart3(level, index, list) {
-  let option = document.createElement("div");
-  let checkbox = document.createElement("input");
-  let span = document.createElement("span");
-
-  option.addEventListener("click", function (e) {
-    e.stopPropagation();
-  });
-
-  checkbox.addEventListener("click", function (e) {
-    handleCheckboxClick_chart2(index);
-    e.stopPropagation();
-  });
-
-  span.textContent = level;
-  option.classList.add("option-country");
-  checkbox.type = "checkbox";
-  checkbox.name = "level-country";
-  checkbox.id = level;
-  checkbox.checked = populationsSelection_chart3[index];
-  checkbox.value = level;
-
-  option.appendChild(checkbox);
-  option.appendChild(span);
-  list.appendChild(option);
-}
 let selectedRadio2_chart3;
-// Function to create radio buttons for time spans
 function createRadioButtons_chart3(list) {
+  // Function to create radio buttons for time spans
+
   const label1 = document.createElement("label");
   label1.innerText = "הצג לפי";
 
@@ -873,11 +839,8 @@ function createRadioButtons_chart3(list) {
     option.appendChild(span);
     list.appendChild(option);
   }
-  // append to list labal to radio buttons "הצג לפי"
 
   list.appendChild(document.createElement("hr"));
-
-  // append to list labal to radio buttons "זמן"
 
   const label2 = document.createElement("label");
   label2.innerText = "זמן";
@@ -908,8 +871,9 @@ function createRadioButtons_chart3(list) {
   }
 }
 
-// Event listener for the "OK" button
 g1okbutton_chart3.addEventListener("click", function () {
+  // Event listener for the "OK" button
+
   const selectedRadio = document.querySelector(
     'input[name="timeSpan-country-g3"]:checked'
   );
@@ -939,27 +903,23 @@ g1okbutton_chart3.addEventListener("click", function () {
   );
 });
 
-// Function to create the entire graph time span select
 function createGraphTimeSpanSelect_chart3(list) {
-  list.innerHTML = ""; // change placeholder
+  // Function to create the entire graph time span select
+
+  list.innerHTML = "";
 
   createRadioButtons_chart3(list);
 }
 
 function createGraphPupoltionAmountSelect_chart3(list) {
-  list.innerHTML = ""; // change placeholder
-
-  // Loop to create checkboxes for levels
-  for (let i = 0; i < levels_chart2.length; i++) {
-    createLevelCheckbox_chart3(levels_chart2[i], i, list);
-  }
+  list.innerHTML = "";
 
   // Create radio buttons for time spans
   createRadioButtons_chart3(list);
 }
 
 openG1TimeSelect_chart3.addEventListener("click", function () {
-  createGraphTimeSpanSelect_chart3(select_time_chart3); // no need
+  createGraphTimeSpanSelect_chart3(select_time_chart3);
   G1Container_chart3.classList.toggle("hide");
 
   g1cancelbutton_chart3.addEventListener("click", function () {
@@ -969,8 +929,6 @@ openG1TimeSelect_chart3.addEventListener("click", function () {
   const arrow3 = document.querySelector("#open-g3-time img");
 
   arrow3.classList.toggle("rotate-arrow");
-
-  // g1okbutton_chart3;
 });
 
 function customizeLegendStylesAndMarker(borderRadius) {
@@ -992,9 +950,6 @@ function customizeLegendStylesAndMarker(borderRadius) {
     marker.style.borderRadius = borderRadius;
   });
 }
-
-// Call the function with your desired border radius value
-// customizeLegendStylesAndMarker("10px");
 
 setInterval(() => {
   customizeLegendStylesAndMarker("10px");

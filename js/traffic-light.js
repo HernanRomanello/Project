@@ -165,7 +165,6 @@ function closeSettlementsSelect(resetTable = false) {
   settlementSelect.classList.toggle("hide");
 
   settlement_searchButton.classList.remove("search-button-clicked");
-  // searchsettlement.click();
   resetSettlementTable(resetTable);
 }
 
@@ -217,7 +216,6 @@ function createSettlementSelect() {
     <br/>
   `;
   for (let i = 0; i < settlementNames.length; i++) {
-    // think what to change in the options
     let span = document.createElement("span");
 
     span.addEventListener("click", function (e) {
@@ -280,8 +278,9 @@ const settlementTableArrows = {
   5: document.querySelector("#table-arrow-settlements-6"),
 };
 
-// Function to sort the table
 function sortTableSettlements(columnIndex) {
+  // Function to sort the table
+
   const isNumber = columnIndex >= 1;
   if (settlementClickCounts[columnIndex] === 0) {
     settlementTableArrows[columnIndex].classList.remove("table-arrow-up");
